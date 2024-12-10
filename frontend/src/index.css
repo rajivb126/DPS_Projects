@@ -1,0 +1,2004 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: visible !important;
+  padding-right: 0 !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.popup .modal {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  transition: 0.3s ease-in-out;
+}
+
+.popup .modal .modal-content .modal-body button.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1051;
+}
+
+.news-update {
+  background-color: orange;
+  color: #043267;
+  /* font-weight: 700; */
+  height: 40px;
+  padding-top: 5px;
+}
+
+.news-update h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.news-update-list {
+  background-color: #1b741e;
+  height: 40px;
+  margin: 0px;
+  padding: 0px 10px;
+}
+
+.news-update-list ul {
+  display: flex;
+  list-style: none;
+}
+
+.news-update-list ul li {
+  padding-right: 20px;
+  padding-top: 5px;
+}
+
+.news-update-list ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.welcome-dps {
+  text-align: justify;
+}
+
+.welcome-dps h3 {
+  font-size: 35px;
+}
+
+.welcome-dps p {
+  font-size: 18px;
+  font-weight: 600;
+  background-image: url(../src/images/dpslogotrans.gif);
+  background-size: 280px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.notice-circular {
+  height: 80%;
+  /* border: 3px solid #084007; */
+  margin-top: 30px;
+}
+
+.notice-circular marquee {
+  width: 100%;
+  padding-left: 0px;
+}
+
+.notice-circular ul {
+  list-style: none;
+}
+
+.notice-circular ul li {
+  padding-bottom: 20px;
+}
+
+.notice-circular ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #00008b;
+  font-weight: 700;
+}
+
+.inside-notice-circular {
+  background-color: #084007;
+  text-align: center;
+  color: #fff;
+  box-shadow: rgb(108, 108, 108) 0px 0px 1px 2px;
+}
+
+.inside-notice-circular h3 {
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+.about-img img {
+  height: auto;
+}
+
+.blog-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-img a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.blog-img img {
+  transition: 0.5s;
+  transform: scale(1, 1);
+}
+
+.blog-img :hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.blog-content {
+  position: relative;
+  background-color: orange;
+  text-align: center;
+  font-weight: 600;
+  padding: 20px 20px 24px 24px;
+}
+
+.blog-content p {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 12px 0px 5px 0px;
+}
+
+.blog-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.blog-content :hover a {
+  color: #1b741e;
+}
+
+.event_gallery {
+  background-image: url(./images/bg-3.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.event_gallery h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.event_gallery .item {
+  padding: 0 5px;
+}
+
+
+.slick-slide>div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+1 2 3 4 5 6 .slick-slide>div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+.event-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.event-img a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.event-img img {
+  transition: 0.5s;
+  transform: scale(1, 1);
+}
+
+.event-img :hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.event-content {
+  position: relative;
+  background-color: orange;
+  text-align: center;
+  font-weight: 600;
+  padding: 20px 20px 24px 24px;
+}
+
+.event-content h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 12px 0px 5px 0px;
+}
+
+.event-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.event-content :hover a {
+  color: #1b741e;
+}
+
+.event-date-wrap {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #00a651;
+  padding: 12px 20px 12px;
+}
+
+.event-date-wrap span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+.event-date-wrap .event-date {
+  margin-bottom: 5px;
+}
+
+.counter {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.counter-one::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  background-color: #e1dddd;
+  width: 3px;
+  height: 50px;
+}
+
+.counter-two::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: #e1dddd;
+  width: 3px;
+  height: 50px;
+}
+
+.counter-three::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  background-color: #e1dddd;
+  width: 3px;
+  height: 50px;
+}
+
+.counter-img {
+  flex-basis: 54px;
+  padding: 0px 25px;
+}
+
+.counter-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #00a651;
+}
+
+.counter-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #666666;
+}
+
+/* At a Glance CSS */
+.atglance h3 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 500;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.atglance p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+.ataglance-responsive-image {
+  display: none;
+  /* Hidden on desktop */
+}
+
+.atgalnce-images {
+  display: block;
+  /* Visible on desktop */
+}
+
+
+footer {
+  margin-top: 50px;
+  padding: 40px 0px 30px 0px;
+  background-color: #043267;
+  color: #fff;
+}
+
+footer .footer .footer-image {
+  text-align: center;
+}
+
+.footer .footer-right {
+  border-right: 1px groove #6a83a0;
+}
+
+.footer h6 {
+  font-size: 16px;
+}
+
+.footer .quick-links span {
+  padding-right: 5px;
+}
+
+.footer .quick-links span a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer .address {
+  list-style: none;
+  padding: 5px 0px;
+}
+
+.footer .address li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+.footer .connect-us {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.footer .connect-us li a {
+  text-decoration: none;
+  color: white;
+  padding: 0 12px;
+}
+
+.bottom-layer {
+  display: none;
+}
+
+.icons {
+  display: block;
+  position: fixed;
+  bottom: 20%;
+  right: 0px;
+  z-index: 9999;
+}
+
+.icons div {
+  margin-bottom: 10px;
+}
+
+.twittericons {
+  width: 50px;
+  height: 50px;
+  font-size: 27px;
+  background: black;
+  text-align: center;
+  margin: 3px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.twittericons a {
+  color: white;
+}
+
+.whatsappicons {
+  width: 50px;
+  height: 50px;
+  font-size: 27px;
+  background: #01e675;
+  text-align: center;
+  margin: 3px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.about-section li a {
+  text-decoration: none !important;
+  color: black;
+}
+
+.about-section li {
+  font-size: 16px;
+}
+
+.about-button {
+  background-color: #043267;
+  color: #fff;
+  padding: 2.5px 15px;
+}
+
+.whatsappicons a {
+  color: white;
+}
+
+.facebookicons {
+  width: 50px;
+  height: 50px;
+  font-size: 27px;
+  background: blue;
+  text-align: center;
+  margin: 3px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.facebookicons a {
+  color: white;
+}
+
+.marquees {
+  background-color: #1b741e;
+  margin: auto;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  padding-top: 5px;
+}
+
+.marquees a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal {
+  transition: 0.5s;
+}
+
+.top-header {
+  background-color: #002147;
+}
+
+.contact-header {
+  color: #fff;
+}
+
+.contact-header ul {
+  list-style: none;
+}
+
+.contact-header ul li {
+  padding: 10px 5px 0px 5px;
+  font-size: 15px;
+}
+
+.contact-header ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+.form-control {
+  padding: 15px 12px;
+  font-size: 15px;
+  border: none;
+  line-height: 1;
+  border-bottom: 1px solid #ced4da
+}
+
+.navbar-brand img {
+  width: 350px;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav-item .nav-link {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  color: #002147;
+  text-transform: capitalize;
+}
+
+.navbar1 :hover {
+  color: orange;
+}
+
+.dropdown-item {
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#navbarNavDropdown .dropdown:hover .dropdown-menu {
+  display: block;
+  transition: all 0.5s;
+  margin-top: 0.125em;
+}
+
+#offcanvasRight {
+  width: 85%;
+}
+
+#offcanvasRight .show {
+  transform: inherit !important;
+  position: static !important;
+}
+
+.dropdown-menu {
+  display: block;
+}
+
+.dropdown {
+  .dropdown-menu {
+    transition: all 0.5s;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1, 0);
+    display: block;
+  }
+
+  &:hover {
+    .dropdown-menu {
+      transform: scale(1);
+    }
+  }
+}
+
+.dropdown-menu .dropdown-item {
+  font-weight: bold;
+}
+
+.dropdown-menu li a:hover {
+  color: #00a651;
+  padding-left: 20px;
+  transition: .5s ease-in-out;
+}
+
+.dropdown-menu li a::before {
+  background: #00a651 none repeat scroll 0 0;
+  border-radius: 50%;
+  content: "";
+  height: 7px;
+  left: 15px;
+  opacity: 0;
+  position: absolute;
+  top: 13px;
+  transition: all 0.3s ease-in-out 0s;
+  width: 7px;
+  z-index: 999;
+}
+
+.contact-details p {
+  font-size: 14px;
+}
+
+.contact-details p a {
+  text-decoration: none;
+  color: #00008b;
+  font-size: 14px;
+}
+
+.fee-structure h3 {
+  color: orange;
+  font-weight: bold;
+}
+
+.fee-structure h6 {
+  color: darkblue;
+  font-weight: 600;
+}
+
+.fee-structure table thead tr th {
+  background-color: orange;
+  color: white;
+}
+
+.fee-structure table thead tr th h6 {
+  color: #fff;
+  font-weight: 700;
+}
+
+.school-rules-heading h3 {
+  background-color: maroon;
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+  padding: 12px 0;
+  border: none;
+  font-weight: bold;
+}
+
+.school-rules p {
+  font-size: 20px;
+}
+
+.school-rules ol {
+  text-align: justify;
+}
+
+.school-rules ol li {
+  font-size: 18px;
+}
+
+.mpd {
+  padding: 0 8%;
+}
+
+.mpd h3 {
+  color: orange;
+  font-weight: bold;
+}
+
+.page-heading {
+  border-left: 8px solid #206AAA;
+  padding-left: 10px;
+}
+
+.mpd table thead tr th {
+  background-color: maroon;
+  color: white;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  /* font-size: 18px; */
+}
+
+thead tr th {
+  text-align: center;
+  font-weight: bold;
+}
+
+.wing h2 {
+  text-align: center;
+  padding: 5px 0;
+  font-weight: 800;
+  background-color: darkgreen;
+  color: orange;
+  font-size: 40px;
+}
+
+.wing p {
+  font-size: 17px;
+  margin: 5px 20px 0 20px;
+  text-align: justify;
+}
+
+.wing h4 {
+  margin: 10px 20px 0px 20px;
+  color: orange;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.alumni-register label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.alumni-register label span {
+  color: red;
+  padding-left: 3px;
+}
+
+.alumni-register input {
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-button input {
+  width: 10%;
+}
+
+#authoritiesMessages {
+  background-image: url(./images/bg-3.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+#authoritiesMessages .row {
+  align-items: center;
+  margin-top: 25px !important;
+  padding-top: 20px;
+}
+
+.authorities_message h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-left: 10px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #002147;
+}
+
+.authorities_message .message h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.authorities_message .message p {
+  text-align: justify;
+  font-size: 18px;
+}
+
+.authorities_message .image img {
+  border: 4px solid #002147;
+}
+
+.vision_and_mission {
+  background-image: url(./images/bg-3.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.vision_and_mission h3 {
+  font-size: 30px;
+  border-left: 5px solid #00a651;
+  padding-left: 10px;
+  font-weight: bold;
+  margin: 2% 0;
+  color: #002147;
+}
+
+.vision_and_mission h3 span {
+  color: #00a651;
+}
+
+.vision_and_mission .mission {
+  padding: 10px 6px 0 6px;
+  text-align: justify;
+}
+
+.vision_and_mission .mission h2 {
+  color: #002147;
+}
+
+.mission_list .mission_box {
+  height: 150px;
+  background-color: #002147;
+  color: bisque;
+  padding: 3.8% 1%;
+  border: 1px solid lawngreen;
+}
+
+.mission_list .mission_box p {
+  text-align: justify;
+  padding: 2.5%;
+  color: yellow;
+}
+
+.vision_and_mission .vision {
+  padding: 10px 6px 0 6px;
+  text-align: justify;
+  color: #002147;
+}
+
+.vision_list .vision_box {
+  height: 220px;
+  background-color: #002147;
+  color: bisque;
+  padding: 3.8% 1%;
+  border: 1px solid lawngreen;
+}
+
+.vision_list .vision_box p {
+  text-align: justify;
+  padding: 2.5%;
+  color: yellow;
+}
+
+/* Infrastructure CSS */
+.infrastructure ul.nav {
+  position: relative;
+}
+
+.infrastructure .nav .nav-link {
+  color: black;
+}
+
+.infrastructure .nav.nav-pills {
+  justify-content: center;
+  align-items: center;
+}
+
+.infrastructure .nav-pills li {
+  display: block;
+  min-width: 200px;
+}
+
+.infrastructure .nav-pills li .nav-link {
+  font-size: 20px;
+  color: black;
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+  transition: 0.3s;
+  border: 2px solid #ebebeb;
+  background-color: orange;
+  width: 250px;
+}
+
+.infrastructure .nav-pills li .nav-link.active {
+  position: relative;
+  color: white !important;
+  background: #0d6efd;
+}
+
+.infrastructure .nav-pills li .nav-link.active::before {
+  position: absolute;
+  content: "";
+  width: 102%;
+  height: 109%;
+  border: 2px solid #c09578;
+  left: -2px;
+  top: -2px;
+  /* border-radius: 2px; */
+}
+
+.infrastructure .tab-content .tab-pane h3 {
+  border-bottom: 2px solid #002147;
+  border-top: 2px solid #002147;
+  margin-top: 30px;
+  padding: 20px 0 25px;
+  text-align: center;
+  color: orange;
+  font-weight: bold;
+}
+
+.infrastructure .tab-content .tab-pane p {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.infrastructure .tab-content .tab-pane h5 {
+  font-size: 24px;
+  color: maroon;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.infrastructure .tab-content .tab-pane ol li {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.infrastructure .tab-content .tab-pane ul li {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.virtualTour h3 {
+  font-size: 30px;
+  border-left: 5px solid #00a651;
+  padding-left: 10px;
+  font-weight: bold;
+  margin: 2% 0;
+  color: #002147;
+}
+
+.virtualTour h3 span {
+  color: #00a651;
+}
+
+.fraternity {
+  text-align: center;
+}
+
+.fraternity h2 {
+  color: orange;
+  font-weight: 700;
+}
+
+.fraternity .img-fluid {
+  height: 200px;
+}
+
+.fraternity h6 {
+  padding: 0px 10px;
+  color: maroon;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.fraternity .teacher-name {
+  color: darkblue;
+  font-weight: bold;
+}
+
+/*  */
+.Teachers-faculties .teachers-name {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.Teachers-faculties h4 {
+  background-color: orange;
+  padding: 10px 0px;
+  color: #002147;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.Teachers-faculties h6 {
+  color: maroon;
+  font-weight: bold;
+}
+
+.Teachers-faculties p a {
+  text-decoration: none;
+  color: maroon;
+  font-weight: bold;
+}
+
+.Teachers-faculties p a i {
+  padding-right: 5px;
+}
+
+.teacher-wings-button ul.nav {
+  position: relative;
+}
+
+.teacher-wings-button .nav .nav-link {
+  color: black;
+}
+
+.teacher-wings-button ul li {
+  display: block;
+}
+
+.teacher-wings-button ul li a {
+  font-size: 20px;
+  color: black;
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+  transition: 0.3s;
+  border: 2px solid #ebebeb;
+  min-width: 190px;
+}
+
+.teacher-wings-button ul li a.active {
+  position: relative;
+  color: #c09578 !important;
+}
+
+.teacher-wings-button ul li a.active::before {
+  position: absolute;
+  content: "";
+  width: 102%;
+  height: 109%;
+  border: 2px solid #c09578;
+  left: -2px;
+  top: -2px;
+  border-radius: 2px;
+}
+
+.wings-contents .teachers-name {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.wings-contents h4 {
+  background-color: orange;
+  padding: 10px 0px;
+  color: #002147;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.wings-contents h6 {
+  color: maroon;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.wings-contents p {
+  font-size: 14px;
+}
+
+.wings-contents p a {
+  text-decoration: none;
+  color: maroon;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.admission-policy {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.admission-policy h3 {
+  color: orange;
+  font-weight: bold;
+}
+
+.admission-policy ol li {
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.exam-policy {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.exam-policy table thead tr th {
+  background-color: orange;
+  color: #fff;
+}
+
+.exam-policy table thead tr th h4 {
+  font-weight: bold;
+}
+
+.exam-policy table thead tr th h6 {
+  font-weight: bold;
+}
+
+.hostel-policy {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.hostel-policy h3 {
+  color: orange;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hostel-policy p {
+  font-size: 18px;
+}
+
+.hostel-policy ol li {
+  padding: 8px 0;
+  font-size: 18px;
+}
+
+.hostel-policy .formalitiesHostel {
+  padding-left: 30px;
+}
+
+.exam-policy .table-3 {
+  width: 80%;
+}
+
+/* Admin Login */
+.carousel .carousel-inner .carousel-item img.admin-img {
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+}
+
+.admin-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background-color: white;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.sidebar {
+  width: 220px;
+}
+
+.list-group a:hover {
+  cursor: pointer;
+}
+
+.document-form-1 {
+  margin: 20px 50px 50px 50px;
+  width: 91%;
+  background-color: white;
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+/* School Magazine */
+.school-magazine {
+  text-align: center;
+}
+
+.school-magazine iframe {
+  width: 900px;
+  height: 475px;
+}
+
+/*  */
+.admission-procedure ul.nav {
+  position: relative;
+}
+
+.admission-procedure .nav .nav-link {
+  color: black;
+}
+
+.admission-procedure .nav.nav-pills {
+  justify-content: center;
+  align-items: center;
+}
+
+.admission-procedure .nav-pills li {
+  display: block;
+  min-width: 200px;
+}
+
+.admission-procedure .nav-pills li .nav-link {
+  font-size: 20px;
+  color: black;
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+  transition: 0.3s;
+  border: 2px solid #ebebeb;
+  background-color: orange;
+  width: 250px;
+}
+
+.admission-procedure .nav-pills li .nav-link.active {
+  position: relative;
+  color: white !important;
+  background: #0d6efd;
+}
+
+.admission-procedure .nav-pills li .nav-link.active::before {
+  position: absolute;
+  content: "";
+  width: 102%;
+  height: 109%;
+  border: 2px solid #c09578;
+  left: -2px;
+  top: -2px;
+  /* border-radius: 2px; */
+}
+
+.admission-procedure .tab-content .tab-pane h3 {
+  border-bottom: 2px solid #002147;
+  border-top: 2px solid #002147;
+  margin-top: 30px;
+  padding: 20px 0 25px;
+  text-align: center;
+  color: orange;
+  font-weight: bold;
+}
+
+.admission-procedure .tab-content .tab-pane p {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.admission-procedure .tab-content .tab-pane h5 {
+  font-size: 24px;
+  color: maroon;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.admission-procedure .tab-content .tab-pane ol li {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+.admission-procedure .tab-content .tab-pane ul li {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Achievement */
+.all-achievement ul.nav {
+  position: relative;
+}
+
+.all-achievement .nav .nav-link {
+  color: black;
+  text-align: center;
+}
+
+.all-achievement .nav {
+  justify-content: center;
+  align-items: center;
+}
+
+.all-achievement li .nav-link {
+  font-size: 20px;
+  color: black;
+  text-transform: capitalize;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+  border: 2px solid #ebebeb;
+  background-color: orange;
+  width: 180px;
+}
+
+.all-achievement li .nav-link.active {
+  position: relative;
+  color: white !important;
+  background: #0d6efd;
+}
+
+.all-achievement li .nav-link.active::before {
+  position: absolute;
+  content: "";
+  width: 102%;
+  height: 109%;
+  border: 2px solid #c09578;
+  left: -2px;
+  top: -2px;
+  /* border-radius: 2px; */
+}
+
+.card-date {
+  width: 90px;
+  padding: 10px;
+  background: url(./images/date-box.svg) no-repeat center center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: auto;
+  background-size: contain;
+}
+
+.card-date .year {
+  font-weight: 700;
+  font-size: 13px;
+  background: #2E57A1;
+  color: white;
+  text-align: center;
+  padding: 0 3px;
+  border-radius: 20px;
+  margin-bottom: 3px;
+}
+
+.card-date .month {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-date .day {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* School Circular */
+.school-circular {
+  display: flex;
+  justify-content: center;
+}
+
+.school-circular .table {
+  width: 80%;
+  display: inline-table;
+}
+
+
+.school-circular table thead th.action {
+  width: 100px;
+}
+
+.school-circular table tbody tr td a button.viewbutton {
+  max-width: 45%;
+  margin-right: 2px;
+}
+
+/* Add this to your CSS */
+.lightbox-js img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.sidebar .list-group.list-group-flush a {
+  background-color: rgb(48, 42, 42);
+}
+
+.sidebar .list-group-item {
+  background-color: rgb(48, 42, 42);
+  color: white;
+  border: none;
+}
+
+/* Student Council CSS */
+.student-council-image img {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+  transform: scale(1, 1);
+  transition: 0.2s ease-in-out;
+}
+
+.student-council-image img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.student_council_table table {
+  width: 85%;
+  margin-top: 15px;
+}
+
+.student_council_table .table>:not(caption)>*>* {
+  padding: .1rem .1rem;
+}
+
+.student_council_table table thead tr th {
+  background-color: orange;
+}
+
+.student_council_table table tbody {
+  vertical-align: middle;
+}
+
+.student_council_table table tbody tr td.house-name {
+  padding-left: 15px;
+}
+
+
+/* BackToTopButton.css */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+  z-index: 9999;
+}
+
+.back-to-top-btn:hover {
+  opacity: 1;
+  background-color: #0056b3;
+  /* Darker shade on hover */
+}
+
+
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .icons {
+    display: none;
+  }
+
+  .contact-header {
+    display: none;
+  }
+
+  .contact-header ul li {
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .contact-header .laptop ul li {
+    font-size: 13px;
+    padding-right: 5px;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  .navbar-brand img {
+    width: 250px;
+  }
+
+  .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      transition: all ease .5s;
+      overflow: hidden;
+      transform-origin: top center;
+      transform: scale(1, 0);
+      display: none;
+    }
+
+    &:hover {
+      .dropdown-menu {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .slider video {
+    height: 128px;
+  }
+
+  .news-update h3 {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .news-update-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .news-update-list ul li {
+    padding-top: 10px;
+  }
+
+  .welcome-dps h3 {
+    font-size: 25px;
+  }
+
+  .welcome-dps p {
+    font-size: 15px;
+    background-size: contain;
+    animation-name: none;
+  }
+
+  .notice-circular {
+    animation-name: none;
+  }
+
+  .about-img img {
+    height: 250px;
+  }
+
+  .counter-content h2 {
+    font-size: 33px;
+  }
+
+  .counter {
+    justify-content: flex-start;
+    padding: 10px 0;
+  }
+
+  .counter-one::before {
+    content: "";
+    display: none;
+  }
+
+  .counter-three::before {
+    content: "";
+    display: none;
+  }
+
+  .counter-two::before {
+    content: "";
+    display: none;
+  }
+
+  .counter-img {
+    padding: 0px 70px;
+  }
+
+  /* About */
+  .about-dps h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .dps-vision h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .mission-dps h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .principal-message h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  .principal-message h5 {
+    font-size: 17px;
+  }
+
+  .about-dps-society h3 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  /* At a Glance */
+  .atglance h3 {
+    font-size: 25px;
+  }
+
+  .atglance p {
+    font-size: 16px;
+  }
+
+  .ataglance-responsive-image {
+    display: block;
+    /* Show the responsive image on smaller screens */
+    width: 100%;
+    height: auto;
+  }
+
+  .atgalnce-images {
+    display: none;
+    /* Hide the images div on smaller screens */
+  }
+
+  /*  */
+  .fraternity h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .fraternity h6 {
+    padding: 0px 20px;
+  }
+
+  .Teachers-faculties p {
+    font-weight: 500;
+  }
+
+
+  /*  */
+  footer {
+    padding: 0px 0px 30px 0px;
+  }
+
+  .footer {
+    padding: 0px;
+    border: 0px;
+  }
+
+  .footer .get-in-touch {
+    border-right: 0px groove #6a83a0;
+    text-align: center;
+  }
+
+
+  .footer .footer-right {
+    border-right: 0;
+  }
+
+  .footer h6 {
+    border-top: 1px solid #6a83a0;
+    padding-top: 35px;
+    margin-top: 35px;
+  }
+
+  .footer-1 h6 {
+    border-top: 0;
+  }
+
+  /*  */
+  .mpd {
+    padding: 0;
+  }
+
+  table {
+    max-width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  /*  */
+  .payment-note ul li {
+    font-size: 15px;
+  }
+
+  /*  */
+  .form-button {
+    text-align: center !important;
+  }
+
+  .form-button input {
+    width: 30%;
+  }
+
+  /* school Rules */
+  .school-rules-heading h3 {
+    font-size: 15px;
+  }
+
+  .school-rules p {
+    font-size: 16px;
+  }
+
+  .school-rules ol li {
+    font-size: 15px;
+  }
+
+  .events-gallery h2 {
+    font-size: 30px;
+    margin: 0 0 20px;
+  }
+
+  /*  */
+  /* .authorities_message h3 {
+    margin-left: 10px;
+  } */
+  .bisque_authoritites_message {
+    margin-top: 50px;
+  }
+
+  .blue_authorities_message {
+    margin-top: 50px;
+  }
+
+  .authorities_message .image img {
+    width: 230px;
+    margin-top: -2%;
+    padding-left: 0;
+  }
+
+  .authorities_message .image img.director-image {
+    margin-top: 0;
+  }
+
+  .authorities_message .message h2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .authorities_message .image h2 {
+    padding-left: 0;
+    ;
+  }
+
+  .authorities_message .message p {
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  .authorities_message .image h3 {
+    padding-left: 0;
+    font-size: 20px;
+  }
+
+  .virtualTour iframe {
+    height: 300px;
+  }
+
+  /*  */
+  .bottom-layer {
+    display: block;
+    background: #9e801a;
+    position: fixed;
+    bottom: 0px;
+    width: 100% !important;
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    z-index: 999999;
+  }
+
+  .bottom-layer a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .explore-us h3 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .explore-us iframe {
+    height: 350px;
+  }
+
+  .exam-policy table.table-2 {
+    font-size: 6px !important;
+  }
+
+  .exam-policy .table-3 {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 120px;
+  }
+
+  .school-magazine iframe {
+    width: 320px;
+    height: 400px;
+  }
+
+  .admission-procedure .nav {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .admission-procedure .tab-content {
+    padding: 0 20px;
+  }
+
+  .all-achievement .nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .all-achievement li .nav-link {
+    width: 200px;
+  }
+
+  .school-circular {
+    display: block;
+  }
+
+  .school-circular table {
+    width: 100% !important;
+  }
+
+  .slick-slider button.slick-prev {
+    left: -10px;
+  }
+
+  .slick-slider button.slick-next {
+    right: -10px;
+  }
+
+  .student_council_table table {
+    width: 100%;
+  }
+
+  .student_council_table .table>:not(caption)>*>* {
+    padding: 0px;
+  }
+
+  .student_council_table table tbody tr td.house-name {
+    padding: 5px;
+  }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .contact-header {
+    display: none;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  #offcanvasRight {
+    width: 50%;
+  }
+
+  .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      transition: all ease .5s;
+      overflow: hidden;
+      transform-origin: top center;
+      transform: scale(1, 0);
+      display: none;
+    }
+
+    &:hover {
+      .dropdown-menu {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .authorities_message .image img {
+    width: 230px;
+    margin-top: -20%;
+    padding-left: 0;
+  }
+
+  .authorities_message .image h2 {
+    padding-left: 0;
+    ;
+  }
+
+  .authorities_message .image h3 {
+    padding-left: 0;
+    font-size: 20px;
+  }
+
+  .counter {
+    justify-content: flex-start;
+  }
+
+  .counter-one::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background-color: #e1dddd;
+    width: 3px;
+    height: 50px;
+  }
+
+  .counter-two::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #e1dddd;
+    width: 3px;
+    height: 50px;
+  }
+
+  .counter-three::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background-color: #e1dddd;
+    width: 3px;
+    height: 50px;
+  }
+
+  /* At a Glance */
+  .atglance h3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .atglance p {
+    text-align: justify;
+    font-size: 18px;
+  }
+
+  .ataglance-responsive-image {
+    display: block;
+    /* Show the responsive image on smaller screens */
+    width: 100%;
+    height: auto;
+  }
+
+  .atgalnce-images {
+    display: none;
+    /* Hide the images div on smaller screens */
+  }
+
+  .exam-policy .table-3 {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 120px;
+  }
+
+  .school-magazine iframe {
+    width: 650px;
+    height: 550px;
+  }
+
+  .admission-procedure .nav.nav-pills {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .admission-procedure .tab-content {
+    padding: 0 20px;
+  }
+
+  .slick-slider button.slick-prev {
+    left: -10px;
+  }
+
+  .slick-slider button.slick-next {
+    right: -10px;
+  }
+
+  .student_council_table table {
+    width: 100%;
+  }
+
+  footer {
+    padding: 0px 0px 30px 0px;
+  }
+
+  .footer {
+    padding: 0px;
+    border: 0px;
+  }
+
+  .footer .get-in-touch {
+    border-right: 0px groove #6a83a0;
+    text-align: center;
+  }
+
+  .footer .footer-right {
+    border-right: 0;
+  }
+
+  .footer h6 {
+    border-top: 1px solid #6a83a0;
+    padding-top: 35px;
+    margin-top: 35px;
+  }
+
+  .footer-1 h6 {
+    border-top: 0;
+  }
+
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .contact-header .laptop ul li {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .navbar-brand img {
+    width: 220px;
+  }
+}
