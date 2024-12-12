@@ -8,7 +8,7 @@ import { faFacebookF, faWhatsapp, faXTwitter, faYoutube } from '@fortawesome/fre
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react';
-import API_BASE_URL from '../../config'
+import API_BASE_URL from '../config'
 
 function Header() {
     const [eName, setEname] = useState('');
