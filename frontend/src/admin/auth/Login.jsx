@@ -16,7 +16,7 @@ function Login() {
         try {
             const response = await axios.post('http://localhost:5000/login', { username, password });
             if (response.data.success) {
-                localStorage.getItem('isAuthenticated', 'true');
+                localStorage.setItem('isAuthenticated', 'true');
                 setError('');
                 navigate('/dashboard');
             }
