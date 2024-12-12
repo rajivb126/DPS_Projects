@@ -8,6 +8,8 @@ import { faFacebookF, faWhatsapp, faXTwitter, faYoutube } from '@fortawesome/fre
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react';
+import API_BASE_URL from '../../config'
+
 function Header() {
     const [eName, setEname] = useState('');
     const [email, setEmail] = useState('');
@@ -40,7 +42,7 @@ function Header() {
         formData.append('efile', eFile);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/enquiry/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/enquiry/add`, formData);
             const newEnquiry = response.data;
             console.log('New enquiry:', newEnquiry);
             setEname('');
@@ -79,7 +81,7 @@ function Header() {
 
     const [newsData, setNewsData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/news/view")
+        axios.get(`${API_BASE_URL}/api/news/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setNewsData(response.data.data);

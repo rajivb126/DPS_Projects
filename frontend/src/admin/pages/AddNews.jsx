@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function AddNews() {
     const [Name, setName] = useState('');
@@ -20,7 +21,7 @@ function AddNews() {
         formData.append('end_date', endDate); // Add end date
 
         try {
-            const response = await axios.post('http://localhost:5000/api/news/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/news/add`, formData);
             const newNews = response.data;
             console.log('New news:', newNews);
             setName('');

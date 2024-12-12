@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import API_BASE_URL from '../config'
 
 function Download() {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/download/view")
+        axios.get(`${API_BASE_URL}/api/download/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setData(response.data.data);
@@ -64,10 +65,10 @@ function Download() {
                                                     <td className='text-center'>{formatDate(news.start_date)}</td>
                                                     <td className='text-center' >{news.download_heading}</td>
                                                     <td style={{ width: '120px' }}>
-                                                        <a href={`http://localhost:5000/uploads/${news.download_link}`} target='_blank' rel="noreferrer">
+                                                        <a href={`${API_BASE_URL}/uploads/${news.download_link}`} target='_blank' rel="noreferrer">
                                                             <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
                                                         </a>
-                                                        <a href={`http://localhost:5000/uploads/${news.download_link}`} target="_blank" rel="noreferrer" >
+                                                        <a href={`${API_BASE_URL}/uploads/${news.download_link}`} target="_blank" rel="noreferrer" >
                                                             <button className='bi bi-download btn btn-danger'
                                                             ></button>
                                                         </a>

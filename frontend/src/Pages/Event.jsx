@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import API_BASE_URL from '../config'
 
 function Event() {
     const [event, setEvent] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/events/view")
+        axios.get(`${API_BASE_URL}/api/events/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setEvent(response.data.data);
@@ -71,7 +72,7 @@ function Event() {
                                             <div className="event-img">
                                                 <a href={`/events/${item.slug}`}>
                                                     <img
-                                                        src={`http://localhost:5000/uploads/${item.thumbnail_image}`}
+                                                        src={`${API_BASE_URL}/uploads/${item.thumbnail_image}`}
                                                         className="img-fluid w-100"
                                                         alt={`${item.title} Thumbnail`}
                                                     />

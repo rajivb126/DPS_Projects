@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from '../../config'
 
 function ViewInfrastructure() {
     const [data, setData] = useState([]); // State to hold the data fetched from the API
@@ -14,7 +15,7 @@ function ViewInfrastructure() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/infrastructure/view")
+        axios.get(`${API_BASE_URL}/api/infrastructure/view`)
             .then(response => {
                 console.log(response.data.data);
                 setData(response.data.data.reverse());
@@ -27,7 +28,7 @@ function ViewInfrastructure() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`http://localhost:5000/api/infrastructure/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/infrastructure/delete/${id}`)
                 .then(response => {
                     console.log(response.data);
                     // Filter out the deleted document from the state
@@ -39,7 +40,7 @@ function ViewInfrastructure() {
     const handleDeleteFile = async (fileName) => {
         try {
             // Make DELETE request to delete the event file by name
-            const response = await axios.delete(`http://localhost:5000/api/infrastructure/deleteImage/${fileName}`);
+            const response = await axios.delete(`${API_BASE_URL}/api/infrastructure/deleteImage/${fileName}`);
     
             if (response.status === 200) {
                 // On success, notify user and remove the deleted file from the UI
@@ -71,7 +72,7 @@ function ViewInfrastructure() {
                 formData.append(key, value);
             });
 
-            axios.put(`http://localhost:5000/api/infrastructure/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/infrastructure/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -84,7 +85,7 @@ function ViewInfrastructure() {
                 });
         } else {
             // If no file upload, just update the other fields
-            axios.put(`http://localhost:5000/api/infrastructure/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/infrastructure/update/${_id}`, rest)
                 .then(response => {
                     setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
                     handleCloseModal(); // Close modal
@@ -217,9 +218,9 @@ function ViewInfrastructure() {
                                                     {modalData.infrastructure_image.map((file, index) => (
                                                         <div key={index} className="col-3 mb-3">
                                                             <div className="file-container">
-                                                                <a href={`http://localhost:5000/uploads/${file}`} data-fancybox="gallery" data-caption={`Event File ${index + 1}`}>
+                                                                <a href={`${API_BASE_URL}/uploads/${file}`} data-fancybox="gallery" data-caption={`Event File ${index + 1}`}>
                                                                     <img
-                                                                        src={`http://localhost:5000/uploads/${file}`}
+                                                                        src={`${API_BASE_URL}/uploads/${file}`}
                                                                         alt={`Event File ${index + 1}`}
                                                                         className="img-fluid"
                                                                         style={{ maxWidth: '100%', height: 'auto' }}

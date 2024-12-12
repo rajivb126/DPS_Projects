@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function ViewAchievement() {
     const [data, setData] = useState([]); // State to hold the data fetched from the API
@@ -14,7 +15,7 @@ function ViewAchievement() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/achievement/view")
+        axios.get(`${API_BASE_URL}/api/achievement/view`)
             .then(response => {
                 console.log(response.data.data);
                 setData(response.data.data.reverse());
@@ -27,7 +28,7 @@ function ViewAchievement() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`http://localhost:5000/api/achievement/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/achievement/delete/${id}`)
                 .then(response => {
                     console.log(response.data);
                     // Filter out the deleted document from the state
@@ -49,7 +50,7 @@ function ViewAchievement() {
                 formData.append(key, value);
             });
 
-            axios.put(`http://localhost:5000/api/achievement/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/achievement/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -62,7 +63,7 @@ function ViewAchievement() {
                 });
         } else {
             // If no file upload, just update the other fields
-            axios.put(`http://localhost:5000/api/achievement/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/achievement/update/${_id}`, rest)
                 .then(response => {
                     setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
                     handleCloseModal(); // Close modal

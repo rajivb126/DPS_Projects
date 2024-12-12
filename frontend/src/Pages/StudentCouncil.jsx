@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import axios from 'axios';
+import API_BASE_URL from '../config'
 
 function StudentCouncil() {
     const [image, setImage] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/api/studentimage/view")
+        axios.get(`${API_BASE_URL}/api/studentimage/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setImage(response.data.data);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import API_BASE_URL from '../../config'
 
 function ViewEvent() {
     const [event, setEvent] = useState([]);
@@ -14,7 +15,7 @@ function ViewEvent() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/events/view")
+        axios.get(`${API_BASE_URL}/api/events/view`)
             .then(response => {
                 console.log(response.data.data);
                 setEvent(response.data.data.reverse());
@@ -26,7 +27,7 @@ function ViewEvent() {
 
     const deleteDocument = (id) => {
         if (window.confirm("Would you like to delete?")) {
-            axios.delete(`http://localhost:5000/api/events/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/events/delete/${id}`)
                 .then(response => {
                     console.log(response.data);
                     setEvent(event.filter(doc => doc._id !== id));
@@ -37,7 +38,7 @@ function ViewEvent() {
     const handleDeleteFile = async (fileName) => {
         try {
             // Make DELETE request to delete the event file by name
-            const response = await axios.delete(`http://localhost:5000/api/events/deleteImage/${fileName}`);
+            const response = await axios.delete(`${API_BASE_URL}/api/events/deleteImage/${fileName}`);
     
             if (response.status === 200) {
                 // On success, notify user and remove the deleted file from the UI
@@ -81,7 +82,7 @@ function ViewEvent() {
                 formData.append(key, value);
             });
 
-            axios.put(`http://localhost:5000/api/events/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/events/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -93,7 +94,7 @@ function ViewEvent() {
                 });
         } else {
             // If no file upload, just update the other fields
-            axios.put(`http://localhost:5000/api/events/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/events/update/${_id}`, rest)
                 .then(response => {
                     setEvent(event.map(doc => (doc._id === _id ? response.data.result : doc)));
                     handleCloseModal(); // Close modal
@@ -260,8 +261,8 @@ function ViewEvent() {
                                         <label htmlFor="thumbnail_image" className="form-label">Thumbnail Image</label>
                                         {mode === 'view' ? (
                                             modalData?.thumbnail_image ? (
-                                                <a href={`http://localhost:5000/uploads/${modalData.thumbnail_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
-                                                    <img src={`http://localhost:5000/uploads/${modalData.thumbnail_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
+                                                <a href={`${API_BASE_URL}/uploads/${modalData.thumbnail_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
+                                                    <img src={`${API_BASE_URL}/uploads/${modalData.thumbnail_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
                                                 </a>
                                             ) : (
                                                 <p>No thumbnail available</p>
@@ -287,9 +288,9 @@ function ViewEvent() {
                                                     {modalData.event_files.map((file, index) => (
                                                         <div key={index} className="col-3 mb-3">
                                                             <div className="file-container">
-                                                                <a href={`http://localhost:5000/uploads/${file}`} data-fancybox="gallery" data-caption={`Event File ${index + 1}`}>
+                                                                <a href={`${API_BASE_URL}/uploads/${file}`} data-fancybox="gallery" data-caption={`Event File ${index + 1}`}>
                                                                     <img
-                                                                        src={`http://localhost:5000/uploads/${file}`}
+                                                                        src={`${API_BASE_URL}/uploads/${file}`}
                                                                         alt={`Event File ${index + 1}`}
                                                                         className="img-fluid"
                                                                         style={{ maxWidth: '100%', height: 'auto' }}

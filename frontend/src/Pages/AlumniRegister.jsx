@@ -2,6 +2,7 @@ import { useState } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import axios from "axios";
+import API_BASE_URL from '../config'
 
 function AlumniRegister() {
     const data = { sname: "", fname: "", yearofpassout: "", nyearschool: "", address: "", contact: "", aemail: "", presentpos: "", refteachers: "", refprincipal: "", photo: "" };
@@ -13,7 +14,7 @@ function AlumniRegister() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:5000/api/alumniform/add", alumniFormData)
+        axios.post(`${API_BASE_URL}/api/alumniform/add`, alumniFormData)
             .then(function (response) {
                 console.log(response);
             })

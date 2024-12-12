@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import API_BASE_URL from '../../config'
 
 function ViewAssembly() {
     const [assembly, setAssembly] = useState([]);
@@ -14,7 +15,7 @@ function ViewAssembly() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/assembly/view")
+        axios.get(`${API_BASE_URL}/api/assembly/view`)
             .then(response => {
                 console.log(response.data.data);
                 setAssembly(response.data.data.reverse());
@@ -26,7 +27,7 @@ function ViewAssembly() {
 
     const deleteDocument = (id) => {
         if (window.confirm("Would you like to delete?")) {
-            axios.delete(`http://localhost:5000/api/assembly/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/assembly/delete/${id}`)
                 .then(response => {
                     console.log(response.data);
                     setAssembly(assembly.filter(doc => doc._id !== id));
@@ -37,7 +38,7 @@ function ViewAssembly() {
     const handleDeleteFile = async (fileName) => {
         try {
             // Make DELETE request to delete the assembly file by name
-            const response = await axios.delete(`http://localhost:5000/api/assembly/deleteImage/${fileName}`);
+            const response = await axios.delete(`${API_BASE_URL}/api/assembly/deleteImage/${fileName}`);
 
             if (response.status === 200) {
                 // On success, notify user and remove the deleted file from the UI
@@ -81,7 +82,7 @@ function ViewAssembly() {
                 formData.append(key, value);
             });
 
-            axios.put(`http://localhost:5000/api/assembly/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/assembly/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -93,7 +94,7 @@ function ViewAssembly() {
                 });
         } else {
             // If no file upload, just update the other fields
-            axios.put(`http://localhost:5000/api/assembly/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/assembly/update/${_id}`, rest)
                 .then(response => {
                     setAssembly(assembly.map(doc => (doc._id === _id ? response.data.result : doc)));
                     handleCloseModal(); // Close modal
@@ -259,8 +260,8 @@ function ViewAssembly() {
                                         <label htmlFor="thumbnail_image" className="form-label">Thumbnail Image</label>
                                         {mode === 'view' ? (
                                             modalData?.thumbnail_image ? (
-                                                <a href={`http://localhost:5000/uploads/${modalData.thumbnail_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
-                                                    <img src={`http://localhost:5000/uploads/${modalData.thumbnail_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
+                                                <a href={`${API_BASE_URL}/uploads/${modalData.thumbnail_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
+                                                    <img src={`${API_BASE_URL}/uploads/${modalData.thumbnail_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
                                                 </a>
                                             ) : (
                                                 <p>No thumbnail available</p>
@@ -286,9 +287,9 @@ function ViewAssembly() {
                                                     {modalData.assembly_files.map((file, index) => (
                                                         <div key={index} className="col-3 mb-3">
                                                             <div className="file-container">
-                                                                <a href={`http://localhost:5000/uploads/${file}`} data-fancybox="gallery" data-caption={`Assembly File ${index + 1}`}>
+                                                                <a href={`${API_BASE_URL}/uploads/${file}`} data-fancybox="gallery" data-caption={`Assembly File ${index + 1}`}>
                                                                     <img
-                                                                        src={`http://localhost:5000/uploads/${file}`}
+                                                                        src={`${API_BASE_URL}/uploads/${file}`}
                                                                         alt={`Assembly File ${index + 1}`}
                                                                         className="img-fluid"
                                                                         style={{ maxWidth: '100%', height: 'auto' }}

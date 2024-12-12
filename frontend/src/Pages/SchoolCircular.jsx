@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import axios from 'axios';
+import API_BASE_URL from '../config'
 
 function SchoolCircular() {
     const [newsData, setNewsData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/news/view")
+        axios.get(`${API_BASE_URL}/api/news/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setNewsData(response.data.data);
@@ -73,10 +74,10 @@ function SchoolCircular() {
                                                     <td className='text-center'>{formatDate(news.start_date)}</td>
                                                     <td className='text-center' >{news.nname}</td>
                                                     <td style={{ width: '120px' }}>
-                                                        <a href={`http://localhost:5000/uploads/${news.nlink}`} target='_blank' rel="noreferrer">
+                                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target='_blank' rel="noreferrer">
                                                             <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
                                                         </a>
-                                                        <a href={`http://localhost:5000/uploads/${news.nlink}`} target="_blank" rel="noreferrer" >
+                                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noreferrer" >
                                                             <button className='bi bi-download btn btn-danger'
                                                             ></button>
                                                         </a>

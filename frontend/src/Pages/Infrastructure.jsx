@@ -7,6 +7,7 @@ import Footer from '../Components/Footer';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import axios from 'axios';
+import API_BASE_URL from '../config'
 
 function Infrastructure() {
     const [data, setData] = useState([]); // State to hold the data fetched from the API
@@ -17,7 +18,7 @@ function Infrastructure() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/infrastructure/view")
+        axios.get(`${API_BASE_URL}/api/infrastructure/view`)
             .then(response => {
                 console.log(response.data.data);
                 setData(response.data.data.reverse());
@@ -136,8 +137,8 @@ function Infrastructure() {
                                     {filterByCategory("general").map((infrastructure, index) =>
                                         infrastructure.infrastructure_image.map((image, imgIndex) => (
                                             <div key={`${index}-${imgIndex}`} className="col-md-4 col-12 mb-4">
-                                                <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${image}`}>
-                                                    <img src={`http://localhost:5000/uploads/${image}`} alt="General" className="img-fluid" />
+                                                <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${image}`}>
+                                                    <img src={`${API_BASE_URL}/uploads/${image}`} alt="General" className="img-fluid" />
                                                 </a>
                                             </div>
                                         ))
@@ -150,8 +151,8 @@ function Infrastructure() {
                                     {filterByCategory("primary").map((infrastructure, index) =>
                                         infrastructure.infrastructure_image.map((image, imgIndex) => (
                                             <div key={`${index}-${imgIndex}`} className="col-md-4 col-12 mb-4">
-                                                <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${image}`}>
-                                                    <img src={`http://localhost:5000/uploads/${image}`} alt="Primary" className="img-fluid" />
+                                                <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${image}`}>
+                                                    <img src={`${API_BASE_URL}/uploads/${image}`} alt="Primary" className="img-fluid" />
                                                 </a>
                                             </div>
                                         ))
@@ -164,8 +165,8 @@ function Infrastructure() {
                                     {filterByCategory("middle").map((infrastructure, index) =>
                                         infrastructure.infrastructure_image.map((image, imgIndex) => (
                                             <div key={`${index}-${imgIndex}`} className="col-md-4 col-12 mb-4">
-                                                <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${image}`}>
-                                                    <img src={`http://localhost:5000/uploads/${image}`} alt="Middle" className="img-fluid" />
+                                                <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${image}`}>
+                                                    <img src={`${API_BASE_URL}/uploads/${image}`} alt="Middle" className="img-fluid" />
                                                 </a>
                                             </div>
                                         ))
@@ -178,8 +179,8 @@ function Infrastructure() {
                                     {filterByCategory("senior").map((infrastructure, index) =>
                                         infrastructure.infrastructure_image.map((image, imgIndex) => (
                                             <div key={`${index}-${imgIndex}`} className="col-md-4 col-12 mb-4">
-                                                <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${image}`}>
-                                                    <img src={`http://localhost:5000/uploads/${image}`} alt="Senior" className="img-fluid" />
+                                                <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${image}`}>
+                                                    <img src={`${API_BASE_URL}/uploads/${image}`} alt="Senior" className="img-fluid" />
                                                 </a>
                                             </div>
                                         ))
@@ -192,8 +193,8 @@ function Infrastructure() {
                                     {filterByCategory("hostel").map((infrastructure, index) =>
                                         infrastructure.infrastructure_image.map((image, imgIndex) => (
                                             <div key={`${index}-${imgIndex}`} className="col-md-4 col-12 mb-4">
-                                                <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${image}`}>
-                                                    <img src={`http://localhost:5000/uploads/${image}`} alt="Hostel" className="img-fluid" />
+                                                <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${image}`}>
+                                                    <img src={`${API_BASE_URL}/uploads/${image}`} alt="Hostel" className="img-fluid" />
                                                 </a>
                                             </div>
                                         ))

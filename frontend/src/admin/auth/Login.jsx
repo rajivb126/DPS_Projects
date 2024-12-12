@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Banner from '../../images/school2.jpg';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../../config'
 
 
 function Login() {
@@ -14,7 +15,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', { username, password });
+            const response = await axios.post(`${API_BASE_URL}/login`, { username, password });
             if (response.data.success) {
                 localStorage.setItem('isAuthenticated', 'true');
                 setError('');

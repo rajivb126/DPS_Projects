@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import API_BASE_URL from '../../config'
 
 function ViewAlumni() {
   const [data, setData] = useState([]); // State to hold the data fetched from the API
@@ -12,7 +13,7 @@ function ViewAlumni() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/alumniform/view")
+        axios.get(`${API_BASE_URL}/api/alumniform/view`)
             .then(response => {
                 console.log(response.data.data);
                 setData(response.data.data.reverse());
@@ -25,7 +26,7 @@ function ViewAlumni() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`http://localhost:5000/api/alumniform/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/alumniform/delete/${id}`)
                 .then(response => {
                     console.log(response.data);
                     // Filter out the deleted document from the state

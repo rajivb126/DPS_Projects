@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import dpslogo from '../../images/dpslogo.png';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function Dashboard() {
     const [data, setData] = useState([]);
@@ -23,7 +24,7 @@ function Dashboard() {
     }, []);
 
     const fetchEnquiry = () => {
-        axios.get("http://localhost:5000/api/enquiry/view")
+        axios.get(`${API_BASE_URL}/api/enquiry/view`)
             .then(response => {
                 console.log(response.data.data);
                 setEnquiry(response.data.data.reverse());
@@ -34,7 +35,7 @@ function Dashboard() {
     };
 
     const fetchAlumni = () => {
-        axios.get("http://localhost:5000/api/alumniform/view")
+        axios.get(`${API_BASE_URL}/api/alumniform/view`)
             .then(response => {
                 console.log(response.data.data);
                 setAlumni(response.data.data.reverse());
@@ -45,7 +46,7 @@ function Dashboard() {
     };
 
     const fetchTC = () => {
-        axios.get("http://localhost:5000/api/transfercertificate/view")
+        axios.get(`${API_BASE_URL}/api/transfercertificate/view`)
             .then(response => {
                 setTC(response.data.data.reverse());
             })
@@ -55,7 +56,7 @@ function Dashboard() {
     };
 
     const fetchDashboardStats = () => {
-        axios.get("http://localhost:5000/api/events/dashboard-stats")
+        axios.get(`${API_BASE_URL}/api/events/dashboard-stats`)
             .then(response => {
                 setEvent(response.data); // Set totalEvents and activeEvents in state
                 console.log(response.data)
@@ -66,7 +67,7 @@ function Dashboard() {
     };
 
     const fetchDashboardStatsNewsletter = () => {
-        axios.get("http://localhost:5000/api/newsletter/dashboard-stats-newsletter")
+        axios.get(`${API_BASE_URL}/api/newsletter/dashboard-stats-newsletter`)
             .then(response => {
                 setNewsletter(response.data); // Set totalEvents and activeEvents in state
                 console.log(response.data)
@@ -77,7 +78,7 @@ function Dashboard() {
     };
 
     const fetchDashboardStatsAssembly = () => {
-        axios.get("http://localhost:5000/api/assembly/dashboard-stats-assembly")
+        axios.get(`${API_BASE_URL}/api/assembly/dashboard-stats-assembly`)
             .then(response => {
                 setAssembly(response.data);
                 console.log(response.data)
@@ -88,7 +89,7 @@ function Dashboard() {
     };
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/faculty/view")
+        axios.get(`${API_BASE_URL}/api/faculty/view`)
             .then(response => {
                 const facultyData = response.data.data;
                 setData(facultyData);

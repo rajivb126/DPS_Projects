@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from '../../config'
 
 function ViewAllFaculty() {
     const [data, setData] = useState([]);
@@ -23,7 +24,7 @@ function ViewAllFaculty() {
     }, [selectedWing, data]);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/faculty/view")
+        axios.get(`${API_BASE_URL}/api/faculty/view`)
             .then(response => {
                 const sortedData = response.data.data.sort((a, b) => 
                     a.teacher_name.localeCompare(b.teacher_name)
@@ -40,7 +41,7 @@ function ViewAllFaculty() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`http://localhost:5000/api/faculty/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/faculty/delete/${id}`)
                 .then(response => {
                     setData(data.filter(doc => doc._id !== id));
                     setFilteredData(filteredData.filter(doc => doc._id !== id)); // Remove deleted item from filtered data
@@ -60,7 +61,7 @@ function ViewAllFaculty() {
                 formData.append(key, value);
             });
 
-            axios.put(`http://localhost:5000/api/faculty/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/faculty/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -72,7 +73,7 @@ function ViewAllFaculty() {
                     console.error('Error updating document:', error);
                 });
         } else {
-            axios.put(`http://localhost:5000/api/faculty/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/faculty/update/${_id}`, rest)
                 .then(response => {
                     setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
                     setFilteredData(filteredData.map(doc => (doc._id === _id ? response.data.result : doc)));
@@ -231,8 +232,8 @@ function ViewAllFaculty() {
                                         <label htmlFor="teacher_image" className="form-label">Teacher Image Path</label><br />
                                         {mode === 'view' ? (
                                             modalData?.teacher_image ? (
-                                                <a href={`http://localhost:5000/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
-                                                    <img src={`http://localhost:5000/uploads/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
+                                                <a href={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
+                                                    <img src={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
                                                 </a>
                                             ) : (
                                                 <p>No thumbnail available</p>

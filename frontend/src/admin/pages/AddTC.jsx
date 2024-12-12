@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import API_BASE_URL from '../../config'
 
 function AddTC() {
     const [tcSname, setTcSname] = useState('')
@@ -17,7 +18,7 @@ function AddTC() {
         formData.append('tc_image', tcImage);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/transfercertificate/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/transfercertificate/add`, formData);
             const newTC = response.data;
             console.log('New transfer certificate:', newTC);
             setTcSname('');

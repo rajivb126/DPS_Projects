@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from '../../config'
 
 function ViewFaculty() {
     const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ function ViewFaculty() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/faculty/view")
+        axios.get(`${API_BASE_URL}/api/faculty/view`)
             .then(response => {
                 setData(response.data.data.reverse());
             })
@@ -24,7 +25,7 @@ function ViewFaculty() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`http://localhost:5000/api/faculty/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/faculty/delete/${id}`)
                 .then(response => {
                     setData(data.filter(doc => doc._id !== id));
                     console.log(response);
@@ -43,7 +44,7 @@ function ViewFaculty() {
                 formData.append(key, value);
             });
 
-            axios.put(`http://localhost:5000/api/faculty/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/faculty/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -54,7 +55,7 @@ function ViewFaculty() {
                     console.error('Error updating document:', error);
                 });
         } else {
-            axios.put(`http://localhost:5000/api/faculty/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/faculty/update/${_id}`, rest)
                 .then(response => {
                     setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
                     handleCloseModal();
@@ -193,8 +194,8 @@ function ViewFaculty() {
                                         <label htmlFor="teacher_image" className="form-label">Teacher Image Path</label><br />
                                         {mode === 'view' ? (
                                             modalData?.teacher_image ? (
-                                                <a href={`http://localhost:5000/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
-                                                    <img src={`http://localhost:5000/uploads/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
+                                                <a href={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
+                                                    <img src={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
                                                 </a>
                                             ) : (
                                                 <p>No thumbnail available</p>

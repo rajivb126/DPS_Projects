@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import API_BASE_URL from '../config'
 
 function Newsletter() {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/newsletter/view")
+        axios.get(`${API_BASE_URL}/api/newsletter/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setData(response.data.data);
@@ -71,10 +72,10 @@ function Newsletter() {
                                                     <td className='text-center'>{formatDate(news.start_date)}</td>
                                                     <td className='text-center' >{news.newsletter_heading}</td>
                                                     <td style={{ width: '120px' }}>
-                                                        <a href={`http://localhost:5000/uploads/${news.newsletter_link}`} target='_blank' rel="noreferrer">
+                                                        <a href={`${API_BASE_URL}/uploads/${news.newsletter_link}`} target='_blank' rel="noreferrer">
                                                             <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
                                                         </a>
-                                                        <a href={`http://localhost:5000/uploads/${news.newsletter_link}`} target="_blank" rel="noreferrer" >
+                                                        <a href={`${API_BASE_URL}/uploads/${news.newsletter_link}`} target="_blank" rel="noreferrer" >
                                                             <button className='bi bi-download btn btn-danger'
                                                             ></button>
                                                         </a>

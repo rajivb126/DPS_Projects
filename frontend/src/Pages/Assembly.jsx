@@ -3,11 +3,12 @@ import axios from 'axios';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
+import API_BASE_URL from '../config'
 
 function Assembly() {
     const [assembly, setAssembly] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/assembly/view")
+        axios.get(`${API_BASE_URL}/api/assembly/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setAssembly(response.data.data);
@@ -71,7 +72,7 @@ function Assembly() {
                                         <div className="events">
                                             <div className="event-img">
                                                 <Link to={`/assembly/${item.slug}`} >
-                                                    <img src={`http://localhost:5000/uploads/${item.thumbnail_image}`} className="img-fluid w-100" alt={`${item.title} Thumbnail`}
+                                                    <img src={`${API_BASE_URL}/uploads/${item.thumbnail_image}`} className="img-fluid w-100" alt={`${item.title} Thumbnail`}
                                                     />
                                                 </Link>
                                                 <div className="event-date-wrap">

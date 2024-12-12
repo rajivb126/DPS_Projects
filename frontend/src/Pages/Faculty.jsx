@@ -11,11 +11,12 @@ import Headmistress_Middle from '../images/hm_middle.jpg';
 import Headmistress_Primary from '../images/Hm_primary.jpeg';
 import { useState, useEffect } from "react";
 import axios from "axios";
+import API_BASE_URL from '../config'
 
 function Faculty() {
     const [teacherData, setTeacherData] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/faculty/view")
+        axios.get(`${API_BASE_URL}/api/faculty/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setTeacherData(response.data.data);
@@ -163,7 +164,7 @@ function Faculty() {
                                                     {seniorWing.map((teacher, index) => (
                                                         <div key={index} className="col-lg-2 col-md-3 col-6">
                                                             <div className="wings-contents">
-                                                                <img src={`http://localhost:5000/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
+                                                                <img src={`${API_BASE_URL}/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
                                                                 />
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
@@ -184,7 +185,7 @@ function Faculty() {
                                                     {middleWing.map((teacher, index) => (
                                                         <div key={index} className="col-lg-2 col-md-3 col-6">
                                                             <div className="wings-contents">
-                                                                <img src={`http://localhost:5000/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
+                                                                <img src={`${API_BASE_URL}/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
                                                                 />
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
@@ -203,7 +204,7 @@ function Faculty() {
                                                     {primaryWing.map((teacher, index) => (
                                                         <div key={index} className="col-lg-2 col-md-3 col-6">
                                                             <div className="wings-contents">
-                                                                <img src={`http://localhost:5000/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
+                                                                <img src={`${API_BASE_URL}/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
                                                                 />
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>

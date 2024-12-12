@@ -4,6 +4,7 @@ import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import API_BASE_URL from '../config'
 
 function TCIssue() {
     const [tcs, setTcs] = useState([]);
@@ -12,7 +13,7 @@ function TCIssue() {
 
     const handleViewTC = () => {
         if (filterTC) {
-            axios.get(`http://localhost:5000/api/transferCertificate/filter/${filterTC}`)
+            axios.get(`${API_BASE_URL}/api/transferCertificate/filter/${filterTC}`)
                 .then(function (response) {
                     console.log(response.data.data);
                     setTcs(response.data.data);
@@ -73,8 +74,8 @@ function TCIssue() {
                             <div className='row mx-auto'>
                                 <div className='col-12'>
                                     <div className='lightbox_image_tc'>
-                                        <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${tc.tc_image}`}>
-                                            <img src={`http://localhost:5000/uploads/${tc.tc_image}`} alt="TC" width={300} />
+                                        <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${tc.tc_image}`}>
+                                            <img src={`${API_BASE_URL}/uploads/${tc.tc_image}`} alt="TC" width={300} />
                                         </a>
                                     </div>
                                 </div>

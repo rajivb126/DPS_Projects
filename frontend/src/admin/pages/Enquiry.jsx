@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from '../../config'
 
 function Enquiry() {
     const [data, setData] = useState([]); // State to hold the data fetched from the API
@@ -12,7 +13,7 @@ function Enquiry() {
     }, []);
 
     const fetchData = () => {
-        axios.get("http://localhost:5000/api/enquiry/view")
+        axios.get(`${API_BASE_URL}/api/enquiry/view`)
             .then(response => {
                 console.log(response.data.data);
                 setData(response.data.data.reverse());
@@ -25,7 +26,7 @@ function Enquiry() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`http://localhost:5000/api/enquiry/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/enquiry/delete/${id}`)
                 .then(response => {
                     console.log(response.data);
                     // Filter out the deleted document from the state
@@ -60,7 +61,7 @@ function Enquiry() {
     console.log("Modal Data:", modalData); // Check modalData contents
 
     const downloadFile = (filename) => {
-        const fileUrl = `http://localhost:5000/uploads/${filename}`;
+        const fileUrl = `${API_BASE_URL}/uploads/${filename}`;
         const link = document.createElement('a'); // Create an anchor element
         link.href = fileUrl; // Set the file URL as the href
         link.download = filename; // Specify the filename to download

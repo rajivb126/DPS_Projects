@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function AddAchievement() {
     const [achievementCategory, setAchievementCategory] = useState('')
@@ -18,7 +19,7 @@ function AddAchievement() {
         formData.append('end_date', endDate); // Add end date
 
         try {
-            const response = await axios.post('http://localhost:5000/api/achievement/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/achievement/add`, formData);
             const newAchievement = response.data;
             console.log('New Achievement:', newAchievement);
             setAchievementCategory('')

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function AddAssembly() {
     const [title, setTitle] = useState('');
@@ -44,7 +45,7 @@ function AddAssembly() {
         }
 
         try {
-            const response = await axios.post('http://localhost:5000/api/assembly/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/assembly/add`, formData);
             console.log(response.data);
 
             // Clear form fields

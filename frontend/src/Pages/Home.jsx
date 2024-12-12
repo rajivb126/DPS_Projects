@@ -27,6 +27,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import API_BASE_URL from '../config'
 
 function Home() {
     const [newsData, setNewsData] = useState([])
@@ -53,7 +54,7 @@ function Home() {
     };
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/news/view")
+        axios.get(`${API_BASE_URL}/api/news/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setNewsData(response.data.data);
@@ -88,7 +89,7 @@ function Home() {
 
     const [event, setEvent] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/events/view")
+        axios.get(`${API_BASE_URL}/api/events/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setEvent(response.data.data);
@@ -100,7 +101,7 @@ function Home() {
 
     const [assembly, setAssembly] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:5000/api/assembly/view")
+        axios.get(`${API_BASE_URL}/api/assembly/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setAssembly(response.data.data);
@@ -400,7 +401,7 @@ function Home() {
                                                 <div className="event-img">
                                                     <a href={`/events/${item.slug}`}>
                                                         <img
-                                                            src={`http://localhost:5000/uploads/${item.thumbnail_image}`}
+                                                            src={`${API_BASE_URL}/uploads/${item.thumbnail_image}`}
                                                             className="img-fluid w-100"
                                                             alt={`${item.title} Thumbnail`}
                                                         />
@@ -439,7 +440,7 @@ function Home() {
                                         <div className="events">
                                             <div className="event-img">
                                                 <Link to={`/assembly/${item.slug}`} >
-                                                    <img src={`http://localhost:5000/uploads/${item.thumbnail_image}`} className="img-fluid w-100" alt={`${item.title} Thumbnail`}
+                                                    <img src={`${API_BASE_URL}/uploads/${item.thumbnail_image}`} className="img-fluid w-100" alt={`${item.title} Thumbnail`}
                                                     />
                                                 </Link>
                                                 <div className="event-date-wrap">

@@ -5,6 +5,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import API_BASE_URL from '../config'
 
 function AssemblyDetails() {
     const { slug } = useParams(); // Get slug from the URL
@@ -17,7 +18,7 @@ function AssemblyDetails() {
         const fetchEventDetails = async () => {
             try {
                 // Make a GET request to the server to fetch event details
-                const response = await axios.get(`http://localhost:5000/api/assembly/view/${slug}`);
+                const response = await axios.get(`${API_BASE_URL}/api/assembly/view/${slug}`);
 
                 // Set the event data in state
                 setAssembly(response.data);
@@ -77,8 +78,8 @@ function AssemblyDetails() {
                                 assembly.assembly_files.map((file, index) => (
                                     <div className="col-md-4" key={index}>
                                         {/* Use Fancybox to wrap images */}
-                                        <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${file}`} >
-                                            <img src={`http://localhost:5000/uploads/${file}`} alt={`Event File ${index + 1}`} className='img-fluid mb-4' />
+                                        <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${file}`} >
+                                            <img src={`${API_BASE_URL}/uploads/${file}`} alt={`Event File ${index + 1}`} className='img-fluid mb-4' />
                                         </a>
                                     </div>
                                 ))

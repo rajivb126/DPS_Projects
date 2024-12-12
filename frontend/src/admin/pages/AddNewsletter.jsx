@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function AddNewsletter() {
     const [Newsletter, setNewsletter] = useState('');
@@ -18,7 +19,7 @@ function AddNewsletter() {
         formData.append('end_date', endDate); // Add end date
 
         try {
-            const response = await axios.post('http://localhost:5000/api/newsletter/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/newsletter/add`, formData);
             const newNewsletter = response.data;
             console.log('New news:', newNewsletter);
             setNewsletter('');

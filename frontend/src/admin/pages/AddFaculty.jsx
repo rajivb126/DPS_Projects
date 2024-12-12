@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../../config'
 
 function AddFaculty() {
     const [teacherName, setTeacherName] = useState('');
@@ -20,7 +21,7 @@ function AddFaculty() {
         formData.append('teacher_image', teacherImage);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/faculty/add', formData);
+            const response = await axios.post(`${API_BASE_URL}/api/faculty/add`, formData);
             const newFaculty = response.data;
             console.log('New Faculty:', newFaculty);
             setTeacherName('');

@@ -5,6 +5,7 @@ import Footer from '../Components/Footer';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { useLocation } from 'react-router-dom';
+import API_BASE_URL from '../config'
 
 function Achievement() {
     const location = useLocation();
@@ -15,7 +16,7 @@ function Achievement() {
 
     useEffect(() => {
         // Fetch achievements from API
-        axios.get("http://localhost:5000/api/achievement/view")
+        axios.get(`${API_BASE_URL}/api/achievement/view`)
             .then(response => {
                 const fetchedData = response.data.data;
                 setData(fetchedData);
@@ -144,8 +145,8 @@ function Achievement() {
                                                     <div key={index} className="col-md-4 col-12">
                                                         <div className='achievement-img mb-3'>
                                                             {/* Achievement Image */}
-                                                            <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${achievement.achievement_file}`}>
-                                                                <img src={`http://localhost:5000/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
+                                                            <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${achievement.achievement_file}`}>
+                                                                <img src={`${API_BASE_URL}/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
                                                             </a>
 
                                                             {/* Like and Comment Section */}
@@ -175,8 +176,8 @@ function Achievement() {
                                                     <div key={index} className="col-md-4 col-12">
                                                         <div className='achievement-img mb-3'>
                                                             {/* Achievement Image */}
-                                                            <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${achievement.achievement_file}`}>
-                                                                <img src={`http://localhost:5000/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
+                                                            <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${achievement.achievement_file}`}>
+                                                                <img src={`${API_BASE_URL}/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
                                                             </a>
 
                                                             {/* Like and Comment Section */}
@@ -206,8 +207,8 @@ function Achievement() {
                                                     <div key={index} className="col-md-4 col-12">
                                                         <div className='achievement-img mb-3'>
                                                             {/* Achievement Image */}
-                                                            <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${achievement.achievement_file}`}>
-                                                                <img src={`http://localhost:5000/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
+                                                            <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${achievement.achievement_file}`}>
+                                                                <img src={`${API_BASE_URL}/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
                                                             </a>
 
                                                             {/* Like and Comment Section */}
@@ -238,8 +239,8 @@ function Achievement() {
                                 <div className='col-4' key={achievement._id}>
                                     <div className='achievement-img mb-3'>
                                         
-                                        <a data-fancybox="gallery" href={`http://localhost:5000/uploads/${achievement.achievement_file}`}>
-                                            <img src={`http://localhost:5000/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
+                                        <a data-fancybox="gallery" href={`${API_BASE_URL}/uploads/${achievement.achievement_file}`}>
+                                            <img src={`${API_BASE_URL}/uploads/${achievement.achievement_file}`} alt="" className='img-fluid' />
                                         </a>
 
                                         
