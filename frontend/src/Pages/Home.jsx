@@ -19,7 +19,7 @@ import achieve1 from '../images/achieve-1.png';
 import achieve2 from '../images/achieve-2.png';
 import achieve3 from '../images/achieve-3.png';
 import achieve4 from '../images/achieve-4.png';
-import Popup from '../images/103.jpg'
+import Popup from '../images/Popup.jpg'
 import { Player } from "video-react";
 import NumberCounter from 'number-counter';
 import Banner from '../images/SiteSlider.mp4'
@@ -210,6 +210,11 @@ function Home() {
                                     <button type="button" className="btn-close btn-close-white" onClick={handleClose} aria-label="Close"></button>
                                     <img src={Popup} alt="" className="img-fluid" />
                                 </div>
+                                <div class="modal-footer justify-content-center">
+                                    <button type="button" class="btn btn-primary">
+                                        <Link to={'https://dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2025-26/Admissions/Adm%20for%20Nur-KG-I-25_26_with%20dates.html'} target="_blank" style={{color:'white', textDecoration:'none'}}>Click here to Proceed</Link>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -217,7 +222,7 @@ function Home() {
             </div>
 
             {/* Slider Section Starts of DPS */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container-fluid slider px-0" style={{ backgroundColor: 'black' }}>
                     <div id="carouselExampleIndicators" className="carousel slide">
                         <div className="carousel-inner">
@@ -228,7 +233,7 @@ function Home() {
             </section>
 
             {/* News Update Section Start of DPS */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-2 col-12 text-center news-update">
@@ -254,7 +259,7 @@ function Home() {
             </section>
 
             {/* Welcome Section Of DPS */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container">
                     <div className="row m-auto">
                         <div className="col-lg-8 col-12 welcome-dps">
@@ -327,7 +332,7 @@ function Home() {
             </section>
 
             {/* Infrastructure Section */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container">
                     <div className="row pt-4">
                         <div className="col-lg-4 col-md-6 col-12 pb-lg-0 pb-3">
@@ -386,7 +391,7 @@ function Home() {
             </section>
 
             {/* Slick Slider of Events Gallery Section */}
-            <section className="event_gallery mt-5 pb-5" style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className="event_gallery mt-5 pb-5" style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -427,7 +432,7 @@ function Home() {
                 </div>
             </section>
 
-            <section className="event_gallery pb-5" style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className="event_gallery pb-5" style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -464,7 +469,7 @@ function Home() {
             </section>
 
             {/* Achievement Section */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container-fluid pt-5">
                     <div className="container text-center">
                         <div className="row m-auto">
@@ -518,7 +523,7 @@ function Home() {
             </section>
 
             {/* Explore Us Section */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container explore-us">
                     <div className="row pt-5">
                         <div className="col-lg-6 col-12">

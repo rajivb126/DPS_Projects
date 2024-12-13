@@ -376,7 +376,7 @@ function Header() {
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown contact-header">
-                                    <Link to={'/contact'} className="nav-link fw-bolder dropdown-toggle" role="button"
+                                    <Link to={''} className="nav-link fw-bolder dropdown-toggle" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         contact
                                     </Link>
@@ -409,8 +409,9 @@ function Header() {
                                                     </div>
                                                     <div className="text-start me-2">
                                                         <a href="contact-us.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="">
-                                                            <button type="button" onClick={handleSubmit}
-                                                                style={{ backgroundColor: 'red', color: '#fff', border: 'none', fontSize: '15px', padding: '8px 40px' }}>ENQUIRY
+                                                            <button type="button" style={{ backgroundColor: 'red', color: '#fff', border: 'none', fontSize: '15px', padding: '8px 40px' }}>
+                                                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{color:'white', textDecoration:'none'}}> ENQUIRY
+                                                                </a>
                                                             </button>
                                                         </a>
                                                     </div>

@@ -49,7 +49,7 @@ function AdmissionProcedure() {
                         <div className="tab-content" id="myTabContent">
                             <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <h3>Admission Overview</h3>
-                                <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to DELHI PRIVATE SCHOOL JODHPUR. Thank you for making our school your first choice for a wonderful educational experience.</p>
+                                <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to DELHI PUBLIC SCHOOL JODHPUR. Thank you for making our school your first choice for a wonderful educational experience.</p>
 
                                 <p>The DPS Jodhpur student community is a potpourri of cultures from across the city, state and country and we attract students from various echelons of society.</p>
 
