@@ -5,7 +5,7 @@ import Footer_logo from '../images/DPSJODHPUR WHITE.png'
 
 function Footer() {
     const sendMessage = () => {
-        const phoneNumber = '1234567890';
+        const phoneNumber = '7737880141';
         const message = encodeURIComponent('Hello!');
 
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -100,7 +100,7 @@ function Footer() {
                         </div>
                         <div className="col-4 p-0 mx-auto" style={{ borderRight: '1px solid #fff' }}>
                             <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <a href="#">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <FontAwesomeIcon icon={faEnvelope} style={{ paddingRight: '3px' }} />
                                     Enquire
                                 </a>

@@ -371,7 +371,7 @@ function Header() {
                                         alumni
                                     </Link>
                                     <ul className="dropdown-menu" style={{ position: 'absolute', left: '-8px', top: '145%', minWidth: '176.5px' }}>
-                                        <li><Link to={'/alumni-register'} className="dropdown-item">Registers</Link></li>
+                                        <li><Link to={'/alumni-register'} className="dropdown-item">Register</Link></li>
                                         <li><a className="dropdown-item" href="#">Prestigious Alumni</a></li>
                                     </ul>
                                 </li>
