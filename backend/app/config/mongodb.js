@@ -8,6 +8,7 @@ mongoose.connect(mongoURI, {
     useUnifiedTopology: true,
     useFindAndModify: false,
     serverSelectionTimeoutMS: 30000, // Increase timeout
+    bufferTimeoutMS: 30000, // Increase buffer timeout
 })
 .then(() => console.log('MongoDB connected successfully!'))
 .catch((err) => console.error('MongoDB connection error:', err));
