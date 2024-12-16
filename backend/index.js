@@ -1,5 +1,5 @@
 const express = require('express');
-require('./app/config/mongodb')
+const mongoose = require('mongoose');
 const imageUpload = require('./app/library/multer');
 var cors = require('cors')
 const app = express();
@@ -14,17 +14,21 @@ app.use(express.urlencoded({ extended: true }));
 const adminCredentials = {
     username: 'dpsadmin',
     password: 'adminDPSJOD'
-}
+};
+
+// MongoDB connection string
+const uri = 'mongodb+srv://rajiv:TOS9f6DqcXCBjLsl@cluster0.zjjjg.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0';
+
 
 app.get('', (request, response) => {
     response.send('Server is working fine.');
 });
 
-app.post('/image-upload', imageUpload.upload, (request,response) => {
+app.post('/image-upload', imageUpload.upload, (request, response) => {
     response.send("Image Upload");
 });
 
-app.post('/multiple-image-upload', imageUpload.multipleUpload, (request,response) => {
+app.post('/multiple-image-upload', imageUpload.multipleUpload, (request, response) => {
     response.send("Image Upload");
 })
 
@@ -69,6 +73,15 @@ app.use((request, response, next) => {
     response.status(404).send(arr);
 })
 
-app.listen(5000, () =>
-    console.log("Backend is running")
-)
+// Connecting to MongoDB
+mongoose.connect(uri)
+    .then(() => {
+        console.log('Connected to MongoDB successfully!');
+        // Start the server only after a successful DB connection
+        app.listen(5000, () => {
+            console.log('Backend is running on port 5000');
+        });
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error.message);
+    });
