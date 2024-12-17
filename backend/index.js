@@ -1,10 +1,29 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const imageUpload = require('./app/library/multer');
 var cors = require('cors')
 const app = express();
+const mongoose = require('mongoose');
 
-app.use(cors())
+// MongoDB connection string
+const uri = 'mongodb+srv://rajiv:TOS9f6DqcXCBjLsl@cluster0.zjjjg.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0';
+
+// Connecting to MongoDB
+mongoose.connect(uri)
+    .then(() => {
+        console.log('Connected to MongoDB successfully!');
+        // Start the server only after a successful DB connection
+        app.listen(5000, () => {
+            console.log('Backend is running on port 5000');
+        });
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error.message);
+    });
+
+// Specific origin ko allow karein
+
+app.use(cors());
+
 // parse requests of content-type - application/json
 app.use(express.json());
 
@@ -15,9 +34,6 @@ const adminCredentials = {
     username: 'dpsadmin',
     password: 'adminDPSJOD'
 };
-
-// MongoDB connection string
-const uri = 'mongodb+srv://rajiv:TOS9f6DqcXCBjLsl@cluster0.zjjjg.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0';
 
 
 app.get('', (request, response) => {
@@ -72,16 +88,3 @@ app.use((request, response, next) => {
 
     response.status(404).send(arr);
 })
-
-// Connecting to MongoDB
-mongoose.connect(uri)
-    .then(() => {
-        console.log('Connected to MongoDB successfully!');
-        // Start the server only after a successful DB connection
-        app.listen(5000, () => {
-            console.log('Backend is running on port 5000');
-        });
-    })
-    .catch((error) => {
-        console.error('Error connecting to MongoDB:', error.message);
-    });
