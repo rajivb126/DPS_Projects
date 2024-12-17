@@ -174,7 +174,6 @@ function Home() {
         slidesToShow: 3, // Change based on how many slides you want visible at once
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
         autoplaySpeed: 3000,
         pauseOnHover: true,
         responsive: [
@@ -210,8 +209,8 @@ function Home() {
                                     <button type="button" className="btn-close btn-close-white" onClick={handleClose} aria-label="Close"></button>
                                     <img src={Popup} alt="" className="img-fluid" />
                                 </div>
-                                <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-primary">
+                                <div className="modal-footer justify-content-center">
+                                    <button type="button" className="btn btn-primary">
                                         <Link to={'https://dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2025-26/Admissions/Adm%20for%20Nur-KG-I-25_26_with%20dates.html'} target="_blank" style={{color:'white', textDecoration:'none'}}>Click here to Proceed</Link>
                                     </button>
                                 </div>
