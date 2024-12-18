@@ -8,14 +8,14 @@ function AdmissionProcedure() {
         <>
             <Header />
 
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div>
                     <iframe width="100%" height="500" src="https://www.youtube.com/embed/eJG1noHnV-4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
                     </iframe>
                 </div>
             </section>
 
-            <section className='admission-procedure' style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className='admission-procedure' style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -31,7 +31,7 @@ function AdmissionProcedure() {
                                     <a className="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" role="tab" aria-controls="overview" aria-selected="true">Admission Overview</a>
                                 </li>
                                 <li>
-                                    <a className="nav-link" id="procedure-tab" data-bs-toggle="tab" data-bs-target="#procedure" role="tab" aria-controls="procedure" aria-selected="false">Admission Procedure</a>
+                                    <a className="nav-link" id="procedure-tab" data-bs-toggle="tab" data-bs-target="#procedure" role="tab" aria-controls="procedure" aria-selected="false">Admission Guideline</a>
                                 </li>
                                 <li>
                                     <a className="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" role="tab" aria-controls="documents" aria-selected="false">Required Documents</a>
@@ -49,18 +49,30 @@ function AdmissionProcedure() {
                         <div className="tab-content" id="myTabContent">
                             <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <h3>Admission Overview</h3>
-                                <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to DELHI PUBLIC SCHOOL JODHPUR. Thank you for making our school your first choice for a wonderful educational experience.</p>
+                                <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to the Admission Process for the session 2025-26.</p>
 
-                                <p>The DPS Jodhpur student community is a potpourri of cultures from across the city, state and country and we attract students from various echelons of society.</p>
+                                <p>DPS Jodhpur is dedicated to fostering the growth of young minds through a balanced approach that integrates academics, co-curricular activities, and essential life skills. With modern facilities, a skilled faculty, and a dynamic learning atmosphere, we provide every student with a fulfilling and enriching educational experience.</p>
 
-                                <p>DPS Jodhpur follows the Indian CBSE curriculum, from PRE KG to Grade 12, wherein students write a board exam in Grades 10 and 12 conducted by the CBSE.</p>
+                                <p>DPS Jodhpur follows the CBSE curriculum, offering classes from Nursery-KG-Prep to Grade 12. We seek individuals who can not only contribute positively to the school community but also take full advantage of the facilities available to them.<br />
+                                Our academic year begins in April.</p>
 
-                                <p>We are open to accepting students from any curriculum who are dynamic and demonstrate their ability to fit into the school system with ease and not only contribute to the school in a positive way, but also take the initiative to absorb and utilize the facilities to their maximum benefit.</p>
+                                <h4 style={{ color: '#074c9f', fontWeight: 'bold' }}>Admission Criteria</h4>
+                                <ul className='p-0' style={{listStyle:'none'}}>
+                                    <li>Eligible Age as on March 31, 2025</li>
+                                    <li><strong>Class Nursery :</strong> Minimum 3 years & Maximum less than 4 years (DOB between 1 April 2021 and 31 March 2022)</li>
+                                    <li><strong>Class KG :</strong> Minimum 4 years & Maximum less than 5 years (DOB between 1 April 2020 and 31 March 2021)</li>
+                                    <li><strong>Class Prep :</strong> Minimum 5 years & Maximum less than 6 years (DOB between 1 April 2019 and 31 March 2020)</li>
+                                    <li><strong>Class I :</strong> Minimum 6 years & Maximum less than 7 years (DOB between 1 April 2018 and 31 March 2019)</li>
+                                </ul>
 
-                                <p>Our academic session starts in the month of April.  We have a robust on-going admission policy which also allows students to enrol in our institution throughout the year, subject to vacancies.</p>
+                                <ol className='ps-3'>
+                                    <li>Successful registration does not in any way guarantee the admission of a candidate. As number of seats available are limited, selection will be based on age criteria, i.e. older children will be given preference. <br /> For example a child born on 15 Aug 2021 (3 Years, 7 Months, 16 Days) will get preference over child born on 11 Dec 2021 (3 Years, 3 Months, 20 Days)
+                                    </li>
+                                    <li>Preference will be given to siblings (real brother or sister) of students already studying in the school.</li>
+                                </ol>
                             </div>
                             <div className="tab-pane fade" id="procedure" role="tabpanel" aria-labelledby="procedure-tab">
-                                <h3>Admission Procedure</h3>
+                                <h3>Admission Guideline</h3>
                                 <h5>GUIDELINES FOR FILLING THE ONLINE REGISTRATION FORM:</h5>
                                 <ol>
                                     <li>Registration form is to be filled only through the school website <a href="https://dpsjodhpur.in/dpsjodhpur">www.dpsjodhpur.in</a></li>
@@ -113,9 +125,9 @@ function AdmissionProcedure() {
                                 <h6 className='fs-6 text-danger text-center'>
                                     <i><u>Note: False information / incomplete form will be rejected. No request for correction will be entertained.</u></i>
                                 </h6>
-                                <h4 className='fs-1 text-center pt-2' style={{ color: 'maroon' }}>
+                                {/* <h4 className='fs-1 text-center pt-2' style={{ color: 'maroon' }}>
                                     <u>Dates for Registration will be announced shortly.</u>
-                                </h4>
+                                </h4> */}
                             </div>
                             <div className="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
                                 <h3>Required Documents</h3>

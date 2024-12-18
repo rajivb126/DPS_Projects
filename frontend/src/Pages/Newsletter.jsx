@@ -83,7 +83,7 @@ function Newsletter() {
                                                 </tr>
                                             ))
                                         ) : (
-                                            <p>No Notice Circular News available.</p>
+                                            <p>No Newsletter available.</p>
                                         )}
                                     </tbody>
                                 </table>

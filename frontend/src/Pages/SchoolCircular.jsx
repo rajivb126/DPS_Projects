@@ -85,7 +85,7 @@ function SchoolCircular() {
                                                 </tr>
                                             ))
                                         ) : (
-                                            <p>No Notice Circular News available.</p>
+                                            <p>No School Circular News available.</p>
                                         )}
                                     </tbody>
                                 </table>

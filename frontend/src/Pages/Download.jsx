@@ -76,7 +76,7 @@ function Download() {
                                                 </tr>
                                             ))
                                         ) : (
-                                            <p>No Notice Circular News available.</p>
+                                            <p>No Download available.</p>
                                         )}
                                     </tbody>
                                 </table>

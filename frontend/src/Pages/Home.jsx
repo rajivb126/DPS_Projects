@@ -211,7 +211,7 @@ function Home() {
                                 </div>
                                 <div className="modal-footer justify-content-center">
                                     <button type="button" className="btn btn-primary">
-                                        <Link to={'https://dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2025-26/Admissions/Adm%20for%20Nur-KG-I-25_26_with%20dates.html'} target="_blank" style={{color:'white', textDecoration:'none'}}>Click here to Proceed</Link>
+                                        <Link to={'https://dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2025-26/Admissions/Adm%20for%20Nur-KG-I-25_26_with%20dates.html'} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>Click here to Proceed</Link>
                                     </button>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@ function Home() {
                             <h3 className="">News Update</h3>
                         </div>
                         <div className="col-lg-10 col-12 news-update-list">
-                            <Marquee direction="left" speed={30} delay={0} play pauseOnHover>
+                            <marquee ref={marqueeRef} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} width="100%" direction="left" scrollamount="4" scrolldelay="0">
                                 <ul>
                                     {newsUpdate.length > 0 ? (
                                         newsUpdate.map((news, index) => (
@@ -248,10 +248,10 @@ function Home() {
                                             </li>
                                         ))
                                     ) : (
-                                        <p className="text-white">No Marquee News available.</p>
+                                        <p className="text-white" style={{paddingTop:'5px'}}>No News Update available.</p>
                                     )}
                                 </ul>
-                            </Marquee>
+                            </marquee>
                         </div>
                     </div>
                 </div>
@@ -298,7 +298,7 @@ function Home() {
                                                     </div>
                                                 ))
                                             ) : (
-                                                <p>No Marquee News available.</p>
+                                                <p>No Notice Circular available.</p>
                                             )}
                                         </ul>
                                     </marquee>
@@ -337,16 +337,16 @@ function Home() {
                         <div className="col-lg-4 col-md-6 col-12 pb-lg-0 pb-3">
                             <div className="blogs">
                                 <div className="blog-img">
-                                    <Link to={'/primary-wing'} target="_blank">
+                                    <Link to={'/primary-wing'}>
                                         <img src={infra1} className="img-fluid w-100" alt="" />
                                     </Link>
                                 </div>
                                 <div className="blog-content">
                                     <p>
-                                        <Link to={'/primary-wing'} target="_blank"> PRIMARY BLOCK</Link>
+                                        <Link to={'/primary-wing'}> PRIMARY BLOCK</Link>
                                     </p>
                                     <p className="mt-0" style={{ color: 'green', fontSize: '18px', fontWeight: '600' }}>
-                                        <Link to={'/primary-wing'} target="_blank">CLASS NURSERY, KG, PREP, I-III</Link>
+                                        <Link to={'/primary-wing'}>CLASS NURSERY, KG, PREP, I-III</Link>
                                     </p>
                                 </div>
                             </div>
@@ -354,16 +354,16 @@ function Home() {
                         <div className="col-lg-4 col-md-6 col-12 pb-lg-0 pb-3">
                             <div className="blogs">
                                 <div className="blog-img">
-                                    <Link to={'/middle-wing'} target="_blank">
+                                    <Link to={'/middle-wing'}>
                                         <img src={infra2} className="img-fluid w-100" alt="" />
                                     </Link>
                                 </div>
                                 <div className="blog-content">
                                     <p>
-                                        <Link to={'/middle-wing'} target="_blank">MIDDLE BLOCK</Link>
+                                        <Link to={'/middle-wing'}>MIDDLE BLOCK</Link>
                                     </p>
                                     <p className="mt-0" style={{ color: 'green', fontSize: '18px', fontWeight: '600' }}>
-                                        <Link to={'/middle-wing'} target="_blank">CLASSES IV-VIII</Link>
+                                        <Link to={'/middle-wing'}>CLASSES IV-VIII</Link>
                                     </p>
                                 </div>
                             </div>
@@ -371,16 +371,16 @@ function Home() {
                         <div className="col-lg-4 col-md-6 col-12">
                             <div className="blogs">
                                 <div className="blog-img">
-                                    <Link to={'/senior-wing'} target="_blank">
+                                    <Link to={'/senior-wing'}>
                                         <img src={infra3} className="img-fluid w-100" alt="" />
                                     </Link>
                                 </div>
                                 <div className="blog-content">
                                     <p>
-                                        <Link to={'/senior-wing'} target="_blank">SENIOR BLOCK</Link>
+                                        <Link to={'/senior-wing'}>SENIOR BLOCK</Link>
                                     </p>
                                     <p className="mt-0" style={{ color: 'green', fontSize: '18px', fontWeight: '600' }}>
-                                        <Link to={'/senior-wing'} target="_blank">CLASSES IX-XII</Link>
+                                        <Link to={'/senior-wing'}>CLASSES IX-XII</Link>
                                     </p>
                                 </div>
                             </div>
