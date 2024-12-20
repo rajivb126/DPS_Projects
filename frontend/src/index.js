@@ -66,6 +66,7 @@ import ViewInfrastructure from './admin/pages/ViewInfrastructure';
 import AddInfrastructure from './admin/pages/AddInfrastructure';
 import AddStudentCouncil from './admin/pages/AddStudentCouncil';
 import ViewStudentCouncil from './admin/pages/ViewStudentCouncil';
+import TcLogin from './admin/auth/TcLogin';
 
 const router = createBrowserRouter([
   {
@@ -191,6 +192,10 @@ const router = createBrowserRouter([
   {
     path: 'student-circular',
     element: <StudentCircular />
+  },
+  {
+    path: 'tc-dps',
+    element: <TcLogin />,
   },
   {
     path: 'admin-dps',

@@ -35,6 +35,12 @@ const adminCredentials = {
     password: 'adminDPSJOD'
 };
 
+// Add TC Incharge credentials
+const tcInchargeCredentials = {
+    username: 'tcincharge',
+    password: 'tcDPSJOD'
+};
+
 
 app.get('', (request, response) => {
     response.send('Server is working fine.');
@@ -56,6 +62,20 @@ app.post('/login', (request, response) => {
     }
 
     if (username === adminCredentials.username && password === adminCredentials.password) {
+        return response.json({ success: true })
+    } else {
+        return response.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+});
+
+app.post('/tc-login', (request, response) => {
+    const { username, password } = request.body;
+
+    if (!username || !password) {
+        return response.status(400).json({ success: false, message: 'Username and password are required' });
+    }
+
+    if (username === tcInchargeCredentials.username && password === tcInchargeCredentials.password) {
         return response.json({ success: true });
     } else {
         return response.status(401).json({ success: false, message: 'Invalid credentials' });
@@ -63,7 +83,6 @@ app.post('/login', (request, response) => {
 });
 
 app.use('/uploads', express.static('uploads'));
-
 
 require('./app/routes/enquiry.route')(app);
 require('./app/routes/newsUpdate.route')(app);
