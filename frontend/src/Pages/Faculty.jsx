@@ -134,32 +134,6 @@ function Faculty() {
                                     <div className="tab-content ps-lg-0 ps-3 my-5">
                                         <div className="tab-pane fade show active" id="senior-wing" role="tabpanel">
                                             <div className="container">
-                                                {/* <div className="row justify-content-center m-auto">
-                                                    <div className="col-lg-2 col-md-3 col-6">
-                                                        <div className="wings-contents">
-                                                            <img src={Poornima_Purohit} className="img-fluid" alt="" />
-                                                            <h6 className="teachers-name pt-3">PURNIMA PUROHIT</h6>
-                                                            <h6>Hindi/Sanskrit</h6>
-                                                            <p>
-                                                                <a href="mailto:purnimapurohit@dpsjodhpur.in">
-                                                                    <FontAwesomeIcon icon={faEnvelope} style={{ paddingRight: '5px' }} />Send Mail<br />
-                                                                </a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-lg-2 col-md-3 col-6">
-                                                        <div className="wings-contents">
-                                                            <img src={Vikas_Saran} className="img-fluid" alt="" />
-                                                            <h6 className="teachers-name pt-3">VIVEK MISHRA</h6>
-                                                            <h6>Mathematics</h6>
-                                                            <p>
-                                                                <a href="mailto:vivekmishra@dpsjodhpur.in">
-                                                                    <FontAwesomeIcon icon={faEnvelope} style={{ paddingRight: '5px' }} />Send Mail<br />
-                                                                </a>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
                                                 <div className="row justify-content-center m-auto">
                                                     {seniorWing.map((teacher, index) => (
                                                         <div key={index} className="col-lg-2 col-md-3 col-6">

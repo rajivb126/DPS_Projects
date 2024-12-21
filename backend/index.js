@@ -41,6 +41,12 @@ const tcInchargeCredentials = {
     password: 'tcDPSJOD'
 };
 
+// Add Event Incharge credentials
+const eventInchargeCredentials = {
+    username: 'eventincharge',
+    password: 'eventDPSJOD'
+};
+
 
 app.get('', (request, response) => {
     response.send('Server is working fine.');
@@ -62,7 +68,7 @@ app.post('/login', (request, response) => {
     }
 
     if (username === adminCredentials.username && password === adminCredentials.password) {
-        return response.json({ success: true })
+        return response.json({ success: true, role: 'admin' });
     } else {
         return response.status(401).json({ success: false, message: 'Invalid credentials' });
     }
@@ -76,11 +82,26 @@ app.post('/tc-login', (request, response) => {
     }
 
     if (username === tcInchargeCredentials.username && password === tcInchargeCredentials.password) {
-        return response.json({ success: true });
+        return response.json({ success: true, role: 'tc-incharge' });
     } else {
         return response.status(401).json({ success: false, message: 'Invalid credentials' });
     }
 });
+
+app.post('/event-login', (request, response) => {
+    const { username, password } = request.body;
+
+    if (!username || !password) {
+        return response.status(400).json({ success: false, message: 'Username and password are required' });
+    }
+
+    if (username === eventInchargeCredentials.username && password === eventInchargeCredentials.password) {
+        return response.json({ success: true, role: 'event-incharge' });
+    } else {
+        return response.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+});
+
 
 app.use('/uploads', express.static('uploads'));
 
