@@ -244,7 +244,7 @@ function Home() {
                                     {newsUpdate.length > 0 ? (
                                         newsUpdate.map((news, index) => (
                                             <li key={index}>
-                                                <a href={news.nlink}>{news.nname}</a>
+                                                <a href={`${API_BASE_URL}/uploads/${news.nlink}`}>{news.nname}</a>
                                             </li>
                                         ))
                                     ) : (
@@ -293,7 +293,7 @@ function Home() {
                                                     <div className="d-flex align-items-center" key={index} style={{ borderBottom: 'solid 1px #e9ecef', paddingTop: '10px' }}>
                                                         <li className="me-3">{formattDate(news.start_date)}</li>
                                                         <li>
-                                                            <a href={news.nlink}>{news.nname}</a>
+                                                            <a href={`${API_BASE_URL}/uploads/${news.nlink}`}>{news.nname}</a>
                                                         </li>
                                                     </div>
                                                 ))
