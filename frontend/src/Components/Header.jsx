@@ -237,7 +237,7 @@ function Header() {
                                         target="_blank" style={{ fontSize: '14px', borderRight: '2px solid #fff', paddingRight: '10px' }}>PAY FEE</a>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="fw-bolder" style={{ color: 'yellow', fontSize: '14px' }}>ERP LOGIN
+                                    <Link to={'https://octopod.co.in/'} className="fw-bolder" style={{ color: 'yellow', fontSize: '14px' }}>ERP LOGIN
                                         <FontAwesomeIcon icon={faSignIn} style={{ paddingLeft: '5px', color: 'yellow', fontSize: '16px' }} /><i className="fa fa-sign-in" aria-hidden="true" ></i>
                                     </Link>
                                 </li>
