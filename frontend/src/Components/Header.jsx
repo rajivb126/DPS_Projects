@@ -183,7 +183,7 @@ function Header() {
                             <marquee ref={marqueeRef} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} width="100%" direction="alternate" behavior="alternate" scrollamount="4" scrolldelay="0">
                                 {marqueeNews.length > 0 ? (
                                     marqueeNews.map((news, index) => (
-                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`}>
+                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target='_blank'>
                                             <span style={{ color: 'yellow' }}> &nbsp;&nbsp;.:::.&nbsp;&nbsp; </span>
                                             <b>{news.nname}</b>
                                             <span style={{ color: 'yellow' }}> &nbsp;&nbsp;.:::.&nbsp;&nbsp; </span>
