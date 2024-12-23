@@ -56,7 +56,7 @@ function AdmissionProcedure() {
                                 <p>DPS Jodhpur follows the CBSE curriculum, offering classes from Nursery-KG-Prep to Grade 12. We seek individuals who can not only contribute positively to the school community but also take full advantage of the facilities available to them.<br />
                                 Our academic year begins in April.</p>
 
-                                <h4 style={{ color: '#074c9f', fontWeight: 'bold' }}>Admission Criteria</h4>
+                                <h4 style={{ color: '#074c9f', fontWeight: 'bold' }}>Age Criteria For Admission</h4>
                                 <ul className='p-0' style={{listStyle:'none'}}>
                                     <li>Eligible Age as on March 31, 2025</li>
                                     <li><strong>Class Nursery :</strong> Minimum 3 years & Maximum less than 4 years (DOB between 1 April 2021 and 31 March 2022)</li>

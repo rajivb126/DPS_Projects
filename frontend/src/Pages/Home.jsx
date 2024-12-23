@@ -159,10 +159,10 @@ function Home() {
         const year = date.getFullYear();
         return (
             <>
-                <div className="card-date">
-                    <div className="year">{year}</div>
-                    <div className="month">{month}</div>
+                <div className="card-date" style={{padding:'10px'}}>
                     <div className="day">{day}</div>
+                    <div className="month">{month}</div>
+                    <div className="year">{year}</div>
                 </div>
             </>
         );

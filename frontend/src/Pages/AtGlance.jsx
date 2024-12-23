@@ -2,13 +2,23 @@ import React from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import ACCREDITATION_IDS from '../images/ACCREDITATION_IDS.jpg';
+import Banner from '../images/SCHOOL BUILDING.jpg'
 
 function AtGlance() {
     return (
         <>
             <Header />
 
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
+                <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
+                    <div className="container-fluid slider px-0" style={{ backgroundColor: 'black' }}>
+                        <div id="carouselExampleIndicators" className="carousel slide">
+                            <div className="carousel-inner">
+                                <img src={Banner} className="d-block w-100" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -18,7 +28,7 @@ function AtGlance() {
                 </div>
                 <div className="container">
                     <div className="row mx-auto">
-                        <div className="col-lg-8 col-12">
+                        <div className="col-12">
                             <div className="atglance">
                                 <p>A magnificent temple of learning amidst the rich and cultural heritage of Rajasthan, Delhi Public School Jodhpur stands tall as a guiding light of educational excellence. DPS, a Co-Ed school affiliated and accredited to Central Board of Secondary Education (CBSE) was established in the year 1998 and is officiated by Delhi Public School Society. Set on a sprawling 15-acre campus with the installation of the solar panel, adorned with superabundant green trees, the school's environment is conducive to open and expansive learning comprising approx. 5000 students and 250 staff members. The institution is under the umbrella of certification with the memberships of National Progressive School’s Conference (NPSC) and the School Innovation Council (SIC) respectively.</p>
 
@@ -40,7 +50,7 @@ function AtGlance() {
 
                             </div>
                         </div>
-                        <div className="col-lg-4 col-12">
+                        {/* <div className="col-lg-4 col-12">
                             <div className="atgalnce-images">
                                 <div className="Images">
                                     <img src={ACCREDITATION_IDS} alt="" className="pt-lg-5 pb-lg-4" />
@@ -49,7 +59,7 @@ function AtGlance() {
                                     <img src={ACCREDITATION_IDS} alt="" />
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

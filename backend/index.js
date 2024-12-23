@@ -119,6 +119,7 @@ require('./app/routes/assembly.route')(app);
 require('./app/routes/studentCouncil.route')(app);
 require('./app/routes/popup.route')(app);
 require('./app/routes/infrastructure.route')(app);
+require('./app/routes/siteImage.route')(app);
 
 app.use((request, response, next) => {
     var arr = {

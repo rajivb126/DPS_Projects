@@ -272,7 +272,7 @@ function Sidebar() {
                             {/* Student Council Dropdown */}
                             <div className='list-group-item' onClick={() => toggleDropdown('studentcouncil')}>
                                 <i className="bi bi-person fs-5 me-3"></i>
-                                <span>studentcouncil</span>
+                                <span>Student Council</span>
                                 <i className={`bi ${activeDropdown === 'studentcouncil' ? 'bi-caret-up' : 'bi-caret-down'} ms-2`}></i>
                             </div>
                             {activeDropdown === 'studentcouncil' && (
@@ -281,6 +281,23 @@ function Sidebar() {
                                         <span>Add</span>
                                     </Link>
                                     <Link to={'studentcouncil/view'} className='list-group-item py-2'>
+                                        <span>View</span>
+                                    </Link>
+                                </div>
+                            )}
+
+                            {/* Site Image Dropdown */}
+                            <div className='list-group-item' onClick={() => toggleDropdown('siteimage')}>
+                                <i className="bi bi-person fs-5 me-3"></i>
+                                <span>Site Image</span>
+                                <i className={`bi ${activeDropdown === 'siteimage' ? 'bi-caret-up' : 'bi-caret-down'} ms-2`}></i>
+                            </div>
+                            {activeDropdown === 'siteimage' && (
+                                <div className='ms-5'>
+                                    <Link to={'siteimage/add'} className='list-group-item py-2'>
+                                        <span>Add</span>
+                                    </Link>
+                                    <Link to={'siteimage/view'} className='list-group-item py-2'>
                                         <span>View</span>
                                     </Link>
                                 </div>

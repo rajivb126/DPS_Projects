@@ -109,7 +109,7 @@ code {
 }
 
 .notice-circular ul li {
-  padding-bottom: 20px;
+  padding-bottom: 8px;
 }
 
 .notice-circular ul li a {
@@ -1287,11 +1287,8 @@ thead tr th {
 }
 
 .card-date {
-  width: 90px;
-  padding: 10px;
+  padding: 5px;
   background: url(./images/date-box.svg) no-repeat center center;
-  padding-top: 12px;
-  padding-bottom: 12px;
   margin: auto;
   background-size: contain;
 }
@@ -1299,12 +1296,8 @@ thead tr th {
 .card-date .year {
   font-weight: 700;
   font-size: 13px;
-  background: #2E57A1;
-  color: white;
   text-align: center;
-  padding: 0 3px;
   border-radius: 20px;
-  margin-bottom: 3px;
 }
 
 .card-date .month {
@@ -1312,12 +1305,12 @@ thead tr th {
   font-size: 16px;
   line-height: 100%;
   text-align: center;
-  text-transform: uppercase;
+  
 }
 
 .card-date .day {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 100%;
   text-align: center;
   text-transform: uppercase;
@@ -1330,10 +1323,14 @@ thead tr th {
 }
 
 .school-circular .table {
-  width: 80%;
+  width: 70%;
   display: inline-table;
 }
 
+.school-circular .table .download_heading {
+  font-size: 18px;
+  font-weight: bold;
+}
 
 .school-circular table thead th.action {
   width: 100px;
@@ -1793,6 +1790,12 @@ thead tr th {
   .school-circular table {
     width: 100% !important;
   }
+
+  .school-circular .table .download_heading {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
 
   .slick-slider button.slick-prev {
     left: -10px;

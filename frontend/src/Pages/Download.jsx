@@ -20,15 +20,15 @@ function Download() {
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const day = ('0' + date.getDate()).slice(-2);
-        const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+        const monthNames = ["Jan", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "Dec"];
         const month = monthNames[date.getMonth()];
         const year = date.getFullYear();
         return (
             <>
                 <div className="card-date">
-                    <div className="year">{year}</div>
-                    <div className="month">{month}</div>
                     <div className="day">{day}</div>
+                    <div className="month">{month}</div>
+                    <div className="year">{year}</div>
                 </div>
             </>
         );
@@ -51,20 +51,20 @@ function Download() {
                         <div className='col-12'>
                             <div className='school-circular'>
                                 <table className='table table-bordered' style={{ borderColor: 'black' }}>
-                                    <thead>
+                                    {/* <thead>
                                         <tr>
-                                            <th style={{ width: '100px' }}>Date</th>
-                                            <th>Download Heading</th>
-                                            <th className='action'>Action</th>
+                                            <th style={{ width: '100px', backgroundColor:'orange' }}>Date</th>
+                                            <th style={{backgroundColor:'orange'}}>Download Heading</th>
+                                            <th className='action' style={{backgroundColor:'orange'}}>Action</th>
                                         </tr>
-                                    </thead>
+                                    </thead> */}
                                     <tbody style={{ verticalAlign: 'middle' }}>
                                         {data.length > 0 ? (
                                             data.map((news, index) => (
                                                 <tr key={index._id}>
-                                                    <td className='text-center'>{formatDate(news.start_date)}</td>
-                                                    <td className='text-center' >{news.download_heading}</td>
-                                                    <td style={{ width: '120px' }}>
+                                                    <td className='text-center' style={{width:'80px'}}>{formatDate(news.start_date)}</td>
+                                                    <td className='download_heading text-center'>{news.download_heading}</td>
+                                                    <td style={{ width: '100px' }}>
                                                         <a href={`${API_BASE_URL}/uploads/${news.download_link}`} target='_blank' rel="noreferrer">
                                                             <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
                                                         </a>
