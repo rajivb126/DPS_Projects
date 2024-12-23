@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import API_BASE_URL from '../../config'
 
 function ViewImage() {
@@ -65,6 +67,31 @@ function ViewImage() {
                 });
         }
     };
+
+    useEffect(() => {
+            // Bind Fancybox with desired settings and event listeners
+            Fancybox.bind('[data-fancybox="gallery"]', {
+                buttons: [
+                    "slideShow",
+                    "thumbs",
+                    "zoom",
+                    "fullScreen",
+                    "download",
+                    "share",
+                    "close"
+                ],
+                loop: false,
+                protect: true,
+                on: {
+                    ready: () => setShowModal(false)  // Close modal when Fancybox opens
+                }
+            });
+    
+            // Clean up Fancybox bindings when the component unmounts
+            return () => {
+                Fancybox.destroy();
+            };
+        }, []);
 
     const handleViewClick = (item) => {
         setModalData(item);
@@ -166,7 +193,7 @@ function ViewImage() {
                                             <div>
                                                 {modalData?.site_image_file ? (
                                                     <div className="text-center">
-                                                        <a href={`${modalData.site_image_file}`} data-fancybox="gallery" data-caption="Thumbnail Image">
+                                                        <a href={`${modalData.site_image_file}`} data-fancybox="gallery" data-caption="Site Image">
                                                             <img src={`${modalData.site_image_file}`} alt="siteImage" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
                                                         </a>
                                                         <button type="button" className="btn btn-secondary mt-2" onClick={copyToClipboard}>
@@ -180,13 +207,7 @@ function ViewImage() {
                                             </div>
                                         )}
                                         {mode === 'edit' && (
-                                            <input
-                                                type="file"
-                                                className="form-control"
-                                                id="site_image_file"
-                                                name="site_image_file"
-                                                onChange={handleInputChange}
-                                            />
+                                            <input type="file" className="form-control" id="site_image_file" name="site_image_file" onChange={handleInputChange}/>
                                         )}
                                     </div>
 

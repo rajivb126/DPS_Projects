@@ -1,5 +1,7 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import API_BASE_URL from '../../config'
 
 function ViewFaculty() {
@@ -66,6 +68,31 @@ function ViewFaculty() {
         }
     };
 
+    useEffect(() => {
+        // Bind Fancybox with desired settings and event listeners
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            buttons: [
+                "slideShow",
+                "thumbs",
+                "zoom",
+                "fullScreen",
+                "download",
+                "share",
+                "close"
+            ],
+            loop: false,
+            protect: true,
+            on: {
+                ready: () => setShowModal(false)  // Close modal when Fancybox opens
+            }
+        });
+
+        // Clean up Fancybox bindings when the component unmounts
+        return () => {
+            Fancybox.destroy();
+        };
+    }, []);
+
     const handleViewClick = (item) => {
         setModalData(item);
         setMode('view'); // Set mode to 'view' for viewing
@@ -115,9 +142,9 @@ function ViewFaculty() {
                                     <th>S. NO.</th>
                                     <th style={{ width: '200px' }}>Teacher Name</th>
                                     <th>Teacher Email</th>
-                                    <th style={{width: '160px'}}>teacher Subject</th>
+                                    <th style={{ width: '160px' }}>teacher Subject</th>
                                     <th>Teacher Wing</th>
-                                    <th style={{width:'300px'}}>Teacher Image Path</th>
+                                    <th style={{ width: '300px' }}>Teacher Image Path</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -191,29 +218,19 @@ function ViewFaculty() {
                                     </div>
 
                                     <div className="form-group mb-3">
-                                        <label htmlFor="teacher_image" className="form-label">Teacher Image Path</label><br />
+                                        <label htmlFor="teacher_image" className="form-label">Thumbnail Image</label>
                                         {mode === 'view' ? (
                                             modalData?.teacher_image ? (
                                                 <a href={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
                                                     <img src={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
                                                 </a>
                                             ) : (
-                                                <p>No thumbnail available</p>
+                                                <p>No Teacher's Image available</p>
                                             )
                                         ) : (
                                             <input type="file" className="form-control" id="teacher_image" name="teacher_image" onChange={handleInputChange} />
                                         )}
                                     </div>
-
-                                    {/* <div className="form-group mb-3">
-                                        <label htmlFor="start_date" className="form-label">Start Date</label>
-                                        <input type="date" className="form-control" id="start_date" name="start_date" value={modalData?.start_date?.substring(0, 10) || ''} onChange={handleInputChange} readOnly={mode === 'view'} />
-                                    </div>
-
-                                    <div className="form-group mb-3">
-                                        <label htmlFor="end_date" className="form-label">End Date</label>
-                                        <input type="date" className="form-control" id="end_date" name="end_date" value={modalData?.end_date?.substring(0, 10) || ''} onChange={handleInputChange} readOnly={mode === 'view'} />
-                                    </div> */}
                                 </div>
 
                                 <div className="modal-footer">
@@ -230,3 +247,18 @@ function ViewFaculty() {
 }
 
 export default ViewFaculty
+
+{/* <div className="form-group mb-3">
+                                        <label htmlFor="teacher_image" className="form-label">Teacher Image Path</label><br />
+                                        {mode === 'view' ? (
+                                            modalData?.teacher_image ? (
+                                                <a href={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Site Image">
+                                                    <img src={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} alt="siteImage" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
+                                                </a>
+                                            ) : (
+                                                <p>No Teachers Images available</p>
+                                            )
+                                        ) : (
+                                            <input type="file" className="form-control" id="teacher_image" name="teacher_image" onChange={handleInputChange} />
+                                        )}
+                                    </div> */}
