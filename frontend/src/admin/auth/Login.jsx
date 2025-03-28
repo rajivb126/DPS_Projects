@@ -14,7 +14,7 @@ function Login() {
     const LOGIN_ENDPOINTS = {
         admin: `${API_BASE_URL}/login`,
         tc: `${API_BASE_URL}/tc-login`,
-        event: `http://localhost:5000/event-login`, // Explicit local URL for Event login
+        event: `${API_BASE_URL}/event-login`, // Explicit local URL for Event login
     };    
 
     const handleLogin = async (e) => {

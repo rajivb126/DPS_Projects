@@ -286,6 +286,23 @@ function Sidebar() {
                                 </div>
                             )}
 
+                            {/* Popup Dropdown */}
+                            <div className='list-group-item' onClick={() => toggleDropdown('popup')}>
+                                <i className="bi bi-person fs-5 me-3"></i>
+                                <span>Popup</span>
+                                <i className={`bi ${activeDropdown === 'popup' ? 'bi-caret-up' : 'bi-caret-down'} ms-2`}></i>
+                            </div>
+                            {activeDropdown === 'popup' && (
+                                <div className='ms-5'>
+                                    <Link to={'popup/add'} className='list-group-item py-2'>
+                                        <span>Add</span>
+                                    </Link>
+                                    <Link to={'popup/view'} className='list-group-item py-2'>
+                                        <span>View</span>
+                                    </Link>
+                                </div>
+                            )}
+
                             {/* Site Image Dropdown */}
                             <div className='list-group-item' onClick={() => toggleDropdown('siteimage')}>
                                 <i className="bi bi-person fs-5 me-3"></i>

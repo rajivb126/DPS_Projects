@@ -68,6 +68,8 @@ import AddStudentCouncil from './admin/pages/AddStudentCouncil';
 import ViewStudentCouncil from './admin/pages/ViewStudentCouncil';
 import AddImage from './admin/pages/AddImage';
 import ViewImage from './admin/pages/ViewImage';
+import AddPopup from './admin/pages/AddPopup';
+import ViewPopup from './admin/pages/ViewPopup';
 
 const router = createBrowserRouter([
   {
@@ -300,6 +302,14 @@ const router = createBrowserRouter([
       {
         path: '/studentcouncil/view',
         element: <ViewStudentCouncil />
+      },
+      {
+        path: '/popup/add',
+        element: <AddPopup />
+      },
+      {
+        path: '/popup/view',
+        element: <ViewPopup />
       },
       {
         path: '/siteimage/add',

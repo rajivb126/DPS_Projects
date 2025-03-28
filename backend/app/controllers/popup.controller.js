@@ -3,13 +3,13 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads')
+        cb(null, 'uploads');
     },
     filename: function (req, file, cb) {
-        const uniqueFileName = (new Date().getTime())
-        cb(null, uniqueFileName + file.originalname)
+        const uniqueFileName = new Date().getTime();
+        cb(null, uniqueFileName + file.originalname);
     }
-})
+});
 
 const upload = multer({ storage: storage });
 
@@ -20,40 +20,25 @@ exports.addPopup = async (request, response) => {
             return response.status(400).json({ message: err.message });
         }
 
-        let startDate;
-        let endDate;
-
-        // Check if start_date is provided, otherwise set to current date
-        if (request.body.start_date) {
-            startDate = new Date(request.body.start_date);
-        } else {
-            startDate = new Date();
-        }
-
-        // Check if end_date is provided, otherwise set to next month
-        if (request.body.end_date) {
-            endDate = new Date(request.body.end_date);
-        } else {
-            endDate = new Date(startDate);
-            endDate.setMonth(endDate.getMonth() + 1); // Set end_date to one month after start_date
-        }
+        let startDate = request.body.start_date ? new Date(request.body.start_date) : new Date();
+        let endDate = request.body.end_date ? new Date(request.body.end_date) : new Date(startDate.setMonth(startDate.getMonth() + 1));
 
         let data = new Popup({
-            'popup_header': request.body.popup_header,
-            'popup_image': request.file.filename,
-            'popup_link': request.body.popup_link,
-            'start_date': startDate,
-            'end_date': endDate
+            popup_header: request.body.popup_header,
+            popup_image: request.file.filename,
+            popup_link: request.body.popup_link,
+            start_date: startDate,
+            end_date: endDate,
+            isVisible: request.body.isVisible || false  // Set default to false if not provided
         });
 
         try {
             const insertData = await data.save();
-            var arr = {
-                'status': true,
-                'message': 'Record Inserted Successfully!!',
-                'data': insertData
-            };
-            response.send(arr);
+            response.send({
+                status: true,
+                message: 'Record Inserted Successfully!',
+                data: insertData
+            });
         } catch (err) {
             response.status(500).json({ message: err.message });
         }
@@ -62,24 +47,16 @@ exports.addPopup = async (request, response) => {
 
 // View API for Popup
 exports.viewPopup = async (request, response) => {
-    const popupData = await Popup.find();
-
-    if (popupData.length != 0) {
-        var arr = {
-            'status': true,
-            'message': "Record Found Successfully",
-            'data': popupData
-        };
+    try {
+        const popupData = await Popup.find();
+        response.send({
+            status: popupData.length !== 0,
+            message: popupData.length ? "Record Found Successfully" : "No Record Found!",
+            data: popupData
+        });
+    } catch (error) {
+        response.status(500).json({ message: 'Server error', error });
     }
-    else {
-        var arr = {
-            'status': false,
-            'message': "No Record Found!!",
-            'data': popupData
-        };
-    }
-
-    response.send(arr);
 };
 
 // Update API For Popup
@@ -114,11 +91,35 @@ exports.updatePopup = async (request, response) => {
     });
 };
 
+// Toggle Popup Visibility API (ON/OFF)
+exports.togglePopupVisibility = async (request, response) => {
+    try {
+        const { id } = request.params;
+        const popup = await Popup.findById(id);
+
+        if (!popup) {
+            return response.status(404).json({ message: 'Popup not found!' });
+        }
+
+        popup.isVisible = !popup.isVisible;  // Toggle ON/OFF
+        await popup.save();
+
+        response.status(200).send({
+            status: true,
+            message: `Popup visibility updated to ${popup.isVisible ? "ON" : "OFF"}`,
+            data: popup
+        });
+    } catch (error) {
+        response.status(500).send({ message: 'Server error', error });
+    }
+};
+
 // Delete API For Popup
 exports.deletePopup = async (request, response) => {
     try {
         const { id } = request.params;
         const result = await Popup.deleteOne({ _id: id });
+
         if (result.deletedCount === 1) {
             response.status(200).send({ message: 'Record deleted successfully' });
         } else {

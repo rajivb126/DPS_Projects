@@ -32,13 +32,34 @@ import API_BASE_URL from '../config'
 function Home() {
     const [newsData, setNewsData] = useState([])
     const marqueeRef = useRef(null);
-    const [showModal, setShowModal] = useState(false);
+    const [popupData, setPopupData] = useState(null); // To store popup data
+    const [showModal, setShowModal] = useState(false); // Modal visibility state
+
     useEffect(() => {
-        setShowModal(true);
+        fetchPopup();
     }, []);
 
+    const fetchPopup = () => {
+        axios.get(`${API_BASE_URL}/api/popup/view`) // Assuming this is the endpoint to fetch popup data
+            .then(response => {
+                const currentPopup = response.data.data.find(popup => {
+                    const currentDate = new Date();
+                    const startDate = new Date(popup.start_date);
+                    const endDate = new Date(popup.end_date);
+                    return popup.isVisible && currentDate >= startDate && currentDate <= endDate;
+                });
+                if (currentPopup) {
+                    setPopupData(currentPopup); // Set the popup data if it meets the condition
+                    setShowModal(true); // Show the modal
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching popup data:', error);
+            });
+    };
+
     const handleClose = () => {
-        setShowModal(false);
+        setShowModal(false); // Close the modal
     };
 
     const handleMouseOver = () => {
@@ -159,7 +180,7 @@ function Home() {
         const year = date.getFullYear();
         return (
             <>
-                <div className="card-date" style={{padding:'10px'}}>
+                <div className="card-date" style={{ padding: '10px' }}>
                     <div className="day">{day}</div>
                     <div className="month">{month}</div>
                     <div className="year">{year}</div>
@@ -199,20 +220,25 @@ function Home() {
 
             <Header />
 
-            <div className="popup">
-                {/* Modal */}
-                {showModal && (
-                    <div className="modal show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
-                        <div className="modal-dialog modal-dialog-centered" role="document">
-                            <div className="modal-content">
-                                <div className="modal-body p-0 position-relative">
-                                    <button type="button" className="btn-close btn-close-white" onClick={handleClose} aria-label="Close"></button>
-                                    <img src={Popup} alt="" className="img-fluid" />
-                                </div>
-                                <div className="modal-footer justify-content-center">
-                                    <button type="button" className="btn btn-primary">
-                                        <Link to={'https://dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2025-26/Admissions/Adm%20for%20Nur-KG-I-25_26_with%20dates.html'} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>Click here to Proceed</Link>
-                                    </button>
+            <div className="home-page">
+                {/* Show Popup Modal */}
+                {showModal && popupData && (
+                    <div className="popup">
+                        {/* Modal */}
+                        <div className="modal show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+                            <div className="modal-dialog modal-dialog-centered" role="document">
+                                <div className="modal-content">
+                                    <div className="modal-body p-0 position-relative">
+                                        <button type="button" className="btn-close btn-close-white" onClick={handleClose} aria-label="Close"></button>
+                                        <img src={`${API_BASE_URL}/uploads/${popupData.popup_image}`} alt="Popup" className="img-fluid" />
+                                    </div>
+                                    <div className="modal-footer justify-content-center">
+                                        <button type="button" className="btn btn-primary">
+                                            <Link to={popupData.popup_link} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
+                                                Click here to Proceed
+                                            </Link>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -248,7 +274,7 @@ function Home() {
                                             </li>
                                         ))
                                     ) : (
-                                        <p className="text-white" style={{paddingTop:'5px'}}>No News Update available.</p>
+                                        <p className="text-white" style={{ paddingTop: '5px' }}>No News Update available.</p>
                                     )}
                                 </ul>
                             </marquee>
