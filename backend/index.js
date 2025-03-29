@@ -5,8 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 // MongoDB connection string
-// const uri = 'mongodb+srv://rajiv:TOS9f6DqcXCBjLsl@cluster0.zjjjg.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0';
-const uri = 'mongodb+srv://rajiv:mue26wpn2EEAao9L@cluster0.onm1m5r.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const uri = 'mongodb+srv://rajiv:TOS9f6DqcXCBjLsl@cluster0.zjjjg.mongodb.net/mernstack?retryWrites=true&w=majority&appName=Cluster0';
 
 // Connecting to MongoDB
 mongoose.connect(uri)
