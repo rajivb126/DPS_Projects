@@ -233,8 +233,7 @@ function Header() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a className="fw-bolder" href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2020-21/News/Bank_Link_Page.html"
-                                        target="_blank" style={{ fontSize: '14px', borderRight: '2px solid #fff', paddingRight: '10px' }}>PAY FEE</a>
+                                    <a className="fw-bolder" href="https://octopod.co.in/student/admission/35ee747ac5f346411f328ae87f426ff7" target="_blank" style={{ fontSize: '14px', borderRight: '2px solid #fff', paddingRight: '10px' }}>PAY FEE</a>
                                 </li>
                                 <li>
                                     <Link to={'https://octopod.co.in/'} className="fw-bolder" style={{ color: 'yellow', fontSize: '14px' }}>ERP LOGIN
