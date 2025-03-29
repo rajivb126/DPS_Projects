@@ -190,7 +190,7 @@ function Header() {
                                         </a>
                                     ))
                                 ) : (
-                                    <p className='text-white my-1'>No Marquee News available.</p>
+                                    <p></p>
                                 )}
                             </marquee>
                         </div>
