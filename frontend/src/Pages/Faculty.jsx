@@ -138,7 +138,7 @@ function Faculty() {
                                                     {seniorWing.map((teacher, index) => (
                                                         <div key={index} className="col-lg-2 col-md-3 col-6">
                                                             <div className="wings-contents">
-                                                                <img src={`${API_BASE_URL}/uploads/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
+                                                                <img src={`${API_BASE_URL}/${teacher.teacher_image}`} className="img-fluid" alt={teacher.name}
                                                                 />
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
