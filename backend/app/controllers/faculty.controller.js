@@ -1,49 +1,15 @@
 const faculty = require('../models/faculty');
 const multer = require('multer');
-const path = require('path');
-// const fs = require('fs');
-
-// const uploads = path.join(__dirname, 'uploads');
-
-// Ensure the uploads folder exists
-// if (!fs.existsSync(uploads)) {
-//     fs.mkdirSync(uploads, { recursive: true });
-// }
-
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, uploads); // Use absolute path
-//     },
-//     filename: function (req, file, cb) {
-//         const uniqueFileName = Date.now() + "_" + file.originalname.replace(/\s+/g, '_');
-//         cb(null, uniqueFileName);
-//     }
-// });
-
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, 'uploads')
-//     },
-//     filename: function (req, file, cb) {
-//         const uniqueFileName = (new Date().getTime())
-//         cb(null, uniqueFileName + file.originalname)
-//     }
-// })
-
-const uploadDir = path.join(__dirname, 'uploads');
-console.log("Uploading to:", uploadDir); // Debugging line
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, uploadDir);
+        cb(null, 'uploads')
     },
     filename: function (req, file, cb) {
-        const uniqueFileName = Date.now() + "_" + file.originalname.replace(/\s+/g, '_');
-        console.log("File will be saved as:", uniqueFileName); // Debugging line
-        cb(null, uniqueFileName);
+        const uniqueFileName = (new Date().getTime())
+        cb(null, uniqueFileName + file.originalname)
     }
-});
-
+})
 
 const upload = multer({ storage: storage });
 
