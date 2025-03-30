@@ -1,5 +1,6 @@
 const Achievement = require('../models/achievement');
 const path = require('path');
+const multer = require('multer');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
