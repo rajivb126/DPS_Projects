@@ -130,6 +130,8 @@ function ViewFaculty() {
         }
     };
 
+    console.log(`${API_BASE_URL}/uploads/${modalData?.teacher_image}`);
+
     return (
         <>
             <div className='container-fluid'>
