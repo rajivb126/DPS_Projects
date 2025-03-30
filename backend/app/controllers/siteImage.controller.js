@@ -1,15 +1,17 @@
 const siteImage = require('../models/siteImage');
 const multer = require('multer');
 const BASE_URL = 'https://dpsjod.in/backend/';
+const path = require('path');
 
-// Set up storage engine for Multer
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Directory to save images
+    destination: function (req, file, cb) {
+        const uploadPath = path.join(__dirname, '../../uploads'); // ✅ Corrected path
+        cb(null, uploadPath);
     },
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`); // Rename uploaded file
-    },
+    filename: function (req, file, cb) {
+        const uniqueFileName = Date.now() + '-' + file.originalname.replace(/\s+/g, '_'); // ✅ Replace spaces with "_"
+        cb(null, uniqueFileName);
+    }
 });
 
 const upload = multer({ storage });

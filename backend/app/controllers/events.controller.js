@@ -1,16 +1,18 @@
 const Event = require('../models/events');
 const multer = require('multer');
 const fs = require('fs')
+const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads')
+        const uploadPath = path.join(__dirname, '../../uploads'); // ✅ Corrected path
+        cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
-        const uniqueFileName = (new Date().getTime())
-        cb(null, uniqueFileName + file.originalname)
+        const uniqueFileName = Date.now() + '-' + file.originalname.replace(/\s+/g, '_'); // ✅ Replace spaces with "_"
+        cb(null, uniqueFileName);
     }
-})
+});
 
 const upload = multer({
     storage: storage
