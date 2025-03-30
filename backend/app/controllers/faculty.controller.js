@@ -1,6 +1,6 @@
 const faculty = require('../models/faculty');
 const multer = require('multer');
-// const path = require('path');
+const path = require('path');
 // const fs = require('fs');
 
 // const uploads = path.join(__dirname, 'uploads');
@@ -20,15 +20,30 @@ const multer = require('multer');
 //     }
 // });
 
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, 'uploads')
+//     },
+//     filename: function (req, file, cb) {
+//         const uniqueFileName = (new Date().getTime())
+//         cb(null, uniqueFileName + file.originalname)
+//     }
+// })
+
+const uploadDir = path.join(__dirname, 'uploads');
+console.log("Uploading to:", uploadDir); // Debugging line
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads')
+        cb(null, 'uploads');
     },
     filename: function (req, file, cb) {
-        const uniqueFileName = (new Date().getTime())
-        cb(null, uniqueFileName + file.originalname)
+        const uniqueFileName = Date.now() + "_" + file.originalname.replace(/\s+/g, '_');
+        console.log("File will be saved as:", uniqueFileName); // Debugging line
+        cb(null, uniqueFileName);
     }
-})
+});
+
 
 const upload = multer({ storage: storage });
 
