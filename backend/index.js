@@ -103,7 +103,7 @@ app.post('/event-login', (request, response) => {
 });
 
 
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 require('./app/routes/enquiry.route')(app);
 require('./app/routes/newsUpdate.route')(app);
