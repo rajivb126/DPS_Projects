@@ -1,6 +1,7 @@
 const express = require('express');
 const imageUpload = require('./app/library/multer');
 var cors = require('cors')
+const path = require('path')
 const app = express();
 const mongoose = require('mongoose');
 
@@ -103,7 +104,7 @@ app.post('/event-login', (request, response) => {
 });
 
 
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 require('./app/routes/enquiry.route')(app);
 require('./app/routes/newsUpdate.route')(app);
