@@ -2,6 +2,7 @@ const express = require('express');
 const imageUpload = require('./app/library/multer');
 var cors = require('cors')
 const app = express();
+const path = require('path');
 const mongoose = require('mongoose');
 
 // MongoDB connection string
