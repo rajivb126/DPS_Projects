@@ -35,7 +35,7 @@ console.log("Uploading to:", uploadDir); // Debugging line
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, upload);
+        cb(null, uploadDir);
     },
     filename: function (req, file, cb) {
         const uniqueFileName = Date.now() + "_" + file.originalname.replace(/\s+/g, '_');

@@ -221,8 +221,8 @@ function ViewFaculty() {
                                         <label htmlFor="teacher_image" className="form-label">Thumbnail Image</label>
                                         {mode === 'view' ? (
                                             modalData?.teacher_image ? (
-                                                <a href={`${API_BASE_URL}/upload/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
-                                                    <img src={`${API_BASE_URL}/upload/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
+                                                <a href={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} data-fancybox="gallery" data-caption="Thumbnail Image">
+                                                    <img src={`${API_BASE_URL}/uploads/${modalData.teacher_image}`} alt="Thumbnail" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
                                                 </a>
                                             ) : (
                                                 <p>No Teacher's Image available</p>
