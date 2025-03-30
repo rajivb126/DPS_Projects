@@ -26,7 +26,7 @@ function ViewAllFaculty() {
     const fetchData = () => {
         axios.get(`${API_BASE_URL}/api/faculty/view`)
             .then(response => {
-                const sortedData = response.data.data.sort((a, b) =>
+                const sortedData = response.data.data.sort((a, b) => 
                     a.teacher_name.localeCompare(b.teacher_name)
                 ); // Sort alphabetically by teacher_name
                 setData(sortedData);
@@ -36,7 +36,7 @@ function ViewAllFaculty() {
                 console.error('Error fetching data:', error);
             });
     };
-
+    
 
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
@@ -155,7 +155,7 @@ function ViewAllFaculty() {
                                     <th>Teacher Email</th>
                                     <th>Teacher Subject</th>
                                     <th>Teacher Wing</th>
-                                    <th style={{ width: '300px' }}>Teacher Image Path</th>
+                                    <th style={{width:'300px'}}>Teacher Image Path</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -167,14 +167,7 @@ function ViewAllFaculty() {
                                         <td className='text-center'>{item.teacher_email}</td>
                                         <td className='text-center'>{item.teacher_subject}</td>
                                         <td className='text-center'>{item.teacher_wing}</td>
-                                        <td>
-                                            {item.teacher_image ? (
-                                                <img src={`${API_BASE_URL}/uploads/${item.teacher_image}`} alt="Teacher" width="100" height="50" />
-                                            ) : (
-                                                'No Image'
-                                            )}
-                                        </td>
-
+                                        <td>{item.teacher_image}</td>
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
