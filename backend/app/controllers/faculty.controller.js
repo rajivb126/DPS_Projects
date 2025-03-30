@@ -1,6 +1,6 @@
 const faculty = require('../models/faculty');
 const multer = require('multer');
-
+const path = require('path');
 const fs = require('fs');
 
 const uploads = path.join(__dirname, 'uploads');
