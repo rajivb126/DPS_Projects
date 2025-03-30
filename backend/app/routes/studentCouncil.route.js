@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const studentImage = require('../controllers/studentCouncilImage');
+    const studentImage = require('../controllers/studentCouncilImage.controller');
     const router = require('express').Router();
 
     router.get('/view', studentImage.viewStudentImage);
