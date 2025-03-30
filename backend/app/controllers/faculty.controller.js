@@ -18,11 +18,17 @@ const upload = multer({ storage: storage });
 exports.addFaculty = async (request, response) => {
     upload.single('teacher_image')(request, response, async function (err) {
         if (err) {
+            console.error("Multer Error:", err.message);
             return response.status(400).json({ message: err.message });
         }
 
-        // Log the exact file path
-        console.log("Uploaded File Path:", request.file.path);
+        // Check if file was uploaded
+        if (!request.file) {
+            console.error("File not received in request!");
+            return response.status(400).json({ message: "No file uploaded!" });
+        }
+
+        console.log("Uploaded File:", request.file); // Log file details
 
         let data = new faculty({
             'teacher_name': request.body.teacher_name,
