@@ -2,7 +2,6 @@ const express = require('express');
 const imageUpload = require('./app/library/multer');
 var cors = require('cors')
 const app = express();
-const path = require('path');
 const mongoose = require('mongoose');
 
 // MongoDB connection string
@@ -104,7 +103,7 @@ app.post('/event-login', (request, response) => {
 });
 
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static('uploads'));
 
 require('./app/routes/enquiry.route')(app);
 require('./app/routes/newsUpdate.route')(app);
