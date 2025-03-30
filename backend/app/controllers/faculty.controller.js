@@ -21,27 +21,35 @@ exports.addFaculty = async (request, response) => {
             return response.status(400).json({ message: err.message });
         }
 
+        // Ensure a file was uploaded
+        if (!request.file) {
+            return response.status(400).json({ message: "No file uploaded!" });
+        }
+
+        // Construct the full image URL
+        const fileUrl = `${request.protocol}://${request.get('host')}/uploads/${request.file.filename}`;
+
         let data = new faculty({
             'teacher_name': request.body.teacher_name,
             'teacher_email': request.body.teacher_email,
             'teacher_subject': request.body.teacher_subject,
             'teacher_wing': request.body.teacher_wing,
-            'teacher_image': request.file.filename
+            'teacher_image': fileUrl // Save the full URL instead of just the filename
         });
 
         try {
             const insertData = await data.save();
-            var arr = {
+            response.json({
                 'status': true,
                 'message': 'Record Inserted Successfully!!',
                 'data': insertData
-            };
-            response.send(arr);
+            });
         } catch (err) {
             response.status(500).json({ message: err.message });
         }
     });
 };
+
 
 // View API for Faculty
 exports.filterFaculty = async (request, response) => {
