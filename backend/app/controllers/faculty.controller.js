@@ -1,24 +1,34 @@
 const faculty = require('../models/faculty');
 const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
+// const path = require('path');
+// const fs = require('fs');
 
-const uploads = path.join(__dirname, 'uploads');
+// const uploads = path.join(__dirname, 'uploads');
 
 // Ensure the uploads folder exists
-if (!fs.existsSync(uploads)) {
-    fs.mkdirSync(uploads, { recursive: true });
-}
+// if (!fs.existsSync(uploads)) {
+//     fs.mkdirSync(uploads, { recursive: true });
+// }
+
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, uploads); // Use absolute path
+//     },
+//     filename: function (req, file, cb) {
+//         const uniqueFileName = Date.now() + "_" + file.originalname.replace(/\s+/g, '_');
+//         cb(null, uniqueFileName);
+//     }
+// });
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, uploads); // Use absolute path
+        cb(null, 'uploads')
     },
     filename: function (req, file, cb) {
-        const uniqueFileName = Date.now() + "_" + file.originalname.replace(/\s+/g, '_');
-        cb(null, uniqueFileName);
+        const uniqueFileName = (new Date().getTime())
+        cb(null, uniqueFileName + file.originalname)
     }
-});
+})
 
 const upload = multer({ storage: storage });
 
