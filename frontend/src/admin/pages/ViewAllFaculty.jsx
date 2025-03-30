@@ -166,6 +166,7 @@ function ViewAllFaculty() {
                                         <td className='text-center'>{item.teacher_name}</td>
                                         <td className='text-center'>{item.teacher_email}</td>
                                         <td className='text-center'>{item.teacher_subject}</td>
+                                        <td className='text-center'>{item.teacher_wing}</td>
                                         <td>
                                             {item.teacher_image ? (
                                                 <img src={`${API_BASE_URL}/uploads/${item.teacher_image}`} alt="Teacher" width="100" height="50" />
@@ -174,7 +175,6 @@ function ViewAllFaculty() {
                                             )}
                                         </td>
 
-                                        <td>{item.teacher_image}</td>
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
