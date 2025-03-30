@@ -94,11 +94,10 @@ function ViewFaculty() {
     }, []);
 
     const handleViewClick = (item) => {
-        console.log(`${API_BASE_URL}/uploads/${item.teacher_image}`); // Debugging image path
         setModalData(item);
-        setMode('view');
+        setMode('view'); // Set mode to 'view' for viewing
         setShowModal(true);
-    };    
+    };
 
     const handleEditClick = (item) => {
         setModalData(item);
