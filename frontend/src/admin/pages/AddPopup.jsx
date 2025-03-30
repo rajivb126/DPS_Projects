@@ -39,7 +39,7 @@ function AddPopup() {
             setPopupImage(null);
             setIsVisible(false);
         } catch (error) {
-            setSuccessMessage("Error adding popup");
+            setErrorMessage("Error adding popup");
         }
     };
 
