@@ -21,6 +21,9 @@ exports.addFaculty = async (request, response) => {
             return response.status(400).json({ message: err.message });
         }
 
+        // Log the exact file path
+        console.log("Uploaded File Path:", request.file.path);
+
         let data = new faculty({
             'teacher_name': request.body.teacher_name,
             'teacher_email': request.body.teacher_email,
