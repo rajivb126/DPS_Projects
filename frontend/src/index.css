@@ -370,11 +370,15 @@ footer .footer .footer-image {
   font-size: 16px;
 }
 
-.footer .quick-links span {
+.footer .quick-links {
+  list-style: none;
+}
+
+.footer .quick-links li {
   padding-right: 5px;
 }
 
-.footer .quick-links span a {
+.footer .quick-links li a {
   text-decoration: none;
   color: white;
 }
@@ -642,6 +646,39 @@ footer .footer .footer-image {
 .fee-structure table thead tr th h6 {
   color: #fff;
   font-weight: 700;
+  font-size: 20px;
+}
+
+.fee-structure table tbody tr td {
+  font-size: 18px;
+}
+
+.subject-combination h3 {
+  color: orange;
+  font-weight: bold;
+}
+
+.subject-combination h4 {
+  color: orange;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+.subject-combination h6 {
+  color: darkblue;
+  font-weight: 600;
+}
+
+.subject-combination table thead tr th {
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+}
+
+.subject-combination table tbody tr td {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .school-rules-heading h3 {
@@ -1815,6 +1852,22 @@ thead tr th {
 
   .student_council_table table tbody tr td.house-name {
     padding: 5px;
+  }
+
+  .fee-structure table thead tr th h6 {
+    font-size: 16px;
+  }
+  
+  .fee-structure table tbody tr td {
+    font-size: 14px;
+  }
+
+  .subject-combination table thead tr th {
+    font-size: 16px;
+  }
+  
+  .subject-combination table tbody tr td {
+    font-size: 14px;
   }
 
 }

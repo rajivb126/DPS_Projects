@@ -70,6 +70,7 @@ import AddImage from './admin/pages/AddImage';
 import ViewImage from './admin/pages/ViewImage';
 import AddPopup from './admin/pages/AddPopup';
 import ViewPopup from './admin/pages/ViewPopup';
+import SubjectCombination from './Pages/SubjectCombination';
 
 const router = createBrowserRouter([
   {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
   {
     path: 'fee-structure',
     element: <FeeStructure />,
+  },
+  {
+    path: 'subject-combination',
+    element: <SubjectCombination />,
   },
   {
     path: 'school-rules',

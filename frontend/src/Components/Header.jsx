@@ -301,6 +301,7 @@ function Header() {
                                         <li><Link to={'/exam-policy'} className="dropdown-item">Exam Policy</Link></li>
                                         <li><Link to={'/hostel-policy'} className="dropdown-item">Hostel Policy</Link></li>
                                         <li><Link to={'/fee-structure'} className="dropdown-item">Fee Structure</Link></li>
+                                        <li><Link to={'subject-combination'} className='dropdown-item'>Subject Combination for Class XI</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -403,8 +404,7 @@ function Header() {
                                                     <div style={{ fontSize: '14px' }}>
                                                         <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Address:</strong> Bypass Road Pal, Jodhpur, Rajasthan, India</p>
                                                         <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Pincode:</strong> 342014</p>
-                                                        <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Phone:</strong> 0291-2766886</p>
-                                                        <p><strong>Phone:</strong> 2946886</p>
+                                                        <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Phone:</strong><a href='tel:0291-2766886' style={{textDecoration:'none', color:'black'}}> 0291-2766886, </a><a href='tel:0291-2766887' style={{textDecoration:'none', color:'black'}}> 0291-2766887</a></p>
                                                     </div>
                                                     <div className="text-start me-2">
                                                         <a href="contact-us.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="">
@@ -478,6 +478,7 @@ function Header() {
                                         <li><Link to={'/exam-policy'} className="dropdown-item">Exam Policy</Link></li>
                                         <li><Link to={'/hostel-policy'} className="dropdown-item">Hostel Policy</Link></li>
                                         <li><Link to={'/fee-structure'} className="dropdown-item">Fee Structure</Link></li>
+                                        <li><Link to={'subject-combination'} className='dropdown-item'>Subject Combination for Class XI</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
