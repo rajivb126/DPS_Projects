@@ -20,8 +20,7 @@ function SubjectCombination() {
                     <div className='row'>
                         <div className="col-12 pt-3 text-center">
                             <div>
-                                <h3>Subject Combination<br />
-                                    Class XI - Session 2025 - 2026
+                                <h3>Session 2025 - 2026
                                 </h3>
                             </div>
                         </div>
