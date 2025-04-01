@@ -147,7 +147,7 @@ function ViewFile() {
                             <thead>
                                 <tr>
                                     <th style={{ width: '80px' }}>S. NO.</th>
-                                    <th>Site Image File</th>
+                                    <th>Files</th>
                                     <th style={{ width: '200px' }}>Action</th>
                                 </tr>
                             </thead>

@@ -558,7 +558,7 @@ function Header() {
                                     </a>
                                 </li>
                                 <li className="nav-item p-0">
-                                    <a className="nav-link fw-bolder" href="mailto:info@dpsjodhpur.in">
+                                    <a className="nav-link fw-bolder" href="mailto:info@dpsjodhpur.in" style={{textTransform:'lowercase'}}>
                                         <FontAwesomeIcon icon={faEnvelope} className='pe-2' />info@dpsjodhpur.in
                                     </a>
                                 </li>
@@ -574,7 +574,7 @@ function Header() {
                                 </li>
                                 <li className="nav-item my-2">
                                     <button type="button" style={{ border: '0', backgroundColor: '#002147', padding: '10px' }}>
-                                        <a className="fw-bolder" href="#" style={{ color: 'yellow', fontSize: '14px', textDecoration: 'none' }} >ERP LOGIN
+                                        <a className="fw-bolder" href="https://octopod.co.in/" style={{ color: 'yellow', fontSize: '14px', textDecoration: 'none' }} >ERP LOGIN
                                             <i className="fa fa-sign-in" aria-hidden="true" style={{ color: 'yellow', fontSize: '16px' }}></i>
                                         </a>
                                     </button>

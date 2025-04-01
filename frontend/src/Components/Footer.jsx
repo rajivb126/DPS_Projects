@@ -9,7 +9,10 @@ function Footer() {
         const phoneNumber = '7737880141';
         const message = encodeURIComponent('Hello!');
 
+        // Construct the WhatsApp API URL
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+        // Open the WhatsApp URL in a new window
         window.open(whatsappUrl);
     };
 

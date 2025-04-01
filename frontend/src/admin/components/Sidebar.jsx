@@ -323,7 +323,7 @@ function Sidebar() {
                             {/* Site File Dropdown */}
                             <div className='list-group-item' onClick={() => toggleDropdown('websitefile')}>
                                 <i className="bi bi-person fs-5 me-3"></i>
-                                <span>Website File</span>
+                                <span>File</span>
                                 <i className={`bi ${activeDropdown === 'websitefile' ? 'bi-caret-up' : 'bi-caret-down'} ms-2`}></i>
                             </div>
                             {activeDropdown === 'websitefile' && (
