@@ -16,7 +16,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Image upload endpoint
 exports.addSiteImage = async (request, response) => {
     upload.single('site_image_file')(request, response, async function (err) {
         if (err) {
@@ -28,12 +27,23 @@ exports.addSiteImage = async (request, response) => {
             return response.status(400).json({ message: 'No file uploaded' });
         }
 
+        // Extract original file name (without timestamp)
+        const originalFileName = request.file.originalname.replace(/\s+/g, '_');
+
         // Construct the full file path
         const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
 
+        // Check if the same file already exists in the database
+        const existingFile = await siteImage.findOne({ original_filename: originalFileName });
+
+        if (existingFile) {
+            return response.status(400).json({ message: 'File with this name already exists!' });
+        }
+
         // Create new document in the database
         let data = new siteImage({
-            site_image_file: filePath, // Save full path instead of just filename
+            site_image_file: filePath,  // Store full path
+            original_filename: originalFileName,  // Store original filename
         });
 
         try {
@@ -48,6 +58,7 @@ exports.addSiteImage = async (request, response) => {
         }
     });
 };
+
 
 // View API for Student Council Image
 exports.viewSiteImage = async (request, response) => {
@@ -72,6 +83,8 @@ exports.viewSiteImage = async (request, response) => {
 };
 
 // Update API for News
+// Update API for Site Image
+// Update API for Site Image
 exports.updateSiteImage = async (request, response) => {
     upload.single('site_image_file')(request, response, async function (err) {
         if (err) {
@@ -82,9 +95,20 @@ exports.updateSiteImage = async (request, response) => {
             const { id } = request.params;
             const updateData = { ...request.body }; // Get the updated fields from the body
 
-            // If a file was uploaded, update the `site_image_file` field with its path
+            // If a file was uploaded, update the `site_image_file` field with its full path
             if (request.file) {
-                updateData.site_image_file = request.file.filename;
+                const originalFileName = request.file.originalname.replace(/\s+/g, '_');
+                const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
+
+                // Check if the same original filename already exists
+                const existingFile = await siteImage.findOne({ original_filename: originalFileName });
+
+                if (existingFile) {
+                    return response.status(400).json({ message: 'File with this name already exists!' });
+                }
+
+                updateData.site_image_file = filePath;
+                updateData.original_filename = originalFileName;
             }
 
             const result = await siteImage.findOneAndUpdate(
