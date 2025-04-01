@@ -194,7 +194,7 @@ function ViewFile() {
                                                 {modalData?.website_file ? (
                                                     <div className="text-center">
                                                         <a href={`${modalData.website_file}`} data-fancybox="gallery" data-caption="Site Image">
-                                                            <img src={`${modalData.website_file}`} alt="siteImage" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
+                                                            <i className="bi bi-file-pdf fs-1 text-black"></i>
                                                         </a>
                                                         <button type="button" className="btn btn-secondary mt-2" onClick={copyToClipboard}>
                                                             <i className='bi bi-copy'></i>

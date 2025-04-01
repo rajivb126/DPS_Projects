@@ -41,7 +41,7 @@ function AddFile() {
             <div className='container'>
                 <div className='row mx-auto'>
                     <div className='col-12'>
-                        <h3 className='text-center text-dark pt-3'>Add Site Image Details</h3>
+                        <h3 className='text-center text-dark pt-3'>Add Files Details</h3>
                         <div className='document-form-1'>
                             <form onSubmit={handleSubmit}>
                                 <div className="row align-items-center">

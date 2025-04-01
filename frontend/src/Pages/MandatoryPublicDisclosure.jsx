@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Footer from "../Components/Footer"
 import Header from "../Components/Header"
 import MPD from '../images/MPD/Affiliation Letter.pdf'
@@ -97,7 +98,7 @@ function MandatoryPublicDisclosure() {
                                         EXTENTION
                                         OF AFFILIATION, IF ANY</td>
                                     <td align="Center">
-                                        <a href={MPD}
+                                        <a href='https://dpsjodhpur.in/backend/uploads/Affiliation_Letter.pdf'
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -106,7 +107,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="left">COPIES OF SOCIETIES/TRUST/COMPANY REGISTRATION/RENEWAL
                                         CERTIFICATE, AS APPLICABLE</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/Licence%20Agreement.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/Licence_Agreement.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -116,7 +117,7 @@ function MandatoryPublicDisclosure() {
                                         APPLICABLE BY
                                         THE STATE GOVT./UT</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/NOC%20DEO.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/NOC_DEO.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -126,7 +127,7 @@ function MandatoryPublicDisclosure() {
                                         ITS
                                         RENEWAL, IF APPLICABLE</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/RTE.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/RTE.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -136,7 +137,7 @@ function MandatoryPublicDisclosure() {
                                         NATIONAL
                                         BUILDING CODE</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/BUILDING.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/BUILDING.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -146,7 +147,7 @@ function MandatoryPublicDisclosure() {
                                         COMPETENT
                                         AUTHORITY</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/FIRE%20and%20SAFETY.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/FIRE_and_SAFETY.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -157,7 +158,7 @@ function MandatoryPublicDisclosure() {
                                         BY
                                         SCHOOL</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.lin/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/DEO%20FORM.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/DEO_FORM.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -166,7 +167,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="left">COPIES OF VALID WATER, HEALTH AND SANITATION CERTIFICATES
                                     </td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/WATER.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/WATER.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -192,7 +193,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">1.</td>
                                     <td align="left">FEE STRUCTURE OF THE SCHOOL</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/FEE%20STRUCUTRE.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/FEE_STRUCUTRE.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -200,7 +201,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">2.</td>
                                     <td align="left">ANNUAL ACADEMIC CALENDAR</td>
                                     <td align="Center">
-                                        <a href="https://dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/School_calendar.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/School_calendar.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -208,14 +209,14 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">3.</td>
                                     <td align="left">LIST OF SCHOOL MANAGEMENT COMMITTEE (SMC)</td>
                                     <td align="Center">
-                                        <a href="#smc">View</a>
+                                        <Link to={'/school-management'} target="_blank">View</Link>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center">4.</td>
                                     <td align="left">LIST OF PARENTS TEACHERS ASSOCIATION (PTA) MEMBERS</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/PTA.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/PTA.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -512,6 +513,8 @@ function MandatoryPublicDisclosure() {
                             </tbody>
                         </table>
                     </div>
+
+                    <h5 className="text-center fs-2 pt-4">Download - <a href="https://dpsjodhpur.in/backend/uploads/Mandatory_Disclosure_Details___SARAS_5.0.pdf">Mandatory_Disclosure_Details _ SARAS 5.0</a></h5>
                 </div>
             </section >
 
