@@ -57,15 +57,15 @@ function MandatoryPublicDisclosure() {
                                         <td align="center">5.</td>
                                         <td align="left">Principal Name &<br />
                                             Qualification</td>
-                                        <td align="left">MR. BIKRAM SINGH YADAV<br />
-                                            B. ED., M. SC (PHYSICS),<br />
-                                            CERTICIATE COURSE OF INTERATIONAL SCHOOL LEADERSHIP, PTC, LONDON</td>
+                                        <td align="left">MS ABHILASHA SHAW<br />
+                                            B. ED., M. A. (ENGLISH),<br />
+                                            </td>
                                     </tr>
                                     <tr>
                                         <td align="center">6.</td>
                                         <td align="left">School Email ID</td>
-                                        <td align="left">dpsjodhpur@rediffmail.com<br />
-                                            info@dpsjodhpur.in</td>
+                                        <td align="left">info@dpsjodhpur.in</td>
+                                           
                                     </tr>
                                     <tr>
                                         <td align="center">7.</td>
@@ -96,7 +96,7 @@ function MandatoryPublicDisclosure() {
                                         EXTENTION
                                         OF AFFILIATION, IF ANY</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/Affiliation%20Letter.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/Affiliation%20Letter.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -105,7 +105,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="left">COPIES OF SOCIETIES/TRUST/COMPANY REGISTRATION/RENEWAL
                                         CERTIFICATE, AS APPLICABLE</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/Licence%20Agreement.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/Licence%20Agreement.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -115,7 +115,7 @@ function MandatoryPublicDisclosure() {
                                         APPLICABLE BY
                                         THE STATE GOVT./UT</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/NOC%20DEO.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/NOC%20DEO.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -125,7 +125,7 @@ function MandatoryPublicDisclosure() {
                                         ITS
                                         RENEWAL, IF APPLICABLE</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/RTE.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/RTE.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -135,7 +135,7 @@ function MandatoryPublicDisclosure() {
                                         NATIONAL
                                         BUILDING CODE</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/BUILDING.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/BUILDING.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -145,7 +145,7 @@ function MandatoryPublicDisclosure() {
                                         COMPETENT
                                         AUTHORITY</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/FIRE%20and%20SAFETY.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/FIRE%20and%20SAFETY.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -156,7 +156,7 @@ function MandatoryPublicDisclosure() {
                                         BY
                                         SCHOOL</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/DEO%20FORM.pdf"
+                                        <a href="https://www.dpsjod.lin/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/DEO%20FORM.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -165,7 +165,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="left">COPIES OF VALID WATER, HEALTH AND SANITATION CERTIFICATES
                                     </td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/WATER.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/WATER.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -191,7 +191,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">1.</td>
                                     <td align="left">FEE STRUCTURE OF THE SCHOOL</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/FEE%20STRUCUTRE.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/FEE%20STRUCUTRE.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -199,7 +199,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">2.</td>
                                     <td align="left">ANNUAL ACADEMIC CALENDAR</td>
                                     <td align="Center">
-                                        <a href="https://dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/School_calendar.pdf"
+                                        <a href="https://dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/School_calendar.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -214,7 +214,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">4.</td>
                                     <td align="left">LIST OF PARENTS TEACHERS ASSOCIATION (PTA) MEMBERS</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjodhpur.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/PTA.pdf"
+                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/PTA.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -319,21 +319,26 @@ function MandatoryPublicDisclosure() {
                             <tbody style={{ fontWeight: '600' }}>
                                 <tr>
                                     <td align="center">1.</td>
-                                    <td align="left">DIRECTOR & PRINCIPAL</td>
+                                    <td align="left">DIRECTOR</td>
                                     <td align="center">1</td>
                                 </tr>
                                 <tr>
                                     <td align="center">2.</td>
-                                    <td align="left">VICE PRINCIPAL</td>
+                                    <td align="left">PRINCIPAL</td>
                                     <td align="center">1</td>
                                 </tr>
                                 <tr>
                                     <td align="center">3.</td>
-                                    <td align="left">HM & Class I/Cs</td>
-                                    <td align="center">5</td>
+                                    <td align="left">VICE PRINCIPAL</td>
+                                    <td align="center">1</td>
                                 </tr>
                                 <tr>
                                     <td align="center">4.</td>
+                                    <td align="left">HM & Class I/Cs</td>
+                                    <td align="center">4</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">5.</td>
                                     <td align="left">NO. OF TEACHERS</td>
                                     <td align="center"></td>
                                 </tr>
