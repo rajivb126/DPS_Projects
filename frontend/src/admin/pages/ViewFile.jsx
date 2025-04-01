@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Fancybox } from '@fancyapps/ui';
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
-import API_BASE_URL from '../../config'
+import React from 'react'
 
-function ViewImage() {
+function ViewFile() {
     const [data, setData] = useState([]);
     const [modalData, setModalData] = useState(null);
     const [showModal, setShowModal] = useState(false);
@@ -15,7 +11,7 @@ function ViewImage() {
     }, []);
 
     const fetchData = () => {
-        axios.get(`${API_BASE_URL}/api/site-image/view`)
+        axios.get(`${API_BASE_URL}/api/website-file/view`)
             .then(response => {
                 setData(response.data.data.reverse());
             })
@@ -27,7 +23,7 @@ function ViewImage() {
     const deleteDocument = (id) => {
         const confirm = window.confirm("Would you like to delete");
         if (confirm) {
-            axios.delete(`${API_BASE_URL}/api/site-image/delete/${id}`)
+            axios.delete(`${API_BASE_URL}/api/website-file/delete/${id}`)
                 .then(response => {
                     setData(data.filter(doc => doc._id !== id));
                     console.log(response);
@@ -36,17 +32,17 @@ function ViewImage() {
     };
 
     const updateDocument = (updatedData) => {
-        const { _id, site_image_file_file, ...rest } = updatedData;
+        const { _id, website_file_file, ...rest } = updatedData;
 
-        if (site_image_file_file) {
+        if (website_file_file) {
             const formData = new FormData();
-            formData.append("site_image_file", site_image_file_file);
+            formData.append("website_file", website_file_file);
 
             Object.entries(rest).forEach(([key, value]) => {
                 formData.append(key, value);
             });
 
-            axios.put(`${API_BASE_URL}/api/site-image/update/${_id}`, formData, {
+            axios.put(`${API_BASE_URL}/api/website-file/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
                 .then(response => {
@@ -57,7 +53,7 @@ function ViewImage() {
                     console.error('Error updating document:', error);
                 });
         } else {
-            axios.put(`${API_BASE_URL}/api/site-image/update/${_id}`, rest)
+            axios.put(`${API_BASE_URL}/api/website-file/update/${_id}`, rest)
                 .then(response => {
                     setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
                     handleCloseModal();
@@ -69,29 +65,29 @@ function ViewImage() {
     };
 
     useEffect(() => {
-            // Bind Fancybox with desired settings and event listeners
-            Fancybox.bind('[data-fancybox="gallery"]', {
-                buttons: [
-                    "slideShow",
-                    "thumbs",
-                    "zoom",
-                    "fullScreen",
-                    "download",
-                    "share",
-                    "close"
-                ],
-                loop: false,
-                protect: true,
-                on: {
-                    ready: () => setShowModal(false)  // Close modal when Fancybox opens
-                }
-            });
-    
-            // Clean up Fancybox bindings when the component unmounts
-            return () => {
-                Fancybox.destroy();
-            };
-        }, []);
+        // Bind Fancybox with desired settings and event listeners
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            buttons: [
+                "slideShow",
+                "thumbs",
+                "zoom",
+                "fullScreen",
+                "download",
+                "share",
+                "close"
+            ],
+            loop: false,
+            protect: true,
+            on: {
+                ready: () => setShowModal(false)  // Close modal when Fancybox opens
+            }
+        });
+
+        // Clean up Fancybox bindings when the component unmounts
+        return () => {
+            Fancybox.destroy();
+        };
+    }, []);
 
     const handleViewClick = (item) => {
         setModalData(item);
@@ -117,10 +113,10 @@ function ViewImage() {
     const handleInputChange = (e) => {
         const { name, value, files } = e.target;
 
-        if (name === "site_image_file" && files?.length > 0) {
+        if (name === "website_file" && files?.length > 0) {
             setModalData(prevData => ({
                 ...prevData,
-                site_image_file_file: files[0]
+                website_file_file: files[0]
             }));
         } else {
             setModalData(prevData => ({
@@ -131,8 +127,8 @@ function ViewImage() {
     };
 
     const copyToClipboard = () => {
-        if (modalData?.site_image_file) {
-            navigator.clipboard.writeText(modalData.site_image_file);
+        if (modalData?.website_file) {
+            navigator.clipboard.writeText(modalData.website_file);
             alert('Image URL copied to clipboard!');
         }
     };
@@ -142,7 +138,7 @@ function ViewImage() {
             <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
-                        <h3 className='text-center text-dark pb-3'>View Site Image Data</h3>
+                        <h3 className='text-center text-dark pb-3'>View Website File Data</h3>
                         <table className='table table-striped table-bordered'>
                             <thead>
                                 <tr>
@@ -155,7 +151,7 @@ function ViewImage() {
                                 {data.map((item, index) => (
                                     <tr key={item._id}>
                                         <td className='text-center'>{index + 1}.</td>
-                                        <td>{item.site_image_file}</td>
+                                        <td>{item.website_file}</td>
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
@@ -182,19 +178,19 @@ function ViewImage() {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">{mode === 'view' ? 'View Site Images Details' : 'Edit News Details'}</h5>
+                                <h5 className="modal-title">{mode === 'view' ? 'View Website File Details' : 'Edit News Details'}</h5>
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleCloseModal}></button>
                             </div>
                             <form onSubmit={handleFormSubmit}>
                                 <div className="modal-body">
                                     <div className="form-group mb-3">
-                                        <label htmlFor="site_image_file" className="form-label">News Link Path</label>
+                                        <label htmlFor="website_file" className="form-label">WeBsite File Link Path</label>
                                         {mode === 'view' && (
                                             <div>
-                                                {modalData?.site_image_file ? (
+                                                {modalData?.website_file ? (
                                                     <div className="text-center">
-                                                        <a href={`${modalData.site_image_file}`} data-fancybox="gallery" data-caption="Site Image">
-                                                            <img src={`${modalData.site_image_file}`} alt="siteImage" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
+                                                        <a href={`${modalData.website_file}`} data-fancybox="gallery" data-caption="Site Image">
+                                                            <img src={`${modalData.website_file}`} alt="siteImage" className="img-fluid" style={{ maxWidth: '30%', height: 'auto' }} />
                                                         </a>
                                                         <button type="button" className="btn btn-secondary mt-2" onClick={copyToClipboard}>
                                                             <i className='bi bi-copy'></i>
@@ -207,7 +203,7 @@ function ViewImage() {
                                             </div>
                                         )}
                                         {mode === 'edit' && (
-                                            <input type="file" className="form-control" id="site_image_file" name="site_image_file" onChange={handleInputChange}/>
+                                            <input type="file" className="form-control" id="website_file" name="website_file" onChange={handleInputChange} />
                                         )}
                                     </div>
 
@@ -226,4 +222,4 @@ function ViewImage() {
     )
 }
 
-export default ViewImage
+export default ViewFile

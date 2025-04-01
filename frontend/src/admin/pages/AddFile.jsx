@@ -1,25 +1,23 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import API_BASE_URL from '../../config'
+import React from 'react'
 
-function AddImage() {
-    const [siteImageLink, setSiteImageLink] = useState('');
+function AddFile() {
+    const [websiteFileLink, setWebsiteFileLink] = useState('');
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('site_image_file', siteImageLink);
+        formData.append('website_file', websiteFileLink);
 
         try {
             const response = await axios.post(`${API_BASE_URL}/api/site-image/add`, formData);
             const newSiteImage = response.data;
-            console.log('New site image:', newSiteImage);
-            setSiteImageLink('');
+            console.log('New website file:', newSiteImage);
+            setWebsiteFileLink('');
             document.getElementById("fileInput").value = "";
 
-            setSuccessMessage('Site Image added successfully!');
+            setSuccessMessage('website File added successfully!');
 
             // Clear the success message after 3 seconds
             setTimeout(() => {
@@ -35,6 +33,7 @@ function AddImage() {
             }, 3000);
         }
     };
+
     return (
         <>
             <div className='container'>
@@ -48,7 +47,7 @@ function AddImage() {
                                         <label htmlFor="fileInput">Site Image File Upload</label>
                                     </div>
                                     <div className='col-8 mb-4'>
-                                        <input type="file" id="fileInput" onChange={(e) => setSiteImageLink(e.target.files[0])} />
+                                        <input type="file" id="fileInput" onChange={(e) => setWebsiteFileLink(e.target.files[0])} />
                                     </div>
 
                                     <div className="col-12 text-center mt-5">
@@ -67,4 +66,4 @@ function AddImage() {
     )
 }
 
-export default AddImage
+export default AddFile

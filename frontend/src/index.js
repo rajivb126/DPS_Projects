@@ -71,6 +71,8 @@ import ViewImage from './admin/pages/ViewImage';
 import AddPopup from './admin/pages/AddPopup';
 import ViewPopup from './admin/pages/ViewPopup';
 import SubjectCombination from './Pages/SubjectCombination';
+import AddFile from './admin/pages/AddFile';
+import ViewFile from './admin/pages/ViewFile';
 
 const router = createBrowserRouter([
   {
@@ -323,6 +325,14 @@ const router = createBrowserRouter([
       {
         path: '/siteimage/view',
         element: <ViewImage />
+      },
+      {
+        path: '/websitefile/add',
+        element: <AddFile />
+      },
+      {
+        path: '/websitefile/view',
+        element: <ViewFile />
       },
     ]
   }

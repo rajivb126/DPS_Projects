@@ -28,7 +28,7 @@ function AddAchievement() {
             setEndDate(new Date(new Date().setMonth(new Date().getMonth() + 1)).toISOString().substring(0, 10)); // Reset end date
             document.getElementById("fileInput").value = "";
 
-            setSuccessMessage('News added successfully!');
+            setSuccessMessage('Achievement added successfully!');
 
             // Clear the success message after 3 seconds
             setTimeout(() => {

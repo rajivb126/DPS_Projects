@@ -121,6 +121,8 @@ require('./app/routes/studentCouncil.route')(app);
 require('./app/routes/popup.route')(app);
 require('./app/routes/infrastructure.route')(app);
 require('./app/routes/siteImage.route')(app);
+require('./app/routes/websiteFile.route')(app);
+
 
 app.use((request, response, next) => {
     var arr = {

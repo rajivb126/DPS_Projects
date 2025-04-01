@@ -28,7 +28,7 @@ function AddNewsletter() {
             setEndDate(new Date(new Date().setMonth(new Date().getMonth() + 1)).toISOString().substring(0, 10)); // Reset end date
             document.getElementById("fileInput").value = "";
 
-            setSuccessMessage('News added successfully!');
+            setSuccessMessage('Newsletter added successfully!');
 
             // Clear the success message after 3 seconds
             setTimeout(() => {
@@ -49,7 +49,7 @@ function AddNewsletter() {
             <div className='container'>
                 <div className='row mx-auto'>
                     <div className='col-12'>
-                        <h3 className='text-center'>Add News</h3>
+                        <h3 className='text-center'>Add Newsletter</h3>
                         <div className='document-form-1'>
                             <form onSubmit={handleSubmit}>
                                 <div className="row align-items-center">

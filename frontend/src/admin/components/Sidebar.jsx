@@ -319,6 +319,23 @@ function Sidebar() {
                                     </Link>
                                 </div>
                             )}
+
+                            {/* Site File Dropdown */}
+                            <div className='list-group-item' onClick={() => toggleDropdown('websitefile')}>
+                                <i className="bi bi-person fs-5 me-3"></i>
+                                <span>Website File</span>
+                                <i className={`bi ${activeDropdown === 'websitefile' ? 'bi-caret-up' : 'bi-caret-down'} ms-2`}></i>
+                            </div>
+                            {activeDropdown === 'websitefile' && (
+                                <div className='ms-5'>
+                                    <Link to={'websitefile/add'} className='list-group-item py-2'>
+                                        <span>Add</span>
+                                    </Link>
+                                    <Link to={'websitefile/view'} className='list-group-item py-2'>
+                                        <span>View</span>
+                                    </Link>
+                                </div>
+                            )}
                         </>
                     )}
 

@@ -69,7 +69,7 @@ function ViewAlumni() {
       <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
-                        <h3 className='text-center pb-3'>Alumni Data</h3>
+                        <h3 className='text-center pb-3'>View Alumni Data</h3>
                         <table className='table table-striped table-bordered'>
                             <thead>
                                 <tr>

@@ -30,7 +30,7 @@ function AddFaculty() {
             setTeacherWing('');
             document.getElementById("fileInput").value = "";
 
-            setSuccessMessage('News added successfully!');
+            setSuccessMessage('Faculty added successfully!');
 
             // Clear the success message after 3 seconds
             setTimeout(() => {
