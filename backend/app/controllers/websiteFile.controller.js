@@ -124,13 +124,13 @@ exports.updateWebsiteFile = async (request, response) => {
                 const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
 
                 // ✅ Check if another entry already has this file
-                const duplicateFile = await websiteFile.findOne({ website_file: filePath });
+                const duplicateFile = await websiteFile.findOne({ website_file_file: filePath });
 
                 if (duplicateFile && duplicateFile._id.toString() !== id) {
                     return response.status(400).json({ message: 'File already exists!' });
                 }
 
-                updateData.website_file = filePath; // Update file path
+                updateData.website_file_file = filePath; // Update file path
             }
 
             // ✅ Update the database entry
