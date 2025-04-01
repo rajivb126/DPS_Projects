@@ -181,7 +181,7 @@ function AddEvent() {
 
                                 {/* Event Event Multiple Image */}
                                 <div className="col-5 mb-4">
-                                    <label>Events Image (1600 * 900 pixel):</label>
+                                    <label>Events Image (1600 * 900 pixel) Max 1MB:</label>
                                 </div>
                                 <div className="col-7 mb-4">
                                     <input type="file" id='eventsImg' multiple onChange={handleEventFilesChange} className='form-control' />

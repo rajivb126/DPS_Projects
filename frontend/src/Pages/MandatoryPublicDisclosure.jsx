@@ -1,5 +1,6 @@
 import Footer from "../Components/Footer"
 import Header from "../Components/Header"
+import MPD from '../images/MPD/Affiliation Letter.pdf'
 
 function MandatoryPublicDisclosure() {
     return (
@@ -96,7 +97,7 @@ function MandatoryPublicDisclosure() {
                                         EXTENTION
                                         OF AFFILIATION, IF ANY</td>
                                     <td align="Center">
-                                        <a href="https://www.dpsjod.in/DPSJodhpur/UserSpace/UserName/admin/DynamicFolder/2021-22/CBSE%20Disclosure/Affiliation%20Letter.pdf"
+                                        <a href={MPD}
                                             target="_blank">View</a>
                                     </td>
                                 </tr>

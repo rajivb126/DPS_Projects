@@ -15,7 +15,8 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-    storage: storage
+    storage: storage,
+    limits: { fileSize: 50 * 1024 * 1024 } // 50MB limit
 });
 
 // Add Event API with Thumbnail and Multiple Event Files
