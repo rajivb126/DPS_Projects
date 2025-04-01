@@ -246,23 +246,23 @@ function MandatoryPublicDisclosure() {
                             <tbody style={{ fontWeight: '600', textAlign: 'center' }}>
                                 <tr>
                                     <td align="center">1.</td>
-                                    <td>2021-22</td>
-                                    <td>358</td>
-                                    <td>358</td>
+                                    <td>2023-24</td>
+                                    <td>353</td>
+                                    <td>353</td>
                                     <td>100%</td>
                                 </tr>
                                 <tr>
                                     <td align="center">2.</td>
-                                    <td>2020-21</td>
-                                    <td>337</td>
-                                    <td>337</td>
-                                    <td>100%</td>
+                                    <td>2022-23</td>
+                                    <td>351</td>
+                                    <td>349</td>
+                                    <td>99.43%</td>
                                 </tr>
                                 <tr>
                                     <td align="center">3.</td>
-                                    <td>2019-20</td>
-                                    <td>337</td>
-                                    <td>337</td>
+                                    <td>2021-22</td>
+                                    <td>358</td>
+                                    <td>358</td>
                                     <td>100%</td>
                                 </tr>
                             </tbody>
@@ -284,24 +284,24 @@ function MandatoryPublicDisclosure() {
                             <tbody style={{ fontWeight: '600', textAlign: 'center' }}>
                                 <tr>
                                     <td align="center">1.</td>
+                                    <td>2023-24</td>
+                                    <td>309</td>
+                                    <td>308</td>
+                                    <td>99.68%</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">2.</td>
+                                    <td>2022-23</td>
+                                    <td>318</td>
+                                    <td>306</td>
+                                    <td>96.23%</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">3.</td>
                                     <td>2021-22</td>
                                     <td>359</td>
                                     <td>358</td>
                                     <td>99.7%</td>
-                                </tr>
-                                <tr>
-                                    <td align="center">2.</td>
-                                    <td>2020-21</td>
-                                    <td>345</td>
-                                    <td>345</td>
-                                    <td>100%</td>
-                                </tr>
-                                <tr>
-                                    <td align="center">3.</td>
-                                    <td>2019-20</td>
-                                    <td>320</td>
-                                    <td>317</td>
-                                    <td>99.1%</td>
                                 </tr>
                             </tbody>
                         </table>

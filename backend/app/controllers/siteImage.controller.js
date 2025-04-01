@@ -1,6 +1,6 @@
 const siteImage = require('../models/siteImage');
 const multer = require('multer');
-const BASE_URL = 'https://dpsjodhpur.in/backend/';
+const BASE_URL = 'https://dpsjodhpur.in/backend';
 const path = require('path');
 
 const storage = multer.diskStorage({

@@ -22,7 +22,9 @@ function Footer() {
                     <div className="row align-items-center footer">
                         <div className="col-lg-3 col-l2 pt-lg-0 pt-5">
                             <div className="footer-image">
-                                <img src={Footer_logo} alt="" className="img-fluid" />
+                                <Link to={'https://dpsjodhpur.in/'}>
+                                    <img src={Footer_logo} alt="" className="img-fluid" />
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-3 col-l2 get-in-touch text-justify">

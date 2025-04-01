@@ -251,7 +251,7 @@ function Home() {
                 <div className="container-fluid slider px-0" style={{ backgroundColor: 'black' }}>
                     <div id="carouselExampleIndicators" className="carousel slide">
                         <div className="carousel-inner">
-                            <Player src={Banner} className="d-block w-100" autoPlay={true} muted />
+                            <Player src={Banner} className="d-block w-100" loop autoPlay={true} muted />
                         </div>
                     </div>
                 </div>

@@ -247,7 +247,7 @@ function Header() {
 
                 <div className="container-fluid header-navbar bg-light">
                     <nav className="navbar navbar-expand-lg">
-                        <a className="navbar-brand" href="index.html">
+                        <a className="navbar-brand" href="https://dpsjodhpur.in/">
                             <img src={dpslogo} alt="DPS Jodhpur" />
                         </a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -427,7 +427,7 @@ function Header() {
                         aria-labelledby="offcanvasRightLabel">
                         <div className="offcanvas-header">
                             <h5 className="offcanvas-title" id="offcanvasRightLabel">
-                                <a className="navbar-brand" href="#">
+                                <a className="navbar-brand" href="https://dpsjodhpur.in/">
                                     <img src={logo} width="50" alt="DPS Jodhpur" />
                                 </a>
                             </h5>
