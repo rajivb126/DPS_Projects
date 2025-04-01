@@ -197,21 +197,41 @@ exports.deleteEvent = async (request, response) => {
 exports.deleteAllEvent = async (request, response) => {
     try {
         const { id } = request.params;
-        const result = await Event.deleteOne({ _id: id });
-        if (result.deletedCount === 1) {
-            response.status(200).send({ message: 'Record deleted successfully' });
-        } else {
-            response.status(404).send({ message: 'Record not found' });
+
+        // Check if event exists
+        const event = await Event.findById(id);
+        if (!event) {
+            return response.status(404).json({ message: 'Event not found' });
         }
+
+        // Delete associated images & files
+        if (event.thumbnail_image) {
+            fs.unlink(path.join(__dirname, '../../uploads', event.thumbnail_image), (err) => {
+                if (err) console.error("Error deleting thumbnail:", err);
+            });
+        }
+
+        if (event.event_files.length > 0) {
+            event.event_files.forEach(file => {
+                fs.unlink(path.join(__dirname, '../../uploads', file), (err) => {
+                    if (err) console.error(`Error deleting file ${file}:`, err);
+                });
+            });
+        }
+
+        // Delete event from the database
+        await Event.deleteOne({ _id: id });
+
+        return response.status(200).json({ message: 'Event and associated files deleted successfully' });
     } catch (error) {
-        response.status(500).send({ message: 'Server error', error });
+        return response.status(500).json({ message: 'Server error', error: error.message });
     }
 };
 
 // 
 exports.deleteImage = async (request, response) => {
     const { imageName } = request.params;
-    const filePath = `uploads/${imageName}`;
+    const filePath = path.join(__dirname, '../../uploads', imageName);
 
     // Check if the file exists
     fs.stat(filePath, (err, stats) => {
