@@ -53,13 +53,21 @@ exports.addWebsiteFile = async (request, response) => {
         // Construct the full file path
         const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
 
-        // Create new document in the database
-        let data = new websiteFile({
-            website_file: filePath, // Save full path instead of just filename
-        });
-
         try {
+            // ✅ Check if a file with the same path already exists
+            const existingFile = await websiteFile.findOne({ website_file: filePath });
+
+            if (existingFile) {
+                return response.status(400).json({ message: 'File already exists!' });
+            }
+
+            // ✅ If no duplicate, save the new file record
+            let data = new websiteFile({
+                website_file: filePath,
+            });
+
             const insertData = await data.save();
+
             response.status(200).json({
                 status: true,
                 message: 'File uploaded successfully!',
@@ -70,6 +78,7 @@ exports.addWebsiteFile = async (request, response) => {
         }
     });
 };
+
 
 // View API for Student Council Image
 exports.viewWebsiteFile = async (request, response) => {
@@ -97,44 +106,50 @@ exports.viewWebsiteFile = async (request, response) => {
 exports.updateWebsiteFile = async (request, response) => {
     upload.single('website_file')(request, response, async function (err) {
         if (err) {
-            return response.status(500).send({ message: 'File upload error', err });
+            return response.status(500).json({ message: 'File upload error', err });
         }
 
         try {
             const { id } = request.params;
-            const updateData = { ...request.body }; // Get the updated fields from the body
+            const updateData = { ...request.body }; // Get updated fields from the request body
 
-            // If a file was uploaded, update the `website_file` field with its full path
+            // Find existing file entry by ID
+            const existingEntry = await websiteFile.findById(id);
+            if (!existingEntry) {
+                return response.status(404).json({ message: 'Record not found' });
+            }
+
+            // If a new file is uploaded
             if (request.file) {
                 const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
 
-                // Check if the same file already exists in the database
-                const existingFile = await websiteFile.findOne({ website_file: filePath });
+                // ✅ Check if another entry already has this file
+                const duplicateFile = await websiteFile.findOne({ website_file: filePath });
 
-                if (existingFile) {
+                if (duplicateFile && duplicateFile._id.toString() !== id) {
                     return response.status(400).json({ message: 'File already exists!' });
                 }
 
-                updateData.website_file = filePath;
+                updateData.website_file = filePath; // Update file path
             }
 
-            const result = await WebsiteFile.findOneAndUpdate(
-                { _id: id },
+            // ✅ Update the database entry
+            const updatedRecord = await websiteFile.findByIdAndUpdate(
+                id,
                 { $set: updateData },
                 { new: true }
             );
 
-            if (result) {
-                response.status(200).send({ message: 'Record updated successfully', result });
-            } else {
-                response.status(404).send({ message: 'Record not found' });
-            }
+            response.status(200).json({
+                message: 'Record updated successfully',
+                data: updatedRecord,
+            });
+
         } catch (error) {
-            response.status(500).send({ message: 'Server error', error });
+            response.status(500).json({ message: 'Server error', error });
         }
     });
 };
-
 
 // Delete API for News Update
 exports.deleteWebsiteFile = async (request, response) => {

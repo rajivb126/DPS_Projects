@@ -13,7 +13,7 @@ function AddFile() {
         formData.append('website_file', websiteFileLink);
 
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/site-image/add`, formData);
+            const response = await axios.post(`${API_BASE_URL}/api/website-file/add`, formData);
             const newSiteImage = response.data;
             console.log('New website file:', newSiteImage);
             setWebsiteFileLink('');

@@ -30,6 +30,7 @@ const upload = multer({
 });
 
 // Image upload endpoint
+// Image upload endpoint for adding a new site image
 exports.addSiteImage = async (request, response) => {
     upload.single('site_image_file')(request, response, async function (err) {
         if (err) {
@@ -44,6 +45,12 @@ exports.addSiteImage = async (request, response) => {
         // Construct the full file path
         const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
 
+        // ✅ Check if the file already exists in the database
+        const existingFile = await siteImage.findOne({ site_image_file: filePath });
+        if (existingFile) {
+            return response.status(400).json({ message: 'File already exists!' });
+        }
+
         // Create new document in the database
         let data = new siteImage({
             site_image_file: filePath, // Save full path instead of just filename
@@ -53,7 +60,7 @@ exports.addSiteImage = async (request, response) => {
             const insertData = await data.save();
             response.status(200).json({
                 status: true,
-                message: 'Record Inserted Successfully!!',
+                message: 'Record Inserted Successfully!',
                 data: insertData,
             });
         } catch (err) {
@@ -88,25 +95,25 @@ exports.viewSiteImage = async (request, response) => {
 exports.updateSiteImage = async (request, response) => {
     upload.single('site_image_file')(request, response, async function (err) {
         if (err) {
-            return response.status(500).send({ message: 'File upload error', err });
+            return response.status(500).json({ message: 'File upload error', err });
         }
 
         try {
             const { id } = request.params;
-            const updateData = { ...request.body }; // Get the updated fields from the body
+            const updateData = { ...request.body }; // Get updated fields from the request body
 
             // If a file was uploaded, update the `site_image_file` field with its full path
             if (request.file) {
                 const filePath = `${BASE_URL}/uploads/${request.file.filename}`;
 
-                // Check if the same file already exists in the database
+                // ✅ Check if the same file already exists in the database
                 const existingFile = await siteImage.findOne({ site_image_file: filePath });
 
                 if (existingFile) {
                     return response.status(400).json({ message: 'File already exists!' });
                 }
 
-                updateData.site_image_file = filePath;
+                updateData.site_image_file = filePath; // Update file path
             }
 
             const result = await siteImage.findOneAndUpdate(
@@ -125,7 +132,6 @@ exports.updateSiteImage = async (request, response) => {
         }
     });
 };
-
 
 // Delete API for News Update
 exports.deleteSiteImage = async (request, response) => {
