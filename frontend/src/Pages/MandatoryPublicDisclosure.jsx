@@ -64,8 +64,8 @@ function MandatoryPublicDisclosure() {
                                     <tr>
                                         <td align="center">6.</td>
                                         <td align="left">School Email ID</td>
-                                        <td align="left">dpsjodhpur@rediffmail.com<br />
-                                            info@dpsjodhpur.in</td>
+                                        <td align="left">info@dpsjodhpur.in</td>
+                                           
                                     </tr>
                                     <tr>
                                         <td align="center">7.</td>
