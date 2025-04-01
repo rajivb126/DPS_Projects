@@ -57,9 +57,9 @@ function MandatoryPublicDisclosure() {
                                         <td align="center">5.</td>
                                         <td align="left">Principal Name &<br />
                                             Qualification</td>
-                                        <td align="left">MR. BIKRAM SINGH YADAV<br />
-                                            B. ED., M. SC (PHYSICS),<br />
-                                            CERTICIATE COURSE OF INTERATIONAL SCHOOL LEADERSHIP, PTC, LONDON</td>
+                                        <td align="left">MS ABHILASHA SHAW<br />
+                                            B. ED., M. A. (ENGLISH),<br />
+                                            </td>
                                     </tr>
                                     <tr>
                                         <td align="center">6.</td>
