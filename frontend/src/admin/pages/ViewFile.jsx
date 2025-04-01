@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import API_BASE_URL from '../../config'
 
 function ViewFile() {
     const [data, setData] = useState([]);
