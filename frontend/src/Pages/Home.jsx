@@ -228,6 +228,33 @@ function Home() {
         ],
     };
 
+    const slidersSettings = {
+        rtl: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3, // Change based on how many slides you want visible at once
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
+
     return (
         <>
 
@@ -447,7 +474,7 @@ function Home() {
                                     ))}
                                 </Slider>
                             ) : (
-                                <p>No events available at the moment.</p>
+                                <p></p>
                             )}
                         </div>
                     </div>
@@ -461,30 +488,35 @@ function Home() {
                             <h2 className="text-center">Assembly <span style={{ color: '#00a651' }}>Gallery</span></h2>
                         </div>
                         {filteredAssembly.length > 0 ? (
-                            filteredAssembly.map((item, index) => (
-                                <div className="col-lg-4 col-md-6 col-12" key={index}>
-                                    <div className="item">
-                                        <div className="events">
-                                            <div className="event-img">
-                                                <Link to={`/assembly/${item.slug}`} >
-                                                    <img src={`${API_BASE_URL}/uploads/${item.thumbnail_image}`} className="img-fluid w-100" alt={`${item.title} Thumbnail`}
-                                                    />
-                                                </Link>
-                                                <div className="event-date-wrap">
-                                                    <span className="event-date">{formatDate(item.assembly_date)}</span>
+                            <Slider {...slidersSettings} className="col-12">
+                                {filteredAssembly.map((item, index) => (
+                                    <div key={index} className="px-2">
+                                        <div className="item">
+                                            <div className="events">
+                                                <div className="event-img">
+                                                    <Link to={`/assembly/${item.slug}`}>
+                                                        <img
+                                                            src={`${API_BASE_URL}/uploads/${item.thumbnail_image}`}
+                                                            className="img-fluid w-100"
+                                                            alt={`${item.title} Thumbnail`}
+                                                        />
+                                                    </Link>
+                                                    <div className="event-date-wrap">
+                                                        <span className="event-date">{formatDate(item.assembly_date)}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="event-content">
-                                                <h3>
-                                                    <Link to={`/assembly/${item.slug}`}>{item.title}</Link>
-                                                </h3>
+                                                <div className="event-content">
+                                                    <h3>
+                                                        <Link to={`/assembly/${item.slug}`}>{item.title}</Link>
+                                                    </h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))
+                                ))}
+                            </Slider>
                         ) : (
-                            <p>No Assembly available at the moment.</p>
+                            <p className="text-center w-100">No Assembly available at the moment.</p>
                         )}
                     </div>
                 </div>
