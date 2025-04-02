@@ -447,9 +447,9 @@ function Home() {
                             <h2 className="text-center">Events <span style={{ color: '#00a651' }}>Gallery</span></h2>
                         </div>
                         <div className="col-12">
-                            {event.length > 0 ? (
+                            {filteredEvents.length > 0 ? (
                                 <Slider {...sliderSettings}>
-                                    {event.map((item, index) => (
+                                    {filteredEvents.map((item, index) => (
                                         <div key={index} className="item">
                                             <div className="events">
                                                 <div className="event-img">
