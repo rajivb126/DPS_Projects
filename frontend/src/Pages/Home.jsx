@@ -32,6 +32,7 @@ import API_BASE_URL from '../config'
 function Home() {
     const [newsData, setNewsData] = useState([])
     const marqueeRef = useRef(null);
+    const newsRef = useRef(null);
     const [popupData, setPopupData] = useState(null); // To store popup data
     const [showModal, setShowModal] = useState(false); // Modal visibility state
 
@@ -60,6 +61,18 @@ function Home() {
 
     const handleClose = () => {
         setShowModal(false); // Close the modal
+    };
+
+    const handleMouseOverNews = () => {
+        if (newsRef.current) {
+            newsRef.current.stop();
+        }
+    };
+
+    const handleMouseOutNews = () => {
+        if (newsRef.current) {
+            newsRef.current.start();
+        }
     };
 
     const handleMouseOver = () => {
@@ -265,7 +278,7 @@ function Home() {
                             <h3 className="">News Update</h3>
                         </div>
                         <div className="col-lg-10 col-12 news-update-list">
-                            <marquee ref={marqueeRef} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} width="100%" direction="left" scrollamount="4" scrolldelay="0">
+                            <marquee ref={newsRef} onMouseOver={handleMouseOverNews} onMouseOut={handleMouseOutNews} width="100%" direction="left" scrollamount="4" scrolldelay="0">
                                 <ul>
                                     {newsUpdate.length > 0 ? (
                                         newsUpdate.map((news, index) => (

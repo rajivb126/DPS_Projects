@@ -165,7 +165,7 @@ function Header() {
             </section>
 
             {/*  */}
-            <section className="sticky-top" style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className="sticky-top" style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container-fluid marquees sticky-top">
                     <div className="row">
                         <div className="col-12">
@@ -347,7 +347,7 @@ function Header() {
                                         Students corner
                                     </Link>
                                     <ul className="dropdown-menu">
-                                        <li><Link to={'https://dpsjodhpur.in/backend/uploads/Almanac_2025_(Imp_Pages).pdf'} className="dropdown-item">School Almanac</Link></li>
+                                        <li><Link to={'https://dpsjodhpur.in/backend/uploads/Almanac_2025_(Imp_Pages).pdf'} target='_blank' className="dropdown-item">School Almanac</Link></li>
                                         <li><Link to={'/download'} className="dropdown-item">Downloads</Link></li>
                                         <li><Link to={'/student-circular'} className="dropdown-item" >School Circulars</Link></li>
                                         <li><Link to={'/school-rules'} className="dropdown-item">School Rules</Link></li>
@@ -393,12 +393,12 @@ function Header() {
                                                     <div style={{ fontSize: '14px' }}>
                                                         <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Address:</strong> Bypass Road Pal, Jodhpur, Rajasthan, India</p>
                                                         <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Pincode:</strong> 342014</p>
-                                                        <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Phone:</strong><a href='tel:0291-2766886' style={{textDecoration:'none', color:'black'}}> 0291-2766886, </a><a href='tel:0291-2766887' style={{textDecoration:'none', color:'black'}}> 0291-2766887</a></p>
+                                                        <p style={{ margin: '0', paddingBottom: '8px' }}><strong>Phone:</strong><a href='tel:0291-2766886' style={{ textDecoration: 'none', color: 'black' }}> 0291-2766886, </a><a href='tel:0291-2766887' style={{ textDecoration: 'none', color: 'black' }}> 0291-2766887</a></p>
                                                     </div>
                                                     <div className="text-start me-2">
                                                         <a href="contact-us.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop" className="">
                                                             <button type="button" style={{ backgroundColor: 'red', color: '#fff', border: 'none', fontSize: '15px', padding: '8px 40px' }}>
-                                                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{color:'white', textDecoration:'none'}}> ENQUIRY
+                                                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ color: 'white', textDecoration: 'none' }}> ENQUIRY
                                                                 </a>
                                                             </button>
                                                         </a>
@@ -524,8 +524,8 @@ function Header() {
                                         Students corner
                                     </Link>
                                     <ul className="dropdown-menu">
+                                        <li><Link to={'https://dpsjodhpur.in/backend/uploads/Almanac_2025_(Imp_Pages).pdf'} target='_blank' className="dropdown-item">School Almanac</Link></li>
                                         <li><Link to={'/download'} className="dropdown-item">Downloads</Link></li>
-                                        {/* <li><Link className="dropdown-item" >School Almanac</Link></li> */}
                                         <li><Link to={'/student-circular'} className="dropdown-item" >School Circulars</Link></li>
                                         <li><Link to={'/school-rules'} className="dropdown-item">School Rules</Link></li>
                                         <li><Link to={'/student-council'} className="dropdown-item" >Student Council</Link></li>
@@ -547,7 +547,7 @@ function Header() {
                                     </a>
                                 </li>
                                 <li className="nav-item p-0">
-                                    <a className="nav-link fw-bolder" href="mailto:info@dpsjodhpur.in" style={{textTransform:'lowercase'}}>
+                                    <a className="nav-link fw-bolder" href="mailto:info@dpsjodhpur.in" style={{ textTransform: 'lowercase' }}>
                                         <FontAwesomeIcon icon={faEnvelope} className='pe-2' />info@dpsjodhpur.in
                                     </a>
                                 </li>
