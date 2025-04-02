@@ -439,11 +439,11 @@ footer .footer .footer-image {
   color: white;
 }
 
-.whatsappicons {
+.youtubeicon {
   width: 50px;
   height: 50px;
   font-size: 27px;
-  background: #01e675;
+  background: red;
   text-align: center;
   margin: 3px;
   border-radius: 50%;
@@ -465,7 +465,7 @@ footer .footer .footer-image {
   padding: 2.5px 15px;
 }
 
-.whatsappicons a {
+.youtubeicon a {
   color: white;
 }
 
@@ -818,62 +818,6 @@ thead tr th {
   background-image: url(./images/bg-3.jpg);
   background-position: center center;
   background-size: cover;
-}
-
-.vision_and_mission h3 {
-  font-size: 30px;
-  border-left: 5px solid #00a651;
-  padding-left: 10px;
-  font-weight: bold;
-  margin: 2% 0;
-  color: #002147;
-}
-
-.vision_and_mission h3 span {
-  color: #00a651;
-}
-
-.vision_and_mission .mission {
-  padding: 10px 6px 0 6px;
-  text-align: justify;
-}
-
-.vision_and_mission .mission h2 {
-  color: #002147;
-}
-
-.mission_list .mission_box {
-  height: 150px;
-  background-color: #002147;
-  color: bisque;
-  padding: 3.8% 1%;
-  border: 1px solid lawngreen;
-}
-
-.mission_list .mission_box p {
-  text-align: justify;
-  padding: 2.5%;
-  color: yellow;
-}
-
-.vision_and_mission .vision {
-  padding: 10px 6px 0 6px;
-  text-align: justify;
-  color: #002147;
-}
-
-.vision_list .vision_box {
-  height: 220px;
-  background-color: #002147;
-  color: bisque;
-  padding: 3.8% 1%;
-  border: 1px solid lawngreen;
-}
-
-.vision_list .vision_box p {
-  text-align: justify;
-  padding: 2.5%;
-  color: yellow;
 }
 
 /* Infrastructure CSS */

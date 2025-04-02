@@ -1,26 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLocationDot, faMapLocation, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faWhatsapp, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import Footer_logo from '../images/DPSJODHPUR WHITE.png'
 import { Link } from "react-router-dom";
 
 function Footer() {
-    const sendMessage = () => {
-        const phoneNumber = '7737880141';
-        const message = encodeURIComponent('Hello!');
-
-        // Construct the WhatsApp API URL
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-
-        // Open the WhatsApp URL in a new window
-        window.open(whatsappUrl);
-    };
-
-
     return (
         <>
             {/* Footer Section */}
-            <footer style={{ animation: 'fadeIn 1s ease-in-out' }}>
+            <footer className="sticky-bottom" style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container-fluid">
                     <div className="row align-items-center footer">
                         <div className="col-lg-3 col-l2 pt-lg-0 pt-5">
@@ -124,9 +112,9 @@ function Footer() {
                         </div>
                         <div className="col-4 p-0 mx-auto" style={{ borderRight: '1px solid #fff' }}>
                             <button className="btn" type="button">
-                                <a href="#" onClick={sendMessage} target="_blank">
-                                    <FontAwesomeIcon icon={faWhatsapp} style={{ paddingRight: '3px' }} />
-                                    Message
+                                <a href="https://maps.app.goo.gl/ozvecvBxT2YnvcLq9" target="_blank">
+                                    <FontAwesomeIcon icon={faLocationDot} style={{ paddingRight: '3px' }} />
+                                    Location
                                 </a>
                             </button>
                         </div>

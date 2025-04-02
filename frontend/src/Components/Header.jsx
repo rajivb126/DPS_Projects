@@ -68,17 +68,6 @@ function Header() {
         }
     };
 
-    const sendMessage = () => {
-        const phoneNumber = '7737880141';
-        const message = encodeURIComponent('Hello!');
-
-        // Construct the WhatsApp API URL
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-
-        // Open the WhatsApp URL in a new window
-        window.open(whatsappUrl);
-    };
-
     const [newsData, setNewsData] = useState([])
     useEffect(() => {
         axios.get(`${API_BASE_URL}/api/news/view`)
@@ -162,9 +151,9 @@ function Header() {
                             <FontAwesomeIcon icon={faXTwitter} style={{ color: 'white', border: 'none' }} />
                         </a>
                     </div>
-                    <div className="whatsappicons">
-                        <a href="#" onClick={sendMessage} target='_blank'>
-                            <FontAwesomeIcon icon={faWhatsapp} />
+                    <div className="youtubeicon">
+                        <a href="https://www.youtube.com/channel/UC7oJPEebMcsc9Cl0wQJ3SoA" target='_blank'>
+                            <FontAwesomeIcon icon={faYoutube} />
                         </a>
                     </div>
                     <div className="facebookicons">
@@ -358,8 +347,8 @@ function Header() {
                                         Students corner
                                     </Link>
                                     <ul className="dropdown-menu">
+                                        <li><Link to={'https://dpsjodhpur.in/backend/uploads/Almanac_2025_(Imp_Pages).pdf'} className="dropdown-item">School Almanac</Link></li>
                                         <li><Link to={'/download'} className="dropdown-item">Downloads</Link></li>
-                                        {/* <li><Link className="dropdown-item">School Almanac</Link></li> */}
                                         <li><Link to={'/student-circular'} className="dropdown-item" >School Circulars</Link></li>
                                         <li><Link to={'/school-rules'} className="dropdown-item">School Rules</Link></li>
                                         <li><Link to={'/student-council'} className="dropdown-item" >Student Council</Link></li>
