@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLocationDot, faMapLocation, faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faInstagram, faWhatsapp, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faInstagram, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import Footer_logo from '../images/DPSJODHPUR WHITE.png'
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function Footer() {
     return (
         <>
             {/* Footer Section */}
-            <footer className="sticky-bottom" style={{ animation: 'fadeIn 1s ease-in-out' }}>
+            <footer style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className="container-fluid">
                     <div className="row align-items-center footer">
                         <div className="col-lg-3 col-l2 pt-lg-0 pt-5">

@@ -47,7 +47,7 @@ function SchoolCircular() {
         <>
             <Header />
 
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className='school_circular' style={{animation:'fadeIn 1s ease-in-out'}}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>

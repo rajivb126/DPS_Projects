@@ -107,7 +107,7 @@ function Achievement() {
             <Header />
 
             {/* Achievement Section Start */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className='Achievement' style={{animation:'fadeIn 1s ease-in-out'}}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -115,7 +115,7 @@ function Achievement() {
                         </div>
                     </div>
                 </div>
-                <div className='container Achievement'>
+                <div className='container'>
                     <div className='row mx-auto'>
                         <div className='col-12'>
                             <div className='all-achievement'>

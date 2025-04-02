@@ -1,3 +1,17 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the main container take up remaining space */
+#root, .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of viewport */
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -1401,7 +1415,25 @@ thead tr th {
   /* Darker shade on hover */
 }
 
+.newsletter {
+  flex: 1; /* Takes up remaining space */
+}
 
+.school_news {
+  flex: 1; /* Takes up remaining space */
+}
+
+.Achievement {
+  flex: 1; /* Takes up remaining space */
+}
+
+.download {
+  flex: 1; /* Takes up remaining space */
+}
+
+.school_circular {
+  flex: 1; /* Takes up remaining space */
+}
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   .icons {
