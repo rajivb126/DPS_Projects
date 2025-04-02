@@ -73,6 +73,7 @@ import ViewPopup from './admin/pages/ViewPopup';
 import SubjectCombination from './Pages/SubjectCombination';
 import AddFile from './admin/pages/AddFile';
 import ViewFile from './admin/pages/ViewFile';
+import Almanac from './Pages/Almanac';
 
 const router = createBrowserRouter([
   {
@@ -178,6 +179,10 @@ const router = createBrowserRouter([
   {
     path: 'school-magazine',
     element: <SchoolMagazine />
+  },
+  {
+    path: 'almanac',
+    element: <Almanac />
   },
   {
     path: 'school-news',

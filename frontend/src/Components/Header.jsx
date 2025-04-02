@@ -51,7 +51,7 @@ function Header() {
             setEcomment('')
             document.getElementById("fileInput").value = "";
 
-            setSuccessMessage('News added successfully!');
+            setSuccessMessage('Enquiry send successfully!');
 
             // Clear the success message after 3 seconds
             setTimeout(() => {
@@ -347,7 +347,7 @@ function Header() {
                                         Students corner
                                     </Link>
                                     <ul className="dropdown-menu">
-                                        <li><Link to={'https://dpsjodhpur.in/backend/uploads/Almanac_2025_(Imp_Pages).pdf'} target='_blank' className="dropdown-item">School Almanac</Link></li>
+                                        <li><Link to={'/almanac'} target='_blank' className="dropdown-item">School Almanac</Link></li>
                                         <li><Link to={'/download'} className="dropdown-item">Downloads</Link></li>
                                         <li><Link to={'/student-circular'} className="dropdown-item" >School Circulars</Link></li>
                                         <li><Link to={'/school-rules'} className="dropdown-item">School Rules</Link></li>
@@ -524,7 +524,7 @@ function Header() {
                                         Students corner
                                     </Link>
                                     <ul className="dropdown-menu">
-                                        <li><Link to={'https://dpsjodhpur.in/backend/uploads/Almanac_2025_(Imp_Pages).pdf'} target='_blank' className="dropdown-item">School Almanac</Link></li>
+                                        <li><Link to={'/almanac'} target='_blank' className="dropdown-item">School Almanac</Link></li>
                                         <li><Link to={'/download'} className="dropdown-item">Downloads</Link></li>
                                         <li><Link to={'/student-circular'} className="dropdown-item" >School Circulars</Link></li>
                                         <li><Link to={'/school-rules'} className="dropdown-item">School Rules</Link></li>
