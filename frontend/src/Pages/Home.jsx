@@ -310,7 +310,7 @@ function Home() {
                                     {newsUpdate.length > 0 ? (
                                         newsUpdate.map((news, index) => (
                                             <li key={index}>
-                                                <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank">{news.nname}</a>
+                                                <i className="bi bi-file-pdf pe-1" style={{color:'white'}}></i><a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank">{news.nname}</a>
                                             </li>
                                         ))
                                     ) : (
