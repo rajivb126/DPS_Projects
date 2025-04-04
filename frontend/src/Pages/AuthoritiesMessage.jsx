@@ -18,7 +18,7 @@ function AuthoritiesMessage() {
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
-                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Authorities Messages</h4>
+                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Messages By Mentor</h4>
                         </div>
                     </div>
                 </div>
