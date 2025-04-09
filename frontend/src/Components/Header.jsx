@@ -268,7 +268,7 @@ function Header() {
                                                 <div className="col-lg-4 py-3">
                                                     <ul className="about-section fs-6">
                                                         <li><Link to={'/at-a-glance'}>At a Glance</Link></li>
-                                                        <li><Link to={'/authorities-message'}>Messages By Mentor</Link></li>
+                                                        <li><Link to={'/authorities-message'}>Messages By Mentors</Link></li>
                                                         <li><Link to={'/school-management'}>Management Committee</Link></li>
                                                         <li><Link to={'/faculty'}>Faculty Zone</Link></li>
                                                         <li><Link to={'/mission-vision'}>Vision & Mission</Link></li>
@@ -438,7 +438,7 @@ function Header() {
                                             <Link to={'/at-a-glance'} className="dropdown-item">At a Glance</Link>
                                         </li>
                                         <li>
-                                            <Link to={'/authorities-message'} className="dropdown-item">Messages By Mentor</Link>
+                                            <Link to={'/authorities-message'} className="dropdown-item">Messages By Mentors</Link>
                                         </li>
                                         <li>
                                             <Link to={'/school-management'} className="dropdown-item">Management Committee</Link>
