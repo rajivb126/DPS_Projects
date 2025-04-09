@@ -5,26 +5,17 @@ import Footer from '../Components/Footer';
 import API_BASE_URL from '../config'
 
 function SchoolNews() {
-    const [newsData, setNewsData] = useState([])
+    const [schoolNewsData, setSchoolNewsData] = useState([])
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/api/news/view`)
+        axios.get(`${API_BASE_URL}/api/schoolnews/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
-                setNewsData(response.data.data);
+                setSchoolNewsData(response.data.data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, []);
-
-    const currentDate = new Date();
-
-    // Filter news based on category and date range
-    const newsUpdate = newsData.filter(news =>
-        news.news_category === 'news update' &&
-        new Date(news.start_date) <= currentDate &&
-        new Date(news.end_date) >= currentDate
-    );
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -47,7 +38,7 @@ function SchoolNews() {
         <>
             <Header />
 
-            <section className='school_news' style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className='school_news' style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -68,16 +59,16 @@ function SchoolNews() {
                                         </tr>
                                     </thead>
                                     <tbody style={{ verticalAlign: 'middle' }}>
-                                        {newsUpdate.length > 0 ? (
-                                            newsUpdate.map((news, index) => (
+                                        {schoolNewsData.length > 0 ? (
+                                            schoolNewsData.map((news, index) => (
                                                 <tr key={index._id}>
-                                                    <td className='text-center'>{formatDate(news.start_date)}</td>
-                                                    <td className='text-center' >{news.nname}</td>
-                                                    <td style={{ width: '120px' }}>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target='_blank' rel="noreferrer">
+                                                    <td className='text-center' style={{ width: '80px' }}>{formatDate(news.start_date)}</td>
+                                                    <td className='schoolnews_heading text-center'><strong>{news.schoolnews_heading}</strong><br /><i>{news.schoolnews_description}</i></td>
+                                                    <td style={{ width: '100px' }}>
+                                                        <a href={`${API_BASE_URL}/uploads/${news.schoolnews_link}`} target='_blank' rel="noreferrer">
                                                             <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
                                                         </a>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noreferrer" >
+                                                        <a href={`${API_BASE_URL}/uploads/${news.schoolnews_link}`} target="_blank" rel="noreferrer" >
                                                             <button className='bi bi-download btn btn-danger'
                                                             ></button>
                                                         </a>

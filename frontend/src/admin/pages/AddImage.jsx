@@ -4,6 +4,7 @@ import API_BASE_URL from '../../config'
 
 function AddImage() {
     const [siteImageLink, setSiteImageLink] = useState('');
+    const [uploadDate, setUploadDate] = useState(new Date().toISOString().substring(0, 10));
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
 
@@ -11,12 +12,14 @@ function AddImage() {
         e.preventDefault();
         const formData = new FormData();
         formData.append('site_image_file', siteImageLink);
+        formData.append('upload_date', uploadDate); // Add start date
 
         try {
             const response = await axios.post(`${API_BASE_URL}/api/site-image/add`, formData);
             const newSiteImage = response.data;
             console.log('New site image:', newSiteImage);
             setSiteImageLink('');
+            setUploadDate(new Date().toISOString().substring(0, 10));
             document.getElementById("fileInput").value = "";
 
             setSuccessMessage('Site Image added successfully!');
@@ -49,6 +52,13 @@ function AddImage() {
                                     </div>
                                     <div className='col-8 mb-4'>
                                         <input type="file" id="fileInput" onChange={(e) => setSiteImageLink(e.target.files[0])} />
+                                    </div>
+
+                                    <div className="col-4 mb-4">
+                                        <label>Upload Date:</label>
+                                    </div>
+                                    <div className="col-8 mb-4">
+                                        <input type="date" value={uploadDate} className='form-control' onChange={(e) => setUploadDate(e.target.value)} />
                                     </div>
 
                                     <div className="col-12 text-center mt-5">

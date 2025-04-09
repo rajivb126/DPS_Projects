@@ -29,12 +29,20 @@ const upload = multer({
     fileFilter 
 });
 
-// Image upload endpoint
-// Image upload endpoint for adding a new site image
+// Image upload for adding a new site image
 exports.addSiteImage = async (request, response) => {
     upload.single('site_image_file')(request, response, async function (err) {
         if (err) {
             return response.status(400).json({ message: `File upload error: ${err.message}` });
+        }
+
+        let uploadDate;
+
+        // Check if upload_date is provided, otherwise set to current date
+        if (request.body.upload_date) {
+            uploadDate = new Date(request.body.upload_date);
+        } else {
+            uploadDate = new Date();
         }
 
         // Check if a file is provided
@@ -54,6 +62,7 @@ exports.addSiteImage = async (request, response) => {
         // Create new document in the database
         let data = new siteImage({
             site_image_file: filePath, // Save full path instead of just filename
+            upload_date: uploadDate
         });
 
         try {

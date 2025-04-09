@@ -148,6 +148,7 @@ function ViewImage() {
                                 <tr>
                                     <th style={{ width: '80px' }}>S. NO.</th>
                                     <th>Site Image File</th>
+                                    <th>Site Image Upload Date</th>
                                     <th style={{ width: '200px' }}>Action</th>
                                 </tr>
                             </thead>
@@ -156,6 +157,7 @@ function ViewImage() {
                                     <tr key={item._id}>
                                         <td className='text-center'>{index + 1}.</td>
                                         <td>{item.site_image_file}</td>
+                                        <td>{item.upload_date}</td>
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
