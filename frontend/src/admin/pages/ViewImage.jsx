@@ -69,29 +69,29 @@ function ViewImage() {
     };
 
     useEffect(() => {
-            // Bind Fancybox with desired settings and event listeners
-            Fancybox.bind('[data-fancybox="gallery"]', {
-                buttons: [
-                    "slideShow",
-                    "thumbs",
-                    "zoom",
-                    "fullScreen",
-                    "download",
-                    "share",
-                    "close"
-                ],
-                loop: false,
-                protect: true,
-                on: {
-                    ready: () => setShowModal(false)  // Close modal when Fancybox opens
-                }
-            });
-    
-            // Clean up Fancybox bindings when the component unmounts
-            return () => {
-                Fancybox.destroy();
-            };
-        }, []);
+        // Bind Fancybox with desired settings and event listeners
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            buttons: [
+                "slideShow",
+                "thumbs",
+                "zoom",
+                "fullScreen",
+                "download",
+                "share",
+                "close"
+            ],
+            loop: false,
+            protect: true,
+            on: {
+                ready: () => setShowModal(false)  // Close modal when Fancybox opens
+            }
+        });
+
+        // Clean up Fancybox bindings when the component unmounts
+        return () => {
+            Fancybox.destroy();
+        };
+    }, []);
 
     const handleViewClick = (item) => {
         setModalData(item);
@@ -157,7 +157,7 @@ function ViewImage() {
                                     <tr key={item._id}>
                                         <td className='text-center'>{index + 1}.</td>
                                         <td>{item.site_image_file}</td>
-                                        <td>{item.upload_date}</td>
+                                        <td>{new Date(item.upload_date).toLocaleDateString()}</td>
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
@@ -206,10 +206,15 @@ function ViewImage() {
                                                 ) : (
                                                     <p>No Images available</p>
                                                 )}
+
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="upload_date" className="form-label">Start Date</label>
+                                                    <input type="date" className="form-control" id="upload_date" name="upload_date" value={modalData?.upload_date?.substring(0, 10) || ''} onChange={handleInputChange} />
+                                                </div>
                                             </div>
                                         )}
                                         {mode === 'edit' && (
-                                            <input type="file" className="form-control" id="site_image_file" name="site_image_file" onChange={handleInputChange}/>
+                                            <input type="file" className="form-control" id="site_image_file" name="site_image_file" onChange={handleInputChange} />
                                         )}
                                     </div>
 

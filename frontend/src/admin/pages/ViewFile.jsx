@@ -148,6 +148,7 @@ function ViewFile() {
                                 <tr>
                                     <th style={{ width: '80px' }}>S. NO.</th>
                                     <th>Files</th>
+                                    <th>Files Upload Date</th>
                                     <th style={{ width: '200px' }}>Action</th>
                                 </tr>
                             </thead>
@@ -156,6 +157,8 @@ function ViewFile() {
                                     <tr key={item._id}>
                                         <td className='text-center'>{index + 1}.</td>
                                         <td>{item.website_file}</td>
+                                        <td>{new Date(item.upload_date).toLocaleDateString()}</td>
+
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
@@ -204,6 +207,11 @@ function ViewFile() {
                                                 ) : (
                                                     <p>No Images available</p>
                                                 )}
+
+                                                <div className="form-group mb-3">
+                                                    <label htmlFor="upload_date" className="form-label">Upload Date</label>
+                                                    <input type="date" className="form-control" id="upload_date" name="upload_date" value={modalData?.upload_date?.substring(0, 10) || ''} onChange={handleInputChange} />
+                                                </div>
                                             </div>
                                         )}
                                         {mode === 'edit' && (
