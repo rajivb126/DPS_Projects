@@ -44,9 +44,9 @@ function SchoolManagement() {
                                         <td align="left">Delhi Public School Bypass Road, Pal Jodhpur (Raj.)</td>
                                     </tr>
                                     <tr>
-                                        <td align="left">Ms Amita Khanna</td>
+                                        <td align="left">Mr Abhimanyu Singh</td>
                                         <td align="left">Member</td>
-                                        <td align="left">294-296 Tagore Nagar, Ajmer Road, Jaipur (Raj)
+                                        <td align="left">44A, Suraj Nagar (West), Keshav Path, Civil Lines, Jaipur
                                         </td>
                                     </tr>
                                     <tr>
@@ -57,9 +57,9 @@ function SchoolManagement() {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td align="left">Mr Abhimanyu Singh</td>
+                                        <td align="left">Ms Amita Khanna</td>
                                         <td align="left">Member</td>
-                                        <td align="left">44A, Suraj Nagar (West), Keshav Path, Civil Lines, Jaipur
+                                        <td align="left">294-296 Tagore Nagar, Ajmer Road, Jaipur (Raj)
                                         </td>
                                     </tr>
                                     <tr>

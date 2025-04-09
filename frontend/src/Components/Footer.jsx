@@ -45,7 +45,7 @@ function Footer() {
                                             <Link to={'/newsletter'}>Newsletter</Link>
                                         </li>
                                         <li>
-                                            <Link to={''}>School Planner</Link>
+                                            <Link to={'/school-news'}>School News</Link>
                                         </li>
                                     </ul>
                                 </div>
