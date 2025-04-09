@@ -229,24 +229,29 @@ exports.deleteAllEvent = async (request, response) => {
     }
 };
 
-// 
+// Delete Image 
 exports.deleteImage = async (request, response) => {
     try {
         const { imageName } = request.params;
 
         // Prevent path traversal
         if (imageName.includes('..')) {
+            console.log('Invalid file name attempt:', imageName);
             return response.status(400).json({ message: 'Invalid file name' });
         }
 
         const filePath = path.join(__dirname, '../../uploads', imageName);
 
+        console.log(`Checking if file exists: ${filePath}`);
         await fs.access(filePath); // Check if file exists
+        console.log('File exists. Proceeding to delete.');
+
         await fs.unlink(filePath); // Delete file
+        console.log(`Image deleted successfully: ${imageName}`);
 
         return response.status(200).json({ message: 'Image deleted successfully' });
     } catch (err) {
-        console.error(err);
+        console.error('Error deleting image:', err);
         return response.status(500).json({ message: 'Error deleting image', error: err.message });
     }
 };

@@ -55,19 +55,16 @@ function Faculty() {
                 </div>
                 <div className="container fraternity py-5">
                     <div className="row" style={{ textAlign: 'center' }}>
-                        <div className="col-12">
-                            <h2>THE FRATERNITY OF DPS JODHPUR</h2>
-                        </div>
                         <div className="col-lg-4"></div>
                         <div className="col-lg-2 col-6">
-                            <div className="py-3">
+                            <div className="pb-3">
                                 <img src={pro_vice_chairman} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">DINESH C. KOTHARI</h6>
                                 <h6>Pro Vice Chairman</h6>
                             </div>
                         </div>
                         <div className="col-lg-2 col-6">
-                            <div className="py-3">
+                            <div className="pb-3">
                                 <img src={Director} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">BIKRAM SINGH YADAV</h6>
                                 <h6>Director</h6>

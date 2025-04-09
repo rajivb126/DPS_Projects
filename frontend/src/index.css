@@ -950,6 +950,7 @@ thead tr th {
 .fraternity .teacher-name {
   color: darkblue;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 /*  */
