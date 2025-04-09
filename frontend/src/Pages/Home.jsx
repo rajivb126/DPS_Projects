@@ -533,7 +533,7 @@ function Home() {
                                         <img src={achieve1} alt="" />
                                     </div>
                                     <div className="counter-content">
-                                        <h2>4.5K +</h2>
+                                        <h2>4.6K +</h2>
                                         <span>STUDENTS</span>
                                     </div>
                                 </div>
@@ -544,7 +544,7 @@ function Home() {
                                         <img src={achieve2} alt="" />
                                     </div>
                                     <div className="counter-content">
-                                        <h2><NumberCounter end={175} className="increment" /></h2>
+                                        <h2><NumberCounter end={185} className="increment" /></h2>
                                         <span>TEACHERS</span>
                                     </div>
                                 </div>
@@ -566,7 +566,7 @@ function Home() {
                                         <img src={achieve4} alt="" />
                                     </div>
                                     <div className="counter-content">
-                                        <h2><NumberCounter end={120} className="increment" /></h2>
+                                        <h2><NumberCounter end={127} className="increment" suffix="+" /></h2>
                                         <span>SMART CLASSES</span>
                                     </div>
                                 </div>

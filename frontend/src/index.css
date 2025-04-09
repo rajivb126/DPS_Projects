@@ -1435,6 +1435,10 @@ thead tr th {
   flex: 1; /* Takes up remaining space */
 }
 
+.TramsferCertificate {
+  flex: 1;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   .icons {
     display: none;

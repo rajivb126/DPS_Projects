@@ -62,16 +62,13 @@ function SchoolNews() {
                                         {schoolNewsData.length > 0 ? (
                                             schoolNewsData.map((news, index) => (
                                                 <tr key={index._id}>
-                                                    <td className='text-center' style={{ width: '80px' }}>{formatDate(news.start_date)}</td>
+                                                    <td className='text-center'>{formatDate(news.start_date)}</td>
                                                     <td className='schoolnews_heading text-center'><strong>{news.schoolnews_heading}</strong><br /><i>{news.schoolnews_description}</i></td>
-                                                    <td style={{ width: '100px' }}>
+                                                    <td align='center'>
                                                         <a href={`${API_BASE_URL}/uploads/${news.schoolnews_link}`} target='_blank' rel="noreferrer">
                                                             <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
                                                         </a>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.schoolnews_link}`} target="_blank" rel="noreferrer" >
-                                                            <button className='bi bi-download btn btn-danger'
-                                                            ></button>
-                                                        </a>
+                                                        
                                                     </td>
                                                 </tr>
                                             ))

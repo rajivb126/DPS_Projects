@@ -1,6 +1,6 @@
 const Event = require('../models/events');
 const multer = require('multer');
-const fs = require('fs')
+const fs = require('fs').promises;
 const path = require('path');
 
 const storage = multer.diskStorage({
@@ -231,22 +231,22 @@ exports.deleteAllEvent = async (request, response) => {
 
 // 
 exports.deleteImage = async (request, response) => {
-    const { imageName } = request.params;
-    const filePath = path.join(__dirname, '../../uploads', imageName);
+    try {
+        const { imageName } = request.params;
 
-    // Check if the file exists
-    fs.stat(filePath, (err, stats) => {
-        if (err) {
-            return response.status(404).json({ message: 'Image not found' });
+        // Prevent path traversal
+        if (imageName.includes('..')) {
+            return response.status(400).json({ message: 'Invalid file name' });
         }
 
-        // Delete the image from the server
-        fs.unlink(filePath, (err) => {
-            if (err) {
-                console.error(err);
-                return response.status(500).json({ message: 'Failed to delete image' });
-            }
-            return response.status(200).json({ message: 'Image deleted successfully' });
-        });
-    });
+        const filePath = path.join(__dirname, '../../uploads', imageName);
+
+        await fs.access(filePath); // Check if file exists
+        await fs.unlink(filePath); // Delete file
+
+        return response.status(200).json({ message: 'Image deleted successfully' });
+    } catch (err) {
+        console.error(err);
+        return response.status(500).json({ message: 'Error deleting image', error: err.message });
+    }
 };
