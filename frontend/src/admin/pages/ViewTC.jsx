@@ -7,6 +7,8 @@ function ViewTC() {
     const [modalData, setModalData] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [isEditMode, setIsEditMode] = useState(false); // Track if in edit mode
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20;
 
     useEffect(() => {
         fetchData();
@@ -46,13 +48,13 @@ function ViewTC() {
             axios.put(`${API_BASE_URL}/api/transfercertificate/update/${_id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             })
-            .then(response => {
-                setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
-                handleCloseModal();
-            })
-            .catch(error => {
-                console.error('Error updating document:', error);
-            });
+                .then(response => {
+                    setData(data.map(doc => (doc._id === _id ? response.data.result : doc)));
+                    handleCloseModal();
+                })
+                .catch(error => {
+                    console.error('Error updating document:', error);
+                });
         } else {
             axios.put(`${API_BASE_URL}/api/transfercertificate/update/${_id}`, rest)
                 .then(response => {
@@ -103,12 +105,38 @@ function ViewTC() {
         }
     };
 
+    // Pagination logic
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
             <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
                         <h3 className='text-center text-dark pb-3'>View TC Data</h3>
+
+                        {/* Pagination */}
+                        <nav>
+                            <ul className="pagination justify-content-start">
+                                <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage - 1)}>Previous</button>
+                                </li>
+                                {Array.from({ length: totalPages }, (_, i) => (
+                                    <li key={i} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
+                                        <button className="page-link" onClick={() => paginate(i + 1)}>{i + 1}</button>
+                                    </li>
+                                ))}
+                                <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage + 1)}>Next</button>
+                                </li>
+                            </ul>
+                        </nav>
+                        
                         <table className='table table-striped table-bordered'>
                             <thead>
                                 <tr>
@@ -121,9 +149,9 @@ function ViewTC() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {currentItems.map((item, index) => (
                                     <tr key={item._id}>
-                                        <td className='text-center'>{index + 1}.</td>
+                                        <td className='text-center'>{indexOfFirstItem + index + 1}.</td>
                                         <td className='text-center'>{item.tc_sname}</td>
                                         <td className='text-center'>{item.tc_number}</td>
                                         <td>{item.tc_image}</td>

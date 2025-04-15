@@ -8,6 +8,9 @@ function ViewInfrastructure() {
     const [showModal, setShowModal] = useState(false); // Modal visibility state
     const [mode, setMode] = useState('view');
     const [infrastructureCategory, setInfrastructureCategory] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20;
+
 
     // Fetch data from API when the component is mounted
     useEffect(() => {
@@ -41,11 +44,11 @@ function ViewInfrastructure() {
         try {
             // Make DELETE request to delete the event file by name
             const response = await axios.delete(`${API_BASE_URL}/api/infrastructure/deleteImage/${fileName}`);
-    
+
             if (response.status === 200) {
                 // On success, notify user and remove the deleted file from the UI
                 alert("File deleted successfully");
-    
+
                 // Update the state to remove the deleted file (adjust state as per your code)
                 // For example:
                 setModalData(prevState => ({
@@ -135,12 +138,40 @@ function ViewInfrastructure() {
             }));
         }
     };
+
+
+    // Pagination logic
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
             <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
                         <h3 className='text-center text-dark pb-3'>View Infrastructure Data</h3>
+
+                        {/* Pagination */}
+                        <nav>
+                            <ul className="pagination justify-content-start">
+                                <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage - 1)}>Previous</button>
+                                </li>
+                                {Array.from({ length: totalPages }, (_, i) => (
+                                    <li key={i} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
+                                        <button className="page-link" onClick={() => paginate(i + 1)}>{i + 1}</button>
+                                    </li>
+                                ))}
+                                <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage + 1)}>Next</button>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <table className='table table-striped table-bordered'>
                             <thead>
                                 <tr>
@@ -153,9 +184,9 @@ function ViewInfrastructure() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {currentItems.map((item, index) => (
                                     <tr key={item._id}>
-                                        <td className='text-center'>{index + 1}.</td>
+                                        <td className='text-center'>{indexOfFirstItem + index + 1}.</td>
                                         <td className='text-center'>{item.infrastructure_category}</td>
                                         <td className='text-center'>{item.infrastructure_image}</td>
                                         <td className='text-center'>{new Date(item.start_date).toLocaleDateString()}</td>

@@ -61,9 +61,19 @@ exports.addWebsiteFile = async (request, response) => {
                 return response.status(400).json({ message: 'File already exists!' });
             }
 
+            let uploadDate
+
+            // Check if upload_date is provided, otherwise set to current date
+            if (request.body.upload_date) {
+                uploadDate = new Date(request.body.upload_date);
+            } else {
+                uploadDate = new Date();
+            }
+
             // ✅ If no duplicate, save the new file record
             let data = new websiteFile({
-                website_file: filePath,
+                'website_file': filePath,
+                'upload_date': uploadDate
             });
 
             const insertData = await data.save();
@@ -135,7 +145,7 @@ exports.updateWebsiteFile = async (request, response) => {
 
             // ✅ Update the database entry
             const updatedRecord = await websiteFile.findByIdAndUpdate(
-                id,
+                { _id: id },
                 { $set: updateData },
                 { new: true }
             );

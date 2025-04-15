@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
-import API_BASE_URL from '../../config'
+import API_BASE_URL from '../../config';
 
 function ViewImage() {
     const [data, setData] = useState([]);
     const [modalData, setModalData] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [mode, setMode] = useState('view');
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20;
 
     useEffect(() => {
         fetchData();
@@ -69,7 +71,6 @@ function ViewImage() {
     };
 
     useEffect(() => {
-        // Bind Fancybox with desired settings and event listeners
         Fancybox.bind('[data-fancybox="gallery"]', {
             buttons: [
                 "slideShow",
@@ -83,11 +84,10 @@ function ViewImage() {
             loop: false,
             protect: true,
             on: {
-                ready: () => setShowModal(false)  // Close modal when Fancybox opens
+                ready: () => setShowModal(false)
             }
         });
 
-        // Clean up Fancybox bindings when the component unmounts
         return () => {
             Fancybox.destroy();
         };
@@ -95,13 +95,13 @@ function ViewImage() {
 
     const handleViewClick = (item) => {
         setModalData(item);
-        setMode('view'); // Set mode to 'view' for viewing
+        setMode('view');
         setShowModal(true);
     };
 
     const handleEditClick = (item) => {
         setModalData(item);
-        setMode('edit'); // Set mode to 'edit' for editing
+        setMode('edit');
         setShowModal(true);
     };
 
@@ -137,12 +137,38 @@ function ViewImage() {
         }
     };
 
+    // Pagination logic
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
             <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
                         <h3 className='text-center text-dark pb-3'>View Site Image Data</h3>
+
+                        {/* Pagination */}
+                        <nav>
+                            <ul className="pagination justify-content-start">
+                                <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage - 1)}>Previous</button>
+                                </li>
+                                {Array.from({ length: totalPages }, (_, i) => (
+                                    <li key={i} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
+                                        <button className="page-link" onClick={() => paginate(i + 1)}>{i + 1}</button>
+                                    </li>
+                                ))}
+                                <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage + 1)}>Next</button>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <table className='table table-striped table-bordered'>
                             <thead>
                                 <tr>
@@ -153,22 +179,14 @@ function ViewImage() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {currentItems.map((item, index) => (
                                     <tr key={item._id}>
-                                        <td className='text-center'>{index + 1}.</td>
+                                        <td className='text-center'>{indexOfFirstItem + index + 1}.</td>
                                         <td>{item.site_image_file}</td>
                                         <td>{new Date(item.upload_date).toLocaleDateString()}</td>
                                         <td>
-                                            <button
-                                                className='bi bi-eye-fill btn btn-primary my-1'
-                                                style={{ width: '30%', marginRight: '5px' }}
-                                                onClick={() => handleViewClick(item)}
-                                            ></button>
-                                            <button
-                                                className='bi bi-pencil-square btn btn-warning my-1'
-                                                style={{ width: '33%', marginRight: '5px' }}
-                                                onClick={() => handleEditClick(item)}
-                                            ></button>
+                                            <button className='bi bi-eye-fill btn btn-primary my-1' style={{ width: '30%', marginRight: '5px' }} onClick={() => handleViewClick(item)}></button>
+                                            <button className='bi bi-pencil-square btn btn-warning my-1' style={{ width: '33%', marginRight: '5px' }} onClick={() => handleEditClick(item)}></button>
                                             <button className='bi bi-trash3 btn btn-danger' style={{ width: '30%' }} onClick={() => deleteDocument(item._id)}></button>
                                         </td>
                                     </tr>
@@ -201,14 +219,13 @@ function ViewImage() {
                                                         <button type="button" className="btn btn-secondary mt-2" onClick={copyToClipboard}>
                                                             <i className='bi bi-copy'></i>
                                                         </button>
-
                                                     </div>
                                                 ) : (
                                                     <p>No Images available</p>
                                                 )}
 
                                                 <div className="form-group mb-3">
-                                                    <label htmlFor="upload_date" className="form-label">Start Date</label>
+                                                    <label htmlFor="upload_date" className="form-label">Upload Date</label>
                                                     <input type="date" className="form-control" id="upload_date" name="upload_date" value={modalData?.upload_date?.substring(0, 10) || ''} onChange={handleInputChange} />
                                                 </div>
                                             </div>
@@ -217,9 +234,7 @@ function ViewImage() {
                                             <input type="file" className="form-control" id="site_image_file" name="site_image_file" onChange={handleInputChange} />
                                         )}
                                     </div>
-
                                 </div>
-
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>Close</button>
                                     {mode === 'edit' && <button type="submit" className="btn btn-primary">Update</button>}
@@ -230,7 +245,7 @@ function ViewImage() {
                 </div>
             )}
         </>
-    )
+    );
 }
 
-export default ViewImage
+export default ViewImage;

@@ -7,7 +7,8 @@ function ViewNewsletter() {
     const [modalData, setModalData] = useState(null); // Store data for modal
     const [showModal, setShowModal] = useState(false); // Modal visibility state
     const [mode, setMode] = useState('view');
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20;
 
     // Fetch data from API when the component is mounted
     useEffect(() => {
@@ -75,7 +76,7 @@ function ViewNewsletter() {
 
 
     const handleViewClick = (item) => {
-        setModalData(item); 
+        setModalData(item);
         setMode('view');
         setShowModal(true);
     };
@@ -112,12 +113,38 @@ function ViewNewsletter() {
         }
     };
 
+    // Pagination logic
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
             <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
                         <h3 className='text-center text-dark pb-3'>View Newsletter Data</h3>
+
+                        {/* Pagination */}
+                        <nav>
+                            <ul className="pagination justify-content-start">
+                                <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage - 1)}>Previous</button>
+                                </li>
+                                {Array.from({ length: totalPages }, (_, i) => (
+                                    <li key={i} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
+                                        <button className="page-link" onClick={() => paginate(i + 1)}>{i + 1}</button>
+                                    </li>
+                                ))}
+                                <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                                    <button className="page-link" onClick={() => paginate(currentPage + 1)}>Next</button>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <table className='table table-striped table-bordered'>
                             <thead>
                                 <tr>
@@ -130,9 +157,9 @@ function ViewNewsletter() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((item, index) => (
+                                {currentItems.map((item, index) => (
                                     <tr key={item._id}>
-                                        <td className='text-center'>{index + 1}.</td>
+                                        <td className='text-center'>{indexOfFirstItem + index + 1}.</td>
                                         <td className='text-center'>{item.newsletter_heading}</td>
                                         <td>{item.newsletter_link}</td>
                                         <td>{new Date(item.start_date).toLocaleDateString()}</td>

@@ -61,8 +61,8 @@ exports.addSiteImage = async (request, response) => {
 
         // Create new document in the database
         let data = new siteImage({
-            site_image_file: filePath, // Save full path instead of just filename
-            upload_date: uploadDate
+            'site_image_file': filePath, // Save full path instead of just filename
+            'upload_date': uploadDate
         });
 
         try {
