@@ -12,6 +12,7 @@ import affiliation from '../images/lOGO FOR WEBSITES/1.png';
 import collabaration from '../images/lOGO FOR WEBSITES/2.png';
 import membership from '../images/lOGO FOR WEBSITES/3.png';
 import accrediation from '../images/lOGO FOR WEBSITES/4.png';
+import ceebcode from '../images/lOGO FOR WEBSITES/5.png';
 import infra1 from '../images/infra-1.jpg';
 import infra2 from '../images/infra-2.jpg';
 import infra3 from '../images/infra-3.jpg';
@@ -310,7 +311,7 @@ function Home() {
                                     {newsUpdate.length > 0 ? (
                                         newsUpdate.map((news, index) => (
                                             <li key={index}>
-                                                <i className="bi bi-file-pdf pe-1" style={{color:'white'}}></i><a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank">{news.nname}</a>
+                                                <i className="bi bi-file-pdf pe-1" style={{ color: 'white' }}></i><a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank">{news.nname}</a>
                                             </li>
                                         ))
                                     ) : (
@@ -355,25 +356,32 @@ function Home() {
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-12 pt-lg-0 pt-4">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-2 col-md-6 col-sm-6 col-12 pt-lg-0 pt-4">
                             <div className="text-center about-img">
                                 <img src={affiliation} alt="" className="img-fluid" />
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-12 pt-lg-0 pt-4">
+                        <div className="col-lg-2 col-md-6 col-sm-6 col-12 pt-lg-0 pt-4">
                             <div className="text-center about-img">
                                 <img src={collabaration} alt="" className="img-fluid" />
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-12 pt-lg-0 pt-2">
+                        <div className="col-lg-2 col-md-6 col-sm-6 col-12 pt-lg-0 pt-2">
                             <div className="text-center about-img">
                                 <img src={membership} alt="" className="img-fluid" />
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6 col-12 pt-lg-0 pt-2">
+                        <div className="col-lg-2 col-md-6 col-sm-6 col-12 pt-lg-0 pt-2">
                             <div className="text-center about-img">
                                 <img src={accrediation} alt="" className="img-fluid" />
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-6 col-sm-6 col-12 pt-lg-0 pt-2">
+                            <div className="text-center about-img">
+                                <img src={ceebcode} alt="" className="img-fluid" />
                             </div>
                         </div>
                     </div>
