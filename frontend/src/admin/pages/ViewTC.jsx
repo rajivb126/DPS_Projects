@@ -115,7 +115,8 @@ function ViewTC() {
                                     <th>S. NO.</th>
                                     <th>TC SName</th>
                                     <th>Tc Number</th>
-                                    <th style={{ width: '450px' }}>TC Path</th>
+                                    <th>TC Path</th>
+                                    <th>Upload Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -126,6 +127,7 @@ function ViewTC() {
                                         <td className='text-center'>{item.tc_sname}</td>
                                         <td className='text-center'>{item.tc_number}</td>
                                         <td>{item.tc_image}</td>
+                                        <td>{new Date(item.upload_date).toLocaleDateString()}</td>
                                         <td>
                                             <button
                                                 className='bi bi-eye-fill btn btn-primary my-1'
@@ -174,6 +176,11 @@ function ViewTC() {
                                         ) : (
                                             modalData?.tc_image && <img src={`${API_BASE_URL}/uploads/${modalData.tc_image}`} alt="TC Document" style={{ width: '100%' }} />
                                         )}
+                                    </div>
+
+                                    <div className="form-group mb-3">
+                                        <label htmlFor="upload_date" className="form-label">Upload Date</label>
+                                        <input type="date" className="form-control" id="upload_date" name="upload_date" value={modalData?.upload_date?.substring(0, 10) || ''} onChange={handleInputChange} />
                                     </div>
                                 </div>
 

@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
         cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
-        const uniqueFileName = Date.now() + '-' + file.originalname.replace(/\s+/g, '_'); // ✅ Replace spaces with "_"
+        const uniqueFileName = file.originalname.replace(/\s+/g, '_'); // ✅ Replace spaces with "_"
         cb(null, uniqueFileName);
     }
 });
@@ -24,10 +24,20 @@ exports.addTransferCertificate = async (request, response) => {
             return response.status(400).json({ message: err.message });
         }
 
+        let uploadDate
+
+        // Check if upload_date is provided, otherwise set to current date
+        if (request.body.upload_date) {
+            uploadDate = new Date(request.body.upload_date);
+        } else {
+            uploadDate = new Date();
+        }
+
         let data = tc({
             'tc_sname': request.body.tc_sname,
             'tc_number': request.body.tc_number,
-            'tc_image': request.file.filename
+            'tc_image': request.file.filename,
+            'upload_date': uploadDate
         });
 
         try {

@@ -6,6 +6,7 @@ function AddTC() {
     const [tcSname, setTcSname] = useState('')
     const [tcNumber, setTcNumber] = useState('');
     const [tcImage, setTcImage] = useState('');
+    const [uploadDate, setUploadDate] = useState(new Date().toISOString().substring(0, 10)); // Current date as default
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
 
@@ -16,6 +17,7 @@ function AddTC() {
         formData.append('tc_sname', tcSname)
         formData.append('tc_number', tcNumber);
         formData.append('tc_image', tcImage);
+        formData.append('upload_date', uploadDate); // Add uploads date
 
         try {
             const response = await axios.post(`${API_BASE_URL}/api/transfercertificate/add`, formData);
@@ -24,6 +26,7 @@ function AddTC() {
             setTcSname('');
             setTcNumber('');
             setTcImage('');
+            setUploadDate(new Date().toISOString().substring(0, 10)); // Reset upload date
             document.getElementById("fileInput").value = "";
 
 
@@ -68,6 +71,13 @@ function AddTC() {
                                     </div>
                                     <div className='col-8 mb-4'>
                                         <input type="file" id="fileInput" onChange={(e) => setTcImage(e.target.files[0])} />
+                                    </div>
+
+                                    <div className="col-4 mb-4">
+                                        <label>Upload Date:</label>
+                                    </div>
+                                    <div className="col-8 mb-4">
+                                        <input type="date" value={uploadDate} className='form-control' onChange={(e) => setUploadDate(e.target.value)} />
                                     </div>
 
                                     <div className="col-12 text-center mt-5">
