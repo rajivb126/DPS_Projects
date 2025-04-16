@@ -45,7 +45,7 @@ function Faculty() {
         <>
             <Header />
 
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -153,7 +153,7 @@ function Faculty() {
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
                                                                 <p>
-                                                                    <a href={`mailto:${teacher.teacher_email}`}>
+                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer" >
                                                                         Send Mail
                                                                     </a>
                                                                 </p>
@@ -174,7 +174,9 @@ function Faculty() {
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
                                                                 <p>
-                                                                    <a href={`mailto:${teacher.teacher_email}`}> Send Mail</a>
+                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer" >
+                                                                        Send Mail
+                                                                    </a>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -193,7 +195,7 @@ function Faculty() {
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
                                                                 <p>
-                                                                    <a href={`mailto:${teacher.teacher_email}`}>
+                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer" >
                                                                         Send Mail
                                                                     </a>
                                                                 </p>
