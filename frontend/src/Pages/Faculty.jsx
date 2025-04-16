@@ -9,8 +9,6 @@ import Director from '../images/Director.jpg';
 import Vice_Principal from '../images/vicep.png';
 import Headmistress_Middle from '../images/hm_middle.jpg';
 import Headmistress_Primary from '../images/Hm_primary.jpeg';
-import Ritu_Handa from '../images/Ritu Handa.jpg';
-import Vinita_Bora from '../images/Vinita Bora.jpg';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import API_BASE_URL from '../config'
@@ -45,26 +43,29 @@ function Faculty() {
         <>
             <Header />
 
-            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
+            <section style={{animation:'fadeIn 1s ease-in-out'}}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
-                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>The Fraternity of DPS Jodhpur</h4>
+                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Our Team</h4>
                         </div>
                     </div>
                 </div>
                 <div className="container fraternity py-5">
                     <div className="row" style={{ textAlign: 'center' }}>
+                        <div className="col-12">
+                            <h2>THE FRATERNITY OF DPS JODHPUR</h2>
+                        </div>
                         <div className="col-lg-4"></div>
                         <div className="col-lg-2 col-6">
-                            <div className="pb-3">
+                            <div className="py-3">
                                 <img src={pro_vice_chairman} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">DINESH C. KOTHARI</h6>
                                 <h6>Pro Vice Chairman</h6>
                             </div>
                         </div>
                         <div className="col-lg-2 col-6">
-                            <div className="pb-3">
+                            <div className="py-3">
                                 <img src={Director} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">BIKRAM SINGH YADAV</h6>
                                 <h6>Director</h6>
@@ -72,8 +73,6 @@ function Faculty() {
                         </div>
                         <div className="col-lg-4"></div>
                         <div className="col-lg-2"></div>
-
-                        {/*  */}
                         <div className="col-lg-2 col-md-3">
                             <div className="py-3">
                                 <img src={Principal} className="img-fluid" alt="" />
@@ -81,6 +80,14 @@ function Faculty() {
                                 <h6>Principal</h6>
                             </div>
                         </div>
+                        {/* <div className="col-lg-2 col-md-3">
+                            <div className="py-3">
+                                <img src={Headmistress_Senior} className="img-fluid" alt="" />
+                                <h6 className="pt-2 teacher-name">SANGEETA YADAV</h6>
+                                <h6>Senior Headmistress<br />
+                                    (Senior Wing)</h6>
+                            </div>
+                        </div> */}
                         <div className="col-lg-2 col-md-3">
                             <div className="py-3">
                                 <img src={Vice_Principal} className="img-fluid" alt="" />
@@ -100,23 +107,6 @@ function Faculty() {
                                 <img src={Headmistress_Primary} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">PURNIMA RAJVI</h6>
                                 <h6 className="">Headmistress<br />(Primary Wing)</h6>
-                            </div>
-                        </div>
-
-                        {/*  */}
-                        <div className="col-lg-4"></div>
-                        <div className="col-lg-2 col-6">
-                            <div className="py-3">
-                                <img src={Vinita_Bora} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">Vinita Bora</h6>
-                                <h6>Incharge (Class IV & V)<br />Middle Wing</h6>
-                            </div>
-                        </div>
-                        <div className="col-lg-2 col-6">
-                            <div className="py-3">
-                                <img src={Ritu_Handa} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">Ritu Handa</h6>
-                                <h6>Incharge (Class I-III)<br /> Primary Wing</h6>
                             </div>
                         </div>
                     </div>
@@ -153,7 +143,7 @@ function Faculty() {
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
                                                                 <p>
-                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer" >
+                                                                    <a href={`mailto:${teacher.teacher_email}`}>
                                                                         Send Mail
                                                                     </a>
                                                                 </p>
@@ -174,9 +164,7 @@ function Faculty() {
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
                                                                 <p>
-                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer" >
-                                                                        Send Mail
-                                                                    </a>
+                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer">Send Mail</a>
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -195,7 +183,7 @@ function Faculty() {
                                                                 <h6 className="teachers-name text-uppercase pt-3">{teacher.teacher_name}</h6>
                                                                 <h6>{teacher.teacher_subject}</h6>
                                                                 <p>
-                                                                    <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${teacher.teacher_email}`} target="_blank" rel="noopener noreferrer" >
+                                                                    <a href={`mailto:${teacher.teacher_email}`}>
                                                                         Send Mail
                                                                     </a>
                                                                 </p>
