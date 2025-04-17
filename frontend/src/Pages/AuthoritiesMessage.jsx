@@ -7,6 +7,9 @@ import Headmistress_Middle from '../images/hm_middle.jpg';
 import Headmistress_Primary from '../images/Hm_primary.jpeg'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faBlog } from '@fortawesome/free-solid-svg-icons';
 
 function AuthoritiesMessage() {
     return (
@@ -14,7 +17,7 @@ function AuthoritiesMessage() {
             <Header />
 
             {/* Authorities Message Section */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -26,12 +29,13 @@ function AuthoritiesMessage() {
                     <div className="container authorities_message">
                         <div>
                             <div className="row">
-                                <div className="col-md-2 ">
-                                    <div className='image'></div>
-                                    <img src={provicechairman} alt="Pro Vice Chairman" />
+                                <div className="col-lg-2 ">
+                                    <div className='images'>
+                                        <img src={provicechairman} alt="Pro Vice Chairman" className='pro_vice_chairman_image' />
+                                    </div>
                                 </div>
 
-                                <div className="col-md-10 message">
+                                <div className="col-lg-10 message">
                                     <h2><i>Education prepares the young to educate themselves throughout their lives.</i></h2>
 
                                     <p>It is with immense pride and joy that I reflect on the journey of Delhi Public School Jodhpur, since its inception in April 1998. Our school is a torch-bearer of educational excellence, deeply rooted in values and committed to nurturing the students pragmatically.</p>
@@ -53,13 +57,22 @@ function AuthoritiesMessage() {
 
                     <div className="container blue_authorities_message">
                         <div className="row authorities_message pt-5">
-                            <div className="col-md-2">
+                            <div className="col-lg-2">
                                 <div className='image'>
                                     <img src={Director} alt="Director" className='director-image' />
                                 </div>
+                                <div className='icon pt-2 pb-1'>
+                                    <a href="https://www.youtube.com/@bsyadav-mythoughts/videos" target='_blank'>
+                                        <FontAwesomeIcon icon={faYoutube} className='youtube_icon' />
+                                    </a>
+
+                                    <a href="https://bsyadav-mythoughts.blogspot.com/">
+                                        <FontAwesomeIcon icon={faBlog} className='blog_icon' />
+                                    </a>
+                                </div>
                             </div>
 
-                            <div className="col-md-10 message">
+                            <div className="col-lg-10 message">
                                 <h2><i>Through the windows of education, we see the world in all its colours.</i></h2>
 
                                 <p>At Delhi Public School Jodhpur, our role transcends traditional education, focusing on all-inclusive development and character building. Our magnificent campus, rich with cultural heritage, nurtures students into future leaders. With top-notch facilities, including advanced labs, sports infrastructure, and residential blocks, we provide a comprehensive learning experience.</p>
@@ -80,13 +93,13 @@ function AuthoritiesMessage() {
 
                     <div className="container authorities_message bisque_authoritites_message">
                         <div className="row">
-                            <div className="col-md-2">
+                            <div className="col-lg-2">
                                 <div className='image'>
                                     <img src={Principal} alt="Principal" />
                                 </div>
                             </div>
 
-                            <div className="col-md-10 message">
+                            <div className="col-lg-10 message">
                                 <h2><i>Education is the compass that points us towards the stars of our potential.</i></h2>
 
                                 <p>Greetings and a heartfelt welcome to DPS Jodhpur, where the landscape of education, is woven with threads of tradition and innovation. Our illustrious institution, nestled in the heart of Rajasthan's vibrant culture, is more than just a school; it is a haven of learning and growth. With all the contemporary facilities, including smart boards, specialised labs, extensive sports amenities and an expansive library, we provide a stimulating and nurturing environment.</p>
@@ -107,13 +120,13 @@ function AuthoritiesMessage() {
 
                     <div className="container blue_authorities_message">
                         <div className="row authorities_message pt-5">
-                            <div className="col-md-2">
+                            <div className="col-lg-2">
                                 <div className='image'>
                                     <img src={VicePrincipal} alt="Vice Principal" className='director-image' />
                                 </div>
                             </div>
 
-                            <div className="col-md-10 message">
+                            <div className="col-lg-10 message">
                                 <h2><i>Through the prism of education, the light of knowledge refracts into a spectrum of understanding.</i></h2>
 
                                 <p>Delhi Public School Jodhpur is dedicated to cultivating an environment that determines academic excellence, creativity, and personal growth. Our commitment is to provide a holistic education that furthers every student's potential, preparing them for future challenges.</p>
@@ -136,13 +149,13 @@ function AuthoritiesMessage() {
 
                     <div className="container authorities_message bisque_authoritites_message">
                         <div className="row">
-                            <div className="col-md-2">
+                            <div className="col-lg-2">
                                 <div className='image'>
                                     <img src={Headmistress_Middle} alt="Headmistress Middle" />
                                 </div>
                             </div>
 
-                            <div className="col-md-10 message">
+                            <div className="col-lg-10 message">
                                 <h2><i>The pen of education writes the story of our future on the pages of today.</i></h2>
 
                                 <p>Delhi Public School Jodhpur sincerely endeavours to polish the students and equip them with the skills needed to survive in the competitive world. The school aims to provide a stimulating and supportive environment, encouraging students to outshine themselves and develop a lifelong love for learning.</p>
@@ -165,13 +178,13 @@ function AuthoritiesMessage() {
 
                     <div className="container blue_authorities_message">
                         <div className="row authorities_message pt-5">
-                            <div className="col-md-2">
+                            <div className="col-lg-2">
                                 <div className='image'>
                                     <img src={Headmistress_Primary} alt="Headmistress Primary Block" className='director-image' />
                                 </div>
                             </div>
 
-                            <div className="col-md-10 message">
+                            <div className="col-lg-10 message">
                                 <h2><i>There are two lasting begets we can give our children. One is roots, the other wings.</i></h2>
 
                                 <p>The first step into school is that giant step forward, where children embark on the great adventure of discovering the wide world outside and the depth of the world within. As we hold the little fingers of the young ones and guide them forward, we realise our responsibility of nurturing their curiosity, igniting their minds to pierce the skies, helping them discover the world of books and richness of experience, ponder on the “mystery of birds in the sky, the bees in the sun and the flowers on a green hill”, and today, ‘master the magic of technology and the limitless span of cyberspace.’</p>

@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   display: flex;
@@ -6,10 +7,12 @@ html, body {
 }
 
 /* Make the main container take up remaining space */
-#root, .App {
+#root,
+.App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full height of viewport */
+  min-height: 100vh;
+  /* Full height of viewport */
 }
 
 body {
@@ -828,6 +831,17 @@ thead tr th {
   border: 4px solid #002147;
 }
 
+.authorities_message .icon .youtube_icon {
+  padding-left: 25px;
+  color: red;
+  font-size: 45px;
+}
+
+.authorities_message .icon .blog_icon {
+  padding-left: 20px;
+  font-size: 45px;
+}
+
 .vision_and_mission {
   background-image: url(./images/bg-3.jpg);
   background-position: center center;
@@ -1301,7 +1315,7 @@ thead tr th {
   font-size: 16px;
   line-height: 100%;
   text-align: center;
-  
+
 }
 
 .card-date .day {
@@ -1417,23 +1431,28 @@ thead tr th {
 }
 
 .newsletter {
-  flex: 1; /* Takes up remaining space */
+  flex: 1;
+  /* Takes up remaining space */
 }
 
 .school_news {
-  flex: 1; /* Takes up remaining space */
+  flex: 1;
+  /* Takes up remaining space */
 }
 
 .Achievement {
-  flex: 1; /* Takes up remaining space */
+  flex: 1;
+  /* Takes up remaining space */
 }
 
 .download {
-  flex: 1; /* Takes up remaining space */
+  flex: 1;
+  /* Takes up remaining space */
 }
 
 .school_circular {
-  flex: 1; /* Takes up remaining space */
+  flex: 1;
+  /* Takes up remaining space */
 }
 
 .TramsferCertificate {
@@ -1733,6 +1752,14 @@ thead tr th {
     font-size: 20px;
   }
 
+  .authorities_message .icon .youtube_icon {
+    padding-left: 60px;
+  }
+
+  .authorities_message .icon .blog_icon {
+    padding-left: 20px;
+  }
+
   .virtualTour iframe {
     height: 300px;
   }
@@ -1813,7 +1840,7 @@ thead tr th {
     font-size: 15px;
     font-weight: bold;
   }
-  
+
 
   .slick-slider button.slick-prev {
     left: -10px;
@@ -1838,7 +1865,7 @@ thead tr th {
   .fee-structure table thead tr th h6 {
     font-size: 16px;
   }
-  
+
   .fee-structure table tbody tr td {
     font-size: 14px;
   }
@@ -1846,7 +1873,7 @@ thead tr th {
   .subject-combination table thead tr th {
     font-size: 16px;
   }
-  
+
   .subject-combination table tbody tr td {
     font-size: 14px;
   }
@@ -1890,6 +1917,11 @@ thead tr th {
   .authorities_message .image img {
     width: 230px;
     margin-top: -20%;
+    padding-left: 0;
+  }
+
+  .authorities_message .images img {
+    width: 230px;
     padding-left: 0;
   }
 
