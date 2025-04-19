@@ -17,39 +17,41 @@ function AlumniRegister() {
         axios.post(`${API_BASE_URL}/api/alumniform/add`, alumniFormData)
             .then(function (response) {
                 console.log(response);
+                // Reset the form after successful submission
+                setAlumniFormData({
+                    sname: "",
+                    fname: "",
+                    yearofpassout: "",
+                    nyearschool: "",
+                    address: "",
+                    contact: "",
+                    aemail: "",
+                    presentpos: "",
+                    refteachers: "",
+                    refprincipal: "",
+                    photo: ""
+                });
             })
             .catch(error => {
                 if (error.response) {
-                    // The request was made and the server responded with a status code
-                    // that falls out of the range of 2xx
-                    console.log(error.response.data); // Log the response data
-                    console.log(error.response.status); // Log the status code
-                    console.log(error.response.headers); // Log the response headers
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
                 } else if (error.request) {
-                    // The request was made but no response was received
                     console.log(error.request);
                 } else {
-                    // Something happened in setting up the request that triggered an Error
                     console.log('Error', error.message);
                 }
                 console.log(error.config);
-            })
-    }
-
-    const handleReset = (e) => {
-        setAlumniFormData(
-            { sname: "", fname: "", yearofpassout: "", nyearschool: "", address: "", contact: "", aemail: "", presentpos: "", refteachers: "", refprincipal: "", photo: "" }
-        )
-
-        e.preventDefault()
-    }
+            });
+    };
 
     return (
         <>
             <Header />
 
             {/* Alumni Register Section */}
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -90,16 +92,11 @@ function AlumniRegister() {
                                 <label style={{ fontSize: '11px' }}>(Names of Teachers you remember)</label>
                                 <input type="text" name="refteachers" value={alumniFormData.refteachers} placeholder="Enter Reference Of Teacher" onChange={handleData} required />
 
-                                <label>Reference Of Principals<span>*</span></label>
-                                <label style={{ fontSize: '11px' }}>(Names of Principals you remember)</label>
-                                <input type="text" name="refprincipal" value={alumniFormData.refprincipal} placeholder="Enter Reference Of Principal" onChange={handleData} required />
-
                                 <label>Recent Photo<span>*</span></label>
                                 <label style={{ fontSize: '11px' }}>(Only Upoload .jpg/.png file)</label>
                                 <input type="file" name="photo" value={alumniFormData.photo} onChange={handleData} multiple style={{ border: '0', padding: '0' }} />
 
                                 <div className="text-end form-button">
-                                    <input type="submit" value="Reset" className="btn btn-default" onClick={handleReset} />
                                     <input type="submit" value="Submit" className="btn btn-success" onClick={handleSubmit} />
                                 </div>
                             </form>

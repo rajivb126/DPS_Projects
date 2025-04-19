@@ -83,7 +83,6 @@ function ViewAlumni() {
                                     <th>Email</th>
                                     <th>Present Position</th>
                                     <th>Ref. Teacher</th>
-                                    <th>Ref. Principal</th>
                                     <th>Photo Path</th>
                                     <th>Action</th>
                                 </tr>
@@ -101,7 +100,6 @@ function ViewAlumni() {
                                         <td className='text-center'>{item.aemail}</td>
                                         <td className='text-center'>{item.presentpos}</td>
                                         <td className='text-center'>{item.refteachers}</td>
-                                        <td className='text-center'>{item.refprincipal}</td>
                                         <td>{item.photo}</td>
                                         <td>
                                             <button
@@ -133,61 +131,55 @@ function ViewAlumni() {
                                     {/* Student Name */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Student Name</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.sname || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Father's Name */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_number" className="form-label">Father's Name</label>
-                                        <input type="text" className="form-control" id="tc_number" name="tc_number" value={modalData?.tc_number || ''} onChange={handleInputChange}/>
+                                        <input type="text" className="form-control" id="tc_number" name="tc_number" value={modalData?.fname || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Year of Passout */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_number" className="form-label">Year of Passout</label>
-                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.tc_number || ''} onChange={handleInputChange}/>
+                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.yearofpassout || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* No. of Years of Our School */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_number" className="form-label">No. of Years in Our School</label>
-                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.tc_number || ''} onChange={handleInputChange}/>
+                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.nyearschool || ''} onChange={handleInputChange}/>
                                     </div>
                                     
                                     {/* Present Address */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Present Address</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.address || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Contact Number */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Contact Number</label>
-                                        <input type="number" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
+                                        <input type="number" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.contact || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Email Address */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Email Address</label>
-                                        <input type="email" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
+                                        <input type="email" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.aemail || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Present Position */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Present Position</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.presentpos || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Reference of Teacher's */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Reference of Teacher's</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
-                                    </div>
-                                    
-                                    {/* Reference of Principals */}
-                                    <div className="form-group mb-3">
-                                        <label htmlFor="tc_sname" className="form-label">Reference of Principa;</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.tc_sname || ''} onChange={handleInputChange}/>
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.refteachers || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     <div className="form-group mb-3">

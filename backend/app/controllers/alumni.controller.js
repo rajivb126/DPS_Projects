@@ -1,31 +1,50 @@
 const alumniForm = require('../models/alumniForm');
 const mongodb = require('mongodb');
+const multer = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        const uploadPath = path.join(__dirname, '../../uploads'); // ✅ Corrected path
+        cb(null, uploadPath);
+    },
+    filename: function (req, file, cb) {
+        const uniqueFileName = file.originalname.replace(/\s+/g, '_'); // ✅ Replace spaces with "_"
+        cb(null, uniqueFileName);
+    }
+});
+
+const upload = multer({ storage: storage });
 
 // Add API for Alumni Form
 exports.addAlumniForm = async (request, response) => {
-    let data = alumniForm({
-        'sname': request.body.sname,
-        'fname': request.body.fname,
-        'yearofpassout': request.body.yearofpassout,
-        'nyearschool': request.body.nyearschool,
-        'address': request.body.address,
-        'contact': request.body.contact,
-        'aemail': request.body.aemail,
-        'presentpos': request.body.presentpos,
-        'refteachers': request.body.refteachers,
-        'refprincipal': request.body.refprincipal,
-        'photo': request.body.photo
-    });
+    upload.single('photo')(request, response, async function (err) {
+        if (err) {
+            return response.status(400).json({ message: err.message });
+        }
+        let data = alumniForm({
+            'sname': request.body.sname,
+            'fname': request.body.fname,
+            'yearofpassout': request.body.yearofpassout,
+            'nyearschool': request.body.nyearschool,
+            'address': request.body.address,
+            'contact': request.body.contact,
+            'aemail': request.body.aemail,
+            'presentpos': request.body.presentpos,
+            'refteachers': request.body.refteachers,
+            'photo': request.file.filename
+        });
 
-    const insertData = await data.save();
+        const insertData = await data.save();
 
-    var arr = {
-        'status': true,
-        'message': 'Record Insert Successfully!!',
-        'data': insertData
-    };
+        var arr = {
+            'status': true,
+            'message': 'Record Insert Successfully!!',
+            'data': insertData
+        };
 
-    response.send(arr);
+        response.send(arr);
+    })
 };
 
 // View API for Alumni Form
