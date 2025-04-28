@@ -45,7 +45,7 @@ function Newsletter() {
         <>
             <Header />
 
-            <section className='newsletter' style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className='newsletter' style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -66,26 +66,30 @@ function Newsletter() {
                                         </tr>
                                     </thead>
                                     <tbody style={{ verticalAlign: 'middle' }}>
-                                        {data.length > 0 ? (
-                                            data.map((news, index) => (
-                                                <tr key={index._id}>
-                                                    <td className='text-center'>{formatDate(news.start_date)}</td>
-                                                    <td className='text-center' >{news.newsletter_heading}</td>
-                                                    <td style={{ width: '120px' }}>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.newsletter_link}`} target='_blank' rel="noreferrer">
-                                                            <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
-                                                        </a>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.newsletter_link}`} target="_blank" rel="noreferrer" >
-                                                            <button className='bi bi-download btn btn-danger'
-                                                            ></button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            ))
+                                        {filteredNewsletter.length > 0 ? (
+                                            [...filteredNewsletter]
+                                                .sort((a, b) => new Date(b.start_date) - new Date(a.start_date)) 
+                                                .map((news, index) => (
+                                                    <tr key={news._id}> 
+                                                        <td className='text-center'>{formatDate(news.start_date)}</td>
+                                                        <td className='text-center'>{news.newsletter_heading}</td>
+                                                        <td style={{ width: '120px' }} className="text-center">
+                                                            <a href={`${API_BASE_URL}/uploads/${news.newsletter_link}`} target='_blank' rel="noreferrer">
+                                                                <button className='viewbutton bi bi-eye-fill btn btn-primary me-1'></button>
+                                                            </a>
+                                                            <a href={`${API_BASE_URL}/uploads/${news.newsletter_link}`} target="_blank" rel="noreferrer">
+                                                                <button className='bi bi-download btn btn-danger'></button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                ))
                                         ) : (
-                                            <p>No Newsletter available.</p>
+                                            <tr>
+                                                <td colSpan="3" className="text-center">No Newsletter available.</td>
+                                            </tr>
                                         )}
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>

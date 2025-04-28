@@ -47,7 +47,7 @@ function SchoolCircular() {
         <>
             <Header />
 
-            <section className='school_circular' style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section className='school_circular' style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -69,25 +69,29 @@ function SchoolCircular() {
                                     </thead>
                                     <tbody style={{ verticalAlign: 'middle' }}>
                                         {noticeCircular.length > 0 ? (
-                                            noticeCircular.map((news, index) => (
-                                                <tr key={index._id}>
-                                                    <td className='text-center'>{formatDate(news.start_date)}</td>
-                                                    <td className='text-center' >{news.nname}</td>
-                                                    <td style={{ width: '120px' }}>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target='_blank' rel="noreferrer">
-                                                            <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
-                                                        </a>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noreferrer" >
-                                                            <button className='bi bi-download btn btn-danger'
-                                                            ></button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            ))
+                                            [...noticeCircular]
+                                                .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
+                                                .map((news, index) => (
+                                                    <tr key={news._id}>
+                                                        <td className='text-center'>{formatDate(news.start_date)}</td>
+                                                        <td className='text-center'>{news.nname}</td>
+                                                        <td style={{ width: '120px' }} className="text-center">
+                                                            <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target='_blank' rel="noreferrer">
+                                                                <button className='viewbutton bi bi-eye-fill btn btn-primary me-1'></button>
+                                                            </a>
+                                                            <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noreferrer">
+                                                                <button className='bi bi-download btn btn-danger'></button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                ))
                                         ) : (
-                                            <p>No School Circular News available.</p>
+                                            <tr>
+                                                <td colSpan="3" className="text-center">No School Circular News available.</td>
+                                            </tr>
                                         )}
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>

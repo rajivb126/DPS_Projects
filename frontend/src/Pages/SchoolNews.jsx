@@ -60,22 +60,29 @@ function SchoolNews() {
                                     </thead>
                                     <tbody style={{ verticalAlign: 'middle' }}>
                                         {schoolNewsData.length > 0 ? (
-                                            schoolNewsData.map((news, index) => (
-                                                <tr key={index._id}>
-                                                    <td className='text-center'>{formatDate(news.start_date)}</td>
-                                                    <td className='schoolnews_heading text-center'><strong>{news.schoolnews_heading}</strong><br /><i>{news.schoolnews_description}</i></td>
-                                                    <td align='center'>
-                                                        <a href={`${API_BASE_URL}/uploads/${news.schoolnews_link}`} target='_blank' rel="noreferrer">
-                                                            <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
-                                                        </a>
-                                                        
-                                                    </td>
-                                                </tr>
-                                            ))
+                                            [...schoolNewsData]
+                                                .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
+                                                .map((news, index) => (
+                                                    <tr key={news._id}>
+                                                        <td className='text-center'>{formatDate(news.start_date)}</td>
+                                                        <td className='schoolnews_heading text-center'>
+                                                            <strong>{news.schoolnews_heading}</strong><br />
+                                                            <i>{news.schoolnews_description}</i>
+                                                        </td>
+                                                        <td align='center'>
+                                                            <a href={`${API_BASE_URL}/uploads/${news.schoolnews_link}`} target='_blank' rel="noreferrer">
+                                                                <button className='viewbutton bi bi-eye-fill btn btn-primary'></button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                ))
                                         ) : (
-                                            <p>No School News available.</p>
+                                            <tr>
+                                                <td colSpan="3" className="text-center">No School News available.</td>
+                                            </tr>
                                         )}
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>

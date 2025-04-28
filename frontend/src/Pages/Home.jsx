@@ -308,14 +308,18 @@ function Home() {
                             <marquee ref={newsRef} onMouseOver={handleMouseOverNews} onMouseOut={handleMouseOutNews} width="100%" direction="left" scrollamount="4" scrolldelay="0">
                                 <ul>
                                     {newsUpdate.length > 0 ? (
-                                        newsUpdate.map((news, index) => (
-                                            <li key={index}>
-                                                <i className="bi bi-file-pdf pe-1" style={{ color: 'white' }}></i><a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank">{news.nname}</a>
-                                            </li>
-                                        ))
+                                        [...newsUpdate]
+                                            .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
+                                            .map((news, index) => (
+                                                <li key={index}>
+                                                    <i className="bi bi-file-pdf pe-1" style={{ color: 'white' }}></i>
+                                                    <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noopener noreferrer">{news.nname}</a>
+                                                </li>
+                                            ))
                                     ) : (
                                         <p className="text-white" style={{ paddingTop: '5px' }}></p>
                                     )}
+
                                 </ul>
                             </marquee>
                         </div>
@@ -339,17 +343,20 @@ function Home() {
                                     <marquee ref={marqueeRef} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} direction="up" scrollamount="2" scrolldelay="10" style={{ height: '300px' }}>
                                         <ul className="p-0">
                                             {noticeCircular.length > 0 ? (
-                                                noticeCircular.map((news, index) => (
-                                                    <div className="d-flex align-items-center" key={index} style={{ borderBottom: 'solid 1px #e9ecef', paddingTop: '10px' }}>
-                                                        <li className="me-3">{formattDate(news.start_date)}</li>
-                                                        <li>
-                                                            <a target="_blank" href={`${API_BASE_URL}/uploads/${news.nlink}`}>{news.nname}</a>
-                                                        </li>
-                                                    </div>
-                                                ))
+                                                [...noticeCircular]
+                                                    .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))  // Sort by start_date descending
+                                                    .map((news, index) => (
+                                                        <div className="d-flex align-items-center" key={index} style={{ borderBottom: 'solid 1px #e9ecef', paddingTop: '10px' }}>
+                                                            <li className="me-3">{formattDate(news.start_date)}</li>
+                                                            <li>
+                                                                <a target="_blank" href={`${API_BASE_URL}/uploads/${news.nlink}`}>{news.nname}</a>
+                                                            </li>
+                                                        </div>
+                                                    ))
                                             ) : (
                                                 <p></p>
                                             )}
+
                                         </ul>
                                     </marquee>
                                 </div>
@@ -378,7 +385,7 @@ function Home() {
                                 <img src={accrediation} alt="" className="img-fluid" />
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>

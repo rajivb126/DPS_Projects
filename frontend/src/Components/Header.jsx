@@ -171,16 +171,19 @@ function Header() {
                         <div className="col-12">
                             <marquee ref={marqueeRef} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} width="100%" direction="left" scrollamount="4" scrolldelay="0">
                                 {marqueeNews.length > 0 ? (
-                                    marqueeNews.map((news, index) => (
-                                        <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target='_blank'>
-                                            <span style={{ color: 'yellow' }}> &nbsp;&nbsp;.:::.&nbsp;&nbsp; </span>
-                                            <b>{news.nname}</b>
-                                            <span style={{ color: 'yellow' }}> &nbsp;&nbsp;.:::.&nbsp;&nbsp; </span>
-                                        </a>
-                                    ))
+                                    [...marqueeNews]
+                                        .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
+                                        .map((news, index) => (
+                                            <a key={index} href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noopener noreferrer">
+                                                <span style={{ color: 'yellow' }}> &nbsp;&nbsp;.:::.&nbsp;&nbsp; </span>
+                                                <b>{news.nname}</b>
+                                                <span style={{ color: 'yellow' }}> &nbsp;&nbsp;.:::.&nbsp;&nbsp; </span>
+                                            </a>
+                                        ))
                                 ) : (
                                     <p></p>
                                 )}
+
                             </marquee>
                         </div>
                     </div>
