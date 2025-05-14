@@ -273,12 +273,18 @@ function Home() {
                                         <img src={`${API_BASE_URL}/uploads/${popupData.popup_image}`} alt="Popup" className="img-fluid" />
                                     </div>
                                     <div className="modal-footer justify-content-center">
-                                        <button type="button" className="btn btn-primary">
-                                            <Link to={popupData.popup_link} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
-                                                Click here to Proceed
-                                            </Link>
+                                        {popupData.popup_link ? (
+                                            <button type="button" className="btn btn-primary">
+                                                <Link to={popupData.popup_link} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
+                                                    Click here to Proceed
+                                                </Link>
+                                            </button>
+                                        ) : null}
+                                        <button type="button" className="btn btn-secondary" onClick={handleClose} aria-label="Close">
+                                            Close
                                         </button>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
