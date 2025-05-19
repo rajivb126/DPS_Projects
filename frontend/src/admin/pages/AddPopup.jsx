@@ -59,15 +59,15 @@ function AddPopup() {
                                         <input type="text" className="form-control" placeholder='Enter Popup Header' value={popupHeader} onChange={(e) => setPopupHeader(e.target.value)} required />
                                     </div>
 
-                                    {/* Assembly Description */}
+                                    {/* POpup Link */}
                                     <div className='col-5 mb-4'>
                                         <label>Popup Link:</label>
                                     </div>
                                     <div className='col-7 mb-4'>
-                                        <input type="text" className="form-control" placeholder='Enter Popup Link' value={popupLink} onChange={(e) => setPopupLink(e.target.value)} required />
+                                        <input type="text" className="form-control" placeholder='Enter Popup Link' value={popupLink} onChange={(e) => setPopupLink(e.target.value)} />
                                     </div>
 
-                                    {/* Assembly Slug */}
+                                    {/* Upload Image */}
                                     <div className="col-5 mb-4">
                                         <label>Upload Image:</label>
                                     </div>
@@ -75,7 +75,7 @@ function AddPopup() {
                                         <input type="file" className="form-control" onChange={handleFileChange} required />
                                     </div>
 
-                                    {/* Assembly Thumbnail Image */}
+                                    {/* Show Popup Button */}
                                     <div className="col-5 mb-4">
                                         <label className="form-check-label">Show Popup (ON/OFF)</label>
                                     </div>
