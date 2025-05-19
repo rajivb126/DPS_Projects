@@ -20,7 +20,7 @@ import achieve4 from '../images/achieve-4.png';
 import Popup from '../images/Popup.jpg'
 import { Player } from "video-react";
 import NumberCounter from 'number-counter';
-import Banner from '../images/SiteSlider.mp4'
+import Banner from '../images/SiteSlider.mp4';
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { Link } from "react-router-dom";
@@ -306,13 +306,13 @@ function Home() {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-2 col-12 text-center news-update">
-                            <h3 className="">News Update</h3>
+                            <h3 className="">Notices & Circulars</h3>
                         </div>
                         <div className="col-lg-10 col-12 news-update-list">
                             <marquee ref={newsRef} onMouseOver={handleMouseOverNews} onMouseOut={handleMouseOutNews} width="100%" direction="left" scrollamount="4" scrolldelay="0">
                                 <ul>
-                                    {newsUpdate.length > 0 ? (
-                                        [...newsUpdate]
+                                    {noticeCircular.length > 0 ? (
+                                        [...noticeCircular]
                                             .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
                                             .map((news, index) => (
                                                 <li key={index}>
@@ -341,13 +341,13 @@ function Home() {
                         <div className="col-lg-4 col-12">
                             <div className="notice-circular">
                                 <div className="inside-notice-circular">
-                                    <h3>Notices & Circulars</h3>
+                                    <h3>News Update</h3>
                                 </div>
                                 <div className="holder px-2" style={{ border: '2px groove darkblue' }}>
                                     <marquee ref={marqueeRef} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} direction="up" scrollamount="2" scrolldelay="10" style={{ height: '300px' }}>
                                         <ul className="p-0">
-                                            {noticeCircular.length > 0 ? (
-                                                [...noticeCircular]
+                                            {newsUpdate.length > 0 ? (
+                                                [...newsUpdate]
                                                     .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))  // Sort by start_date descending
                                                     .map((news, index) => (
                                                         <div className="d-flex align-items-center" key={index} style={{ borderBottom: 'solid 1px #e9ecef', paddingTop: '10px' }}>
