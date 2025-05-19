@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Marquee from "react-fast-marquee";
-
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import 'animate.css';
