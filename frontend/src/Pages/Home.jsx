@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "video-react/dist/video-react.css";
+import greenschool from '../images/lOGO FOR WEBSITES/5.png';
 import affiliation from '../images/lOGO FOR WEBSITES/1.png';
 import collabaration from '../images/lOGO FOR WEBSITES/2.png';
 import membership from '../images/lOGO FOR WEBSITES/3.png';
@@ -17,7 +18,7 @@ import achieve1 from '../images/achieve-1.png';
 import achieve2 from '../images/achieve-2.png';
 import achieve3 from '../images/achieve-3.png';
 import achieve4 from '../images/achieve-4.png';
-import Popup from '../images/Popup.jpg'
+// import Popup from '../images/Popup.jpg'
 import { Player } from "video-react";
 import NumberCounter from 'number-counter';
 import Banner from '../images/SiteSlider.mp4';
@@ -371,6 +372,13 @@ function Home() {
                     <div className="row justify-content-center">
                         <div className="col-lg-3 col-md-6 col-sm-6 col-12 pt-lg-0 pt-4">
                             <div className="text-center about-img">
+                                <img src={greenschool} alt="" className="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-3 col-md-6 col-sm-6 col-12 pt-lg-0 pt-4">
+                            <div className="text-center about-img">
                                 <img src={affiliation} alt="" className="img-fluid" />
                             </div>
                         </div>
@@ -389,7 +397,6 @@ function Home() {
                                 <img src={accrediation} alt="" className="img-fluid" />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
