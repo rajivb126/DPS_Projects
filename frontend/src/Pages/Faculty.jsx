@@ -71,7 +71,7 @@ function Faculty() {
                                 <h6>Director</h6>
                             </div>
                         </div>
-                        <div className="col-lg-4"></div>
+                       <div className="col-lg-4"></div>
                         <div className="col-lg-2"></div>
                         <div className="col-lg-2 col-md-4">
                             <div className="py-3">
