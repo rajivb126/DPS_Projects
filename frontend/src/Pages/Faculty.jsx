@@ -71,9 +71,9 @@ function Faculty() {
                                 <h6>Director</h6>
                             </div>
                         </div>
-                        <div className="col-lg-4"></div>
+                       <div className="col-lg-4"></div>
                         <div className="col-lg-2"></div>
-                        <div className="col-lg-2 col-md-3">
+                        <div className="col-lg-2 col-md-4">
                             <div className="py-3">
                                 <img src={Principal} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">ABHILASHA SHAW</h6>
@@ -88,21 +88,15 @@ function Faculty() {
                                     (Senior Wing)</h6>
                             </div>
                         </div> */}
-                        <div className="col-lg-2 col-md-3">
+                        <div className="col-lg-2 col-md-4">
                             <div className="py-3">
                                 <img src={Vice_Principal} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">KAAJAL KANWAR BHATI</h6>
                                 <h6>Vice Principal</h6>
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-3">
-                            <div className="py-3">
-                                <img src={Headmistress_Middle} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">PALLAVI DAS</h6>
-                                <h6 className="">Headmistress<br /> (Middle Wing)</h6>
-                            </div>
-                        </div>
-                        <div className="col-lg-2 col-md-3">
+                        
+                        <div className="col-lg-2 col-md-4">
                             <div className="py-3">
                                 <img src={Headmistress_Primary} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">PURNIMA RAJVI</h6>
