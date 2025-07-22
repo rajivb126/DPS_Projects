@@ -43,7 +43,7 @@ function Faculty() {
         <>
             <Header />
 
-            <section style={{animation:'fadeIn 1s ease-in-out'}}>
+            <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
@@ -56,31 +56,34 @@ function Faculty() {
                         <div className="col-12">
                             <h2>THE FRATERNITY OF DPS JODHPUR</h2>
                         </div>
-                        <div className="col-lg-4"></div>
-                        <div className="col-lg-2 col-6">
-                            <div className="py-3">
-                                <img src={pro_vice_chairman} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">DINESH C. KOTHARI</h6>
-                                <h6>Pro Vice Chairman</h6>
+                        <div className="col-12">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-2 col-6">
+                                    <div className="py-3">
+                                        <img src={pro_vice_chairman} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">DINESH C. KOTHARI</h6>
+                                        <h6>Pro Vice Chairman</h6>
+                                    </div>
+                                </div>
+                                <div className="col-lg-2 col-6">
+                                    <div className="py-3">
+                                        <img src={Director} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">BIKRAM SINGH YADAV</h6>
+                                        <h6>Director</h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-lg-2 col-6">
-                            <div className="py-3">
-                                <img src={Director} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">BIKRAM SINGH YADAV</h6>
-                                <h6>Director</h6>
-                            </div>
-                        </div>
-                       <div className="col-lg-4"></div>
-                        <div className="col-lg-2"></div>
-                        <div className="col-lg-2 col-md-4">
-                            <div className="py-3">
-                                <img src={Principal} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">ABHILASHA SHAW</h6>
-                                <h6>Principal</h6>
-                            </div>
-                        </div>
-                        {/* <div className="col-lg-2 col-md-3">
+                        <div className="col-12">
+                            <div className="row justify-content-center">
+                                <div className="col-lg-2 col-md-4">
+                                    <div className="py-3">
+                                        <img src={Principal} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">ABHILASHA SHAW</h6>
+                                        <h6>Principal</h6>
+                                    </div>
+                                </div>
+                                {/* <div className="col-lg-2 col-md-3">
                             <div className="py-3">
                                 <img src={Headmistress_Senior} className="img-fluid" alt="" />
                                 <h6 className="pt-2 teacher-name">SANGEETA YADAV</h6>
@@ -88,19 +91,21 @@ function Faculty() {
                                     (Senior Wing)</h6>
                             </div>
                         </div> */}
-                        <div className="col-lg-2 col-md-4">
-                            <div className="py-3">
-                                <img src={Vice_Principal} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">KAAJAL KANWAR BHATI</h6>
-                                <h6>Vice Principal</h6>
-                            </div>
-                        </div>
-                        
-                        <div className="col-lg-2 col-md-4">
-                            <div className="py-3">
-                                <img src={Headmistress_Primary} className="img-fluid" alt="" />
-                                <h6 className="pt-2 teacher-name">PURNIMA RAJVI</h6>
-                                <h6 className="">Headmistress<br />(Primary Wing)</h6>
+                                <div className="col-lg-2 col-md-4">
+                                    <div className="py-3">
+                                        <img src={Vice_Principal} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">KAAJAL KANWAR BHATI</h6>
+                                        <h6>Vice Principal</h6>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-2 col-md-4">
+                                    <div className="py-3">
+                                        <img src={Headmistress_Primary} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">PURNIMA RAJVI</h6>
+                                        <h6 className="">Headmistress<br />(Primary Wing)</h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

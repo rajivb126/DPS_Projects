@@ -119,9 +119,11 @@ require('./app/routes/faculty.route')(app);
 require('./app/routes/assembly.route')(app);
 require('./app/routes/studentCouncil.route')(app);
 require('./app/routes/popup.route')(app);
+require('./app/routes/slider.route')(app);
 require('./app/routes/infrastructure.route')(app);
 require('./app/routes/siteImage.route')(app);
 require('./app/routes/websiteFile.route')(app);
+require('./app/routes/result.route')(app);
 
 
 app.use((request, response, next) => {

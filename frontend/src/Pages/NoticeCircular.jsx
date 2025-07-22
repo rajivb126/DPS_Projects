@@ -4,7 +4,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import API_BASE_URL from '../config'
 
-function SchoolNews() {
+function NoticeCircular() {
     const [newsData, setNewsData] = useState([])
     useEffect(() => {
         axios.get(`${API_BASE_URL}/api/news/view`)
@@ -20,8 +20,8 @@ function SchoolNews() {
     const currentDate = new Date();
 
     // Filter news based on category and date range
-    const newsUpdate = newsData.filter(news =>
-        news.news_category === 'news update' &&
+    const noticeCircular = newsData.filter(news =>
+        news.news_category === 'notice circular' &&
         new Date(news.start_date) <= currentDate &&
         new Date(news.end_date) >= currentDate
     );
@@ -51,7 +51,7 @@ function SchoolNews() {
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
-                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>School News</h4>
+                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Notice & Circular</h4>
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,8 @@ function SchoolNews() {
                                         </tr>
                                     </thead>
                                     <tbody style={{ verticalAlign: 'middle' }}>
-                                        {newsUpdate.length > 0 ? (
-                                            [...newsUpdate]
+                                        {noticeCircular.length > 0 ? (
+                                            [...noticeCircular]
                                                 .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
                                                 .map((news, index) => (
                                                     <tr key={news._id}>
@@ -103,4 +103,4 @@ function SchoolNews() {
     )
 }
 
-export default SchoolNews
+export default NoticeCircular

@@ -33,6 +33,7 @@ function Home() {
     const marqueeRef = useRef(null);
     const newsRef = useRef(null);
     const [popupData, setPopupData] = useState(null); // To store popup data
+    const [videos, setVideos] = useState([]); // To Store SLider data
     const [showModal, setShowModal] = useState(false); // Modal visibility state
 
     useEffect(() => {
@@ -57,6 +58,17 @@ function Home() {
                 console.error('Error fetching popup data:', error);
             });
     };
+
+    useEffect(() => {
+        axios.get(`${API_BASE_URL}/api/slider/view`)
+            .then(function (response) {
+                console.log(response.data.data[0]);
+                setVideos(response.data.data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     const handleClose = () => {
         setShowModal(false); // Close the modal
@@ -265,12 +277,12 @@ function Home() {
                     <div className="popup">
                         {/* Modal */}
                         <div className="modal show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
-                            <div className="modal-dialog modal-dialog-centered" role="document" style={{ maxWidth: '1000px'}}>
+                            <div className="modal-dialog modal-dialog-centered" role="document" style={{ maxWidth: '1000px' }}>
                                 <div className="modal-content">
                                     <div className="modal-body p-0 position-relative">
                                         <img src={`${API_BASE_URL}/uploads/${popupData.popup_image}`} alt="Popup" className="img-fluid" />
                                     </div>
-                                    <div className="modal-footer p-0 justify-content-end" style={{position:"absolute", top:'-23px', right:'-22px'}}>
+                                    <div className="modal-footer p-0 justify-content-end" style={{ position: "absolute", top: '-23px', right: '-22px', borderTop: '0' }}>
                                         {popupData.popup_link ? (
                                             <button type="button" className="btn btn-primary">
                                                 <Link to={popupData.popup_link} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
@@ -278,7 +290,7 @@ function Home() {
                                                 </Link>
                                             </button>
                                         ) : null}
-                                        <button type="button" className="btn btn-dark" onClick={handleClose} aria-label="Close" style={{fontWeight:'bold'}}>
+                                        <button type="button" className="btn btn-dark" onClick={handleClose} aria-label="Close" style={{ fontWeight: 'bold' }}>
                                             X
                                         </button>
                                     </div>
@@ -294,7 +306,11 @@ function Home() {
                 <div className="container-fluid slider px-0" style={{ backgroundColor: 'black' }}>
                     <div id="carouselExampleIndicators" className="carousel slide">
                         <div className="carousel-inner">
-                            <Player src={Banner} className="d-block w-100" loop autoPlay={true} muted />
+                            {videos.map((slider, index) => (
+                                <div key={slider.id}>
+                                    <Player src={slider.video_url} className="d-block w-100" loop autoPlay muted />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

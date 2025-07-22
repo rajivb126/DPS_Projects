@@ -19,6 +19,35 @@ function Header() {
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
     const marqueeRef = useRef(null);
+    const [xthResult, setXthResult] = useState(null);
+    const [xiithResult, setXiithResult] = useState(null);
+    const [resultData, setResultData] = useState([]);
+
+    useEffect(() => {
+        axios.get(`${API_BASE_URL}/api/result/view`)
+            .then(function (response) {
+                console.log(response.data.data[0]); // Optional: to check your response
+
+                const resultList = response.data.data;
+                setResultData(resultList); // If you're using resultData elsewhere
+
+                // Set result URLs by category
+                const xth = resultList.find(item => item.result_category === "Xth Result");
+                const xiith = resultList.find(item => item.result_category === "XIIth Result");
+
+                setXthResult(xth?.result_file || null);
+                setXiithResult(xiith?.result_file || null);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
+    const handleNoResult = (e) => {
+        e.preventDefault();
+        alert("Result not uploaded yet.");
+    };
+
 
     const handleMouseOver = () => {
         if (marqueeRef.current) {
@@ -303,6 +332,7 @@ function Header() {
                                     </Link>
                                     <ul className="dropdown-menu">
                                         <li><Link to={'/school-news'} className="dropdown-item" href="#">School News</Link></li>
+                                        <li><Link to={'/notice-circular'} className="dropdown-item" href="#">Notice & Circulars</Link></li>
                                         <li><Link to={'/event'} className="dropdown-item">Event Photo Gallery</Link></li>
                                         <li><Link to={'/newsletter'} className="dropdown-item">Newsletter</Link></li>
                                         <li><Link to={'/school-magazine'} className="dropdown-item" href="#">School Magazine-Quest</Link></li>
@@ -339,9 +369,30 @@ function Header() {
                                         <li>
                                             <a className="dropdown-item">Academic Curriculum</a>
                                         </li>
-                                        {/* <li>
-                                            <a className="dropdown-item">Board Results</a>
-                                        </li> */}
+                                        
+                                        {/* Always Show These Two */}
+                                        <li>
+                                            {xthResult ? (
+                                                <Link to={xthResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                                    Xth Board Result
+                                                </Link>
+                                            ) : (
+                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
+                                                    Xth Board Result
+                                                </Link>
+                                            )}
+                                        </li>
+                                        <li>
+                                            {xiithResult ? (
+                                                <Link to={xiithResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                                    XIIth Board Result
+                                                </Link>
+                                            ) : (
+                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
+                                                    XIIth Board Result
+                                                </Link>
+                                            )}
+                                        </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -480,6 +531,7 @@ function Header() {
                                     </Link>
                                     <ul className="dropdown-menu">
                                         <li><Link to={'/school-news'} className="dropdown-item" href="#">School News</Link></li>
+                                        <li><Link to={'/notice-circular'} className="dropdown-item" href="#">Notice & Circulars</Link></li>
                                         <li><Link to={'/event'} className="dropdown-item">Event Photo Gallery</Link></li>
                                         <li><Link to={'/newsletter'} className="dropdown-item">Newsletter</Link></li>
                                         <li><Link to={'/school-magazine'} className="dropdown-item" href="#">School Magazine-Quest</Link></li>
@@ -516,8 +568,29 @@ function Header() {
                                         <li>
                                             <a className="dropdown-item">Academic Curriculum</a>
                                         </li>
+                                        
+                                        {/* Always Show These Two */}
                                         <li>
-                                            <a className="dropdown-item">Board Results</a>
+                                            {xthResult ? (
+                                                <Link to={xthResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                                    Xth Board Result
+                                                </Link>
+                                            ) : (
+                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
+                                                    Xth Board Result
+                                                </Link>
+                                            )}
+                                        </li>
+                                        <li>
+                                            {xiithResult ? (
+                                                <Link to={xiithResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
+                                                    XIIth Board Result
+                                                </Link>
+                                            ) : (
+                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
+                                                    XIIth Board Result
+                                                </Link>
+                                            )}
                                         </li>
                                     </ul>
                                 </li>

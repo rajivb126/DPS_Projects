@@ -7,7 +7,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'lightbox.js-react/dist/index.css';
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
-import AdmissionPolicy from './Pages/AdmissionPolicy';
 import AlumniRegister from './Pages/AlumniRegister';
 import ExamPolicy from './Pages/ExamPolicy';
 import Faculty from './Pages/Faculty';
@@ -35,8 +34,6 @@ import SchoolMagazine from './Pages/SchoolMagazine';
 import Newsletter from './Pages/Newsletter';
 import AddNewsletter from './admin/pages/AddNewsletter';
 import ViewNewsletter from './admin/pages/ViewNewsletter';
-import AddSchoolnews from './admin/pages/AddSchoolnews';
-import ViewSchoolnews from './admin/pages/ViewSchoolnews';
 import AddDownload from './admin/pages/AddDownload';
 import ViewDownload from './admin/pages/ViewDownload';
 import Download from './Pages/Download';
@@ -64,8 +61,6 @@ import StudentCircular from './Pages/SchoolCircular'
 import SchoolNews from './Pages/SchoolNews';
 import ViewInfrastructure from './admin/pages/ViewInfrastructure';
 import AddInfrastructure from './admin/pages/AddInfrastructure';
-import AddStudentCouncil from './admin/pages/AddStudentCouncil';
-import ViewStudentCouncil from './admin/pages/ViewStudentCouncil';
 import AddImage from './admin/pages/AddImage';
 import ViewImage from './admin/pages/ViewImage';
 import AddPopup from './admin/pages/AddPopup';
@@ -74,6 +69,11 @@ import SubjectCombination from './Pages/SubjectCombination';
 import AddFile from './admin/pages/AddFile';
 import ViewFile from './admin/pages/ViewFile';
 import Almanac from './Pages/Almanac';
+import AddSlider from './admin/pages/AddSlider';
+import ViewSlider from './admin/pages/ViewSlider';
+import AddResult from './admin/pages/AddResult';
+import ViewResult from './admin/pages/ViewResult';
+import NoticeCircular from './Pages/NoticeCircular';
 
 const router = createBrowserRouter([
   {
@@ -189,6 +189,10 @@ const router = createBrowserRouter([
     element: <SchoolNews />
   },
   {
+    path: 'notice-circular',
+    element: <NoticeCircular />
+  },
+  {
     path: 'newsletter',
     element: <Newsletter />
   },
@@ -252,14 +256,6 @@ const router = createBrowserRouter([
         element: <ViewNewsletter />
       },
       {
-        path: '/schoolnews/add',
-        element: <AddSchoolnews />
-      },
-      {
-        path: '/schoolnews/view',
-        element: <ViewSchoolnews />
-      },
-      {
         path: '/download/add',
         element: <AddDownload />
       },
@@ -308,20 +304,20 @@ const router = createBrowserRouter([
         element: <ViewInfrastructure />
       },
       {
-        path: '/studentcouncil/add',
-        element: <AddStudentCouncil />
-      },
-      {
-        path: '/studentcouncil/view',
-        element: <ViewStudentCouncil />
-      },
-      {
         path: '/popup/add',
         element: <AddPopup />
       },
       {
         path: '/popup/view',
         element: <ViewPopup />
+      },
+      {
+        path: '/slidervideo/add',
+        element: <AddSlider />
+      },
+      {
+        path: '/slidervideo/view',
+        element: <ViewSlider />
       },
       {
         path: '/siteimage/add',
@@ -338,6 +334,14 @@ const router = createBrowserRouter([
       {
         path: '/websitefile/view',
         element: <ViewFile />
+      },
+      {
+        path: '/result/add',
+        element: <AddResult />
+      },
+      {
+        path: '/result/view',
+        element: <ViewResult />
       },
     ]
   }
