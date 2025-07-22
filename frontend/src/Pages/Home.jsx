@@ -265,13 +265,12 @@ function Home() {
                     <div className="popup">
                         {/* Modal */}
                         <div className="modal show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
-                            <div className="modal-dialog modal-dialog-centered" role="document">
+                            <div className="modal-dialog modal-dialog-centered" role="document" style={{ maxWidth: '1000px'}}>
                                 <div className="modal-content">
                                     <div className="modal-body p-0 position-relative">
-                                        <button type="button" className="btn-close btn-close-white" onClick={handleClose} aria-label="Close"></button>
                                         <img src={`${API_BASE_URL}/uploads/${popupData.popup_image}`} alt="Popup" className="img-fluid" />
                                     </div>
-                                    <div className="modal-footer justify-content-center">
+                                    <div className="modal-footer p-0 justify-content-end" style={{position:"absolute", top:'-23px', right:'-22px'}}>
                                         {popupData.popup_link ? (
                                             <button type="button" className="btn btn-primary">
                                                 <Link to={popupData.popup_link} target="_blank" style={{ color: 'white', textDecoration: 'none' }}>
@@ -279,11 +278,10 @@ function Home() {
                                                 </Link>
                                             </button>
                                         ) : null}
-                                        <button type="button" className="btn btn-secondary" onClick={handleClose} aria-label="Close">
-                                            Close
+                                        <button type="button" className="btn btn-dark" onClick={handleClose} aria-label="Close" style={{fontWeight:'bold'}}>
+                                            X
                                         </button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
