@@ -26,7 +26,7 @@ function AddResult() {
             setResultCategory('');
             setResultFile('');
         } catch (error) {
-            setErrorMessage("Error adding popup");
+            setErrorMessage("Error adding result");
         }
     };
     return (

@@ -308,7 +308,7 @@ function Home() {
                         <div className="carousel-inner">
                             {videos.map((slider, index) => (
                                 <div key={slider.id}>
-                                    <Player src={slider.video_url} className="d-block w-100" loop autoPlay muted />
+                                    <Player src={`${API_BASE_URL}/uploads/${slider.video_url}`} className="d-block w-100" loop autoPlay muted />
                                 </div>
                             ))}
                         </div>

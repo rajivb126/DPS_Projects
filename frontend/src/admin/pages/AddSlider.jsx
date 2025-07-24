@@ -23,7 +23,7 @@ function AddSlider() {
             setSuccessMessage(response.data.message);
             setSliderUrl('');
         } catch (error) {
-            setErrorMessage("Error adding popup");
+            setErrorMessage("Error adding slider");
         }
     };
 
