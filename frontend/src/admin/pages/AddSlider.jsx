@@ -21,7 +21,7 @@ function AddSlider() {
             });
 
             setSuccessMessage(response.data.message);
-            setSliderUrl(null);
+            setSliderUrl('');
         } catch (error) {
             setErrorMessage("Error adding popup");
         }

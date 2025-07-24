@@ -19,35 +19,18 @@ function Header() {
     const [error, setError] = useState(null);
     const [successMessage, setSuccessMessage] = useState('');
     const marqueeRef = useRef(null);
-    const [xthResult, setXthResult] = useState(null);
-    const [xiithResult, setXiithResult] = useState(null);
-    const [resultData, setResultData] = useState([]);
+    const [resultData, setResultData] = useState([])
 
     useEffect(() => {
-        axios.get(`${API_BASE_URL}/api/result/view`)
+        axios.get(`http://localhost:5000/api/result/view`)
             .then(function (response) {
-                console.log(response.data.data[0]); // Optional: to check your response
-
-                const resultList = response.data.data;
-                setResultData(resultList); // If you're using resultData elsewhere
-
-                // Set result URLs by category
-                const xth = resultList.find(item => item.result_category === "Xth Result");
-                const xiith = resultList.find(item => item.result_category === "XIIth Result");
-
-                setXthResult(xth?.result_file || null);
-                setXiithResult(xiith?.result_file || null);
+                console.log(response.data.data[0]);
+                setResultData(response.data.data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, []);
-
-    const handleNoResult = (e) => {
-        e.preventDefault();
-        alert("Result not uploaded yet.");
-    };
-
 
     const handleMouseOver = () => {
         if (marqueeRef.current) {
@@ -369,30 +352,21 @@ function Header() {
                                         <li>
                                             <a className="dropdown-item">Academic Curriculum</a>
                                         </li>
-                                        
-                                        {/* Always Show These Two */}
-                                        <li>
-                                            {xthResult ? (
-                                                <Link to={xthResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
-                                                    Xth Board Result
-                                                </Link>
-                                            ) : (
-                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
-                                                    Xth Board Result
-                                                </Link>
-                                            )}
-                                        </li>
-                                        <li>
-                                            {xiithResult ? (
-                                                <Link to={xiithResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
-                                                    XIIth Board Result
-                                                </Link>
-                                            ) : (
-                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
-                                                    XIIth Board Result
-                                                </Link>
-                                            )}
-                                        </li>
+
+                                        {[...resultData]
+                                            .sort((a, b) => {
+                                                const order = { 'Xth Result': 1, 'XIIth Result': 2 };
+                                                return (order[a.result_category] || 99) - (order[b.result_category] || 99);
+                                            })
+                                            .map((result, index) => (
+                                                <li key={index}>
+                                                    <a href={`${API_BASE_URL}/uploads/${result.result_file}`} className="dropdown-item"
+                                                        target="_blank" rel="noopener noreferrer" >
+                                                        {result.result_category}
+                                                    </a>
+                                                </li>
+                                            ))}
+
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -568,29 +542,11 @@ function Header() {
                                         <li>
                                             <a className="dropdown-item">Academic Curriculum</a>
                                         </li>
-                                        
-                                        {/* Always Show These Two */}
                                         <li>
-                                            {xthResult ? (
-                                                <Link to={xthResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
-                                                    Xth Board Result
-                                                </Link>
-                                            ) : (
-                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
-                                                    Xth Board Result
-                                                </Link>
-                                            )}
+                                            <Link to={'/xth-result'} className="dropdown-item">Xth Board Results</Link>
                                         </li>
                                         <li>
-                                            {xiithResult ? (
-                                                <Link to={xiithResult} className="dropdown-item" target="_blank" rel="noopener noreferrer">
-                                                    XIIth Board Result
-                                                </Link>
-                                            ) : (
-                                                <Link to="#" className="dropdown-item" onClick={handleNoResult}>
-                                                    XIIth Board Result
-                                                </Link>
-                                            )}
+                                            <Link to={'/xiith-result'} className='dropdown-item'>XIIth Board Results</Link>
                                         </li>
                                     </ul>
                                 </li>

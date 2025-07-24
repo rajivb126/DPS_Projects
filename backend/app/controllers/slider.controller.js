@@ -13,7 +13,25 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage });
+// Multer file filter for videos only
+const fileFilter = function (req, file, cb) {
+    const filetypes = /mp4|avi|mkv|mov/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
+
+    if (mimetype && extname) {
+        cb(null, true);
+    } else {
+        cb(new Error('Only video files are allowed!'));
+    }
+};
+
+// Initialize multer with storage and filter
+const upload = multer({
+    storage: storage,
+    fileFilter: fileFilter,
+    limits: { fileSize: 100 * 1024 * 1024 } // Limit to 100MB
+});
 
 // Add API for Slider
 exports.addSlider = async (request, response) => {

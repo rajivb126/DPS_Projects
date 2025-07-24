@@ -23,7 +23,8 @@ function AddResult() {
             });
 
             setSuccessMessage(response.data.message);
-            setResultFile(null);
+            setResultCategory('');
+            setResultFile('');
         } catch (error) {
             setErrorMessage("Error adding popup");
         }
