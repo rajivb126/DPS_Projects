@@ -63,7 +63,7 @@ function SchoolNews() {
                                     <thead>
                                         <tr>
                                             <th style={{ width: '100px' }}>Date</th>
-                                            <th>School News Heading</th>
+                                            <th>Heading</th>
                                             <th className='action'>Action</th>
                                         </tr>
                                     </thead>

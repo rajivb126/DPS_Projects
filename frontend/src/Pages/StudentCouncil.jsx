@@ -11,7 +11,7 @@ function StudentCouncil() {
                 <div className='container-fluid' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
-                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Mission & Vision</h4>
+                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>HOUSE PREFECTORIAL COUNCIL (2025-26)</h4>
                         </div>
                     </div>
                 </div>

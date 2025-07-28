@@ -51,7 +51,7 @@ function NoticeCircular() {
                 <div className='container-fluid mb-3' style={{ background: '#002147' }}>
                     <div className='row'>
                         <div className='col-12'>
-                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Notice & Circular</h4>
+                            <h4 className="text-center text-uppercase py-3" style={{ color: 'white', fontSize: '20px', fontWeight: 'bold' }}>Notices & Circulars</h4>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ function NoticeCircular() {
                                     <thead>
                                         <tr>
                                             <th style={{ width: '100px' }}>Date</th>
-                                            <th>School News Heading</th>
+                                            <th>Heading</th>
                                             <th className='action'>Action</th>
                                         </tr>
                                     </thead>
