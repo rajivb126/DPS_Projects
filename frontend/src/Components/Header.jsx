@@ -22,7 +22,7 @@ function Header() {
     const [resultData, setResultData] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/result/view`)
+        axios.get(`${API_BASE_URL}/api/result/view`)
             .then(function (response) {
                 console.log(response.data.data[0]);
                 setResultData(response.data.data);
@@ -366,7 +366,6 @@ function Header() {
                                                     </a>
                                                 </li>
                                             ))}
-
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">

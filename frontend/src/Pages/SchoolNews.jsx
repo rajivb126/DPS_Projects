@@ -74,7 +74,7 @@ function SchoolNews() {
                                                 .map((news, index) => (
                                                     <tr key={news._id}>
                                                         <td className='text-center'>{formatDate(news.start_date)}</td>
-                                                        <td className='schoolnews_heading text-center'>
+                                                        <td className='schoolnews_heading text-uppercase text-center'>
                                                             <strong>{news.nname}</strong><br />
                                                         </td>
                                                         <td align='center'>
