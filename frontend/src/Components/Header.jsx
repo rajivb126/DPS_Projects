@@ -365,7 +365,8 @@ function Header() {
                                                         {result.result_category}
                                                     </a>
                                                 </li>
-                                            ))}
+                                            ))
+                                        }
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -541,12 +542,20 @@ function Header() {
                                         <li>
                                             <a className="dropdown-item">Academic Curriculum</a>
                                         </li>
-                                        <li>
-                                            <Link to={'/xth-result'} className="dropdown-item">Xth Board Results</Link>
-                                        </li>
-                                        <li>
-                                            <Link to={'/xiith-result'} className='dropdown-item'>XIIth Board Results</Link>
-                                        </li>
+                                        {[...resultData]
+                                            .sort((a, b) => {
+                                                const order = { 'Xth Result': 1, 'XIIth Result': 2 };
+                                                return (order[a.result_category] || 99) - (order[b.result_category] || 99);
+                                            })
+                                            .map((result, index) => (
+                                                <li key={index}>
+                                                    <a href={`${API_BASE_URL}/uploads/${result.result_file}`} className="dropdown-item"
+                                                        target="_blank" rel="noopener noreferrer" >
+                                                        {result.result_category}
+                                                    </a>
+                                                </li>
+                                            ))
+                                        }
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
