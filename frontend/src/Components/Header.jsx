@@ -354,10 +354,6 @@ function Header() {
                                         </li>
 
                                         {[...resultData]
-                                            .sort((a, b) => {
-                                                const order = { 'Xth Result': 1, 'XIIth Result': 2 };
-                                                return (order[a.result_category] || 99) - (order[b.result_category] || 99);
-                                            })
                                             .map((result, index) => (
                                                 <li key={index}>
                                                     <a href={`${API_BASE_URL}/uploads/${result.result_file}`} className="dropdown-item"
@@ -382,7 +378,7 @@ function Header() {
                                         <li><Link to={'/student-council'} className="dropdown-item" >Student Council</Link></li>
                                     </ul>
                                 </li>
-                                <li className="nav-item dropdown">
+                                {/* <li className="nav-item dropdown">
                                     <Link className="nav-link fw-bolder dropdown-toggle" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         alumni
@@ -391,7 +387,7 @@ function Header() {
                                         <li><Link to={'/alumni-register'} className="dropdown-item">Register</Link></li>
                                         <li><a className="dropdown-item" href="#">Prestigious Alumni</a></li>
                                     </ul>
-                                </li>
+                                </li> */}
                                 <li className="nav-item dropdown contact-header">
                                     <Link to={''} className="nav-link fw-bolder dropdown-toggle" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -506,8 +502,8 @@ function Header() {
                                     <ul className="dropdown-menu">
                                         <li><Link to={'/school-news'} className="dropdown-item" href="#">School News</Link></li>
                                         <li><Link to={'/notice-circular'} className="dropdown-item" href="#">Notice & Circulars</Link></li>
-                                        <li><Link to={'/event'} className="dropdown-item">Event Photo Gallery</Link></li>
-                                        <li><Link to={'/newsletter'} className="dropdown-item">Newsletter</Link></li>
+                                        <li><Link to={'/event'} className="dropdown-item">Events Photo Gallery</Link></li>
+                                        <li><Link to={'/newsletter'} className="dropdown-item">Newsletters</Link></li>
                                         <li><Link to={'/school-magazine'} className="dropdown-item" href="#">School Magazine-Quest</Link></li>
                                         <li><Link to={'/achievement?tab=academic'} className="dropdown-item">Academic Achievements</Link></li>
                                         <li><Link to={'/achievement?tab=co-curricular'} className="dropdown-item">Co-Curricular Achievements</Link></li>
@@ -543,10 +539,6 @@ function Header() {
                                             <a className="dropdown-item">Academic Curriculum</a>
                                         </li>
                                         {[...resultData]
-                                            .sort((a, b) => {
-                                                const order = { 'Xth Result': 1, 'XIIth Result': 2 };
-                                                return (order[a.result_category] || 99) - (order[b.result_category] || 99);
-                                            })
                                             .map((result, index) => (
                                                 <li key={index}>
                                                     <a href={`${API_BASE_URL}/uploads/${result.result_file}`} className="dropdown-item"
@@ -571,7 +563,7 @@ function Header() {
                                         <li><Link to={'/student-council'} className="dropdown-item" >Student Council</Link></li>
                                     </ul>
                                 </li>
-                                <li className="nav-item dropdown">
+                                {/* <li className="nav-item dropdown">
                                     <Link className="nav-link fw-bolder dropdown-toggle" role="button"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         alumni
@@ -580,7 +572,7 @@ function Header() {
                                         <li><Link to={'/alumni-register'} className="dropdown-item">Registers</Link></li>
                                         <li><a className="dropdown-item" href="#">Prestigious Alumni</a></li>
                                     </ul>
-                                </li>
+                                </li> */}
                                 <li className="nav-item">
                                     <a className="nav-link fw-bolder" href="tel:02912766886">
                                         <FontAwesomeIcon icon={faPhone} className='pe-2' />0291-2766886/887, 2946886/887

@@ -45,8 +45,8 @@ function AddResult() {
                                     <div className="col-8 mb-4">
                                         <select name="category" className="form-select" value={resultCategory} onChange={(e) => setResultCategory(e.target.value)}>
                                             <option value="">Select Category</option>
-                                            <option value="Xth Result">Xth Result</option>
-                                            <option value="XIIth Result">XIIth Result</option>
+                                            <option value="Class-X Toppers">Class-X Toppers</option>
+                                            <option value="Class-XII Toppers">Class-XII Toppers</option>
                                         </select>
                                     </div>
 

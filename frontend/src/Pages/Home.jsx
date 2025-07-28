@@ -332,7 +332,7 @@ function Home() {
                                             .map((news, index) => (
                                                 <li key={index}>
                                                     <i className="bi bi-file-pdf pe-1" style={{ color: 'white' }}></i>
-                                                    <a href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noopener noreferrer">{news.nname}</a>
+                                                    <a className="text-uppercase" href={`${API_BASE_URL}/uploads/${news.nlink}`} target="_blank" rel="noopener noreferrer">{news.nname}</a>
                                                 </li>
                                             ))
                                     ) : (
@@ -368,7 +368,7 @@ function Home() {
                                                         <div className="d-flex align-items-center" key={index} style={{ borderBottom: 'solid 1px #e9ecef', paddingTop: '10px' }}>
                                                             <li className="me-3">{formattDate(news.start_date)}</li>
                                                             <li>
-                                                                <a target="_blank" href={`${API_BASE_URL}/uploads/${news.nlink}`}>{news.nname}</a>
+                                                                <a className="text-uppercase" target="_blank" href={`${API_BASE_URL}/uploads/${news.nlink}`}>{news.nname}</a>
                                                             </li>
                                                         </div>
                                                     ))
