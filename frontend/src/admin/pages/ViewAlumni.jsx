@@ -3,10 +3,9 @@ import axios from 'axios'
 import API_BASE_URL from '../../config'
 
 function ViewAlumni() {
-    const [data, setData] = useState([]); // State to hold the data fetched from the API
+  const [data, setData] = useState([]); // State to hold the data fetched from the API
     const [modalData, setModalData] = useState(null); // Store data for modal
     const [showModal, setShowModal] = useState(false); // Modal visibility state
-    const [mode, setMode] = useState('view'); // For viewing/editing modes
 
     // Fetch data from API when the component is mounted
     useEffect(() => {
@@ -36,16 +35,27 @@ function ViewAlumni() {
         }
     };
 
+    const downloadFile = (filename) => {
+        const fileUrl = `${API_BASE_URL}/uploads/${filename}`;
+        const link = document.createElement('a'); // Create an anchor element
+        link.href = fileUrl; // Set the file URL as the href
+        link.download = filename; // Specify the filename to download
+        link.click(); // Trigger the download
+    };
+
+    const handlePrint = () => {
+        // Use window.print() to print the current page
+        window.print();
+    };
+
 
     const handleViewClick = (item) => {
         setModalData(item); // Set the selected row data
-        setMode('view');
         setShowModal(true);  // Show the modal
     };
 
     const handleUpdateClick = (item) => {
         setModalData(item); // Set the selected row data
-        setMode('edit');
         setShowModal(true);  // Show the modal
     };
 
@@ -67,9 +77,9 @@ function ViewAlumni() {
         });
     };
 
-    return (
-        <>
-            <div className='container-fluid'>
+  return (
+    <>
+      <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-12'>
                         <h3 className='text-center pb-3'>View Alumni Data</h3>
@@ -90,7 +100,7 @@ function ViewAlumni() {
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
                                 {data.map((item, index) => (
                                     <tr key={item.id}>
                                         <td className='text-center'>{index + 1}.</td>
@@ -105,12 +115,10 @@ function ViewAlumni() {
                                         <td className='text-center'>{item.refteachers}</td>
                                         <td>{item.photo}</td>
                                         <td>
-                                            <button
-                                                className='bi bi-eye-fill btn btn-primary my-1'
-                                                style={{ width: '50%' }}
-                                                onClick={() => handleViewClick(item)}
+                                            <button className='bi bi-eye-fill btn btn-primary my-1' style={{ width: '30%' }} onClick={() => handleViewClick(item)}
                                             ></button>
-                                            <button className='bi bi-trash3 btn btn-danger' style={{ width: '50%' }} onClick={() => deleteDocument(item._id)}></button>
+                                            <button className='bi bi-download btn btn-secondary' style={{ width: '40px', marginRight: '5px' }} onClick={() => downloadFile(item.efile)}></button>
+                                            <button className='bi bi-trash3 btn btn-danger' style={{ width: '30%' }} onClick={() => deleteDocument(item._id)}></button>
                                         </td>
                                     </tr>
                                 ))}
@@ -134,68 +142,67 @@ function ViewAlumni() {
                                     {/* Student Name */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Student Name</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.sname || ''} onChange={handleInputChange} />
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.sname || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Father's Name */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_number" className="form-label">Father's Name</label>
-                                        <input type="text" className="form-control" id="tc_number" name="tc_number" value={modalData?.fname || ''} onChange={handleInputChange} />
+                                        <input type="text" className="form-control" id="tc_number" name="tc_number" value={modalData?.fname || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Year of Passout */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_number" className="form-label">Year of Passout</label>
-                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.yearofpassout || ''} onChange={handleInputChange} />
+                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.yearofpassout || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* No. of Years of Our School */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_number" className="form-label">No. of Years in Our School</label>
-                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.nyearschool || ''} onChange={handleInputChange} />
+                                        <input type="number" className="form-control" id="tc_number" name="tc_number" value={modalData?.nyearschool || ''} onChange={handleInputChange}/>
                                     </div>
-
+                                    
                                     {/* Present Address */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Present Address</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.address || ''} onChange={handleInputChange} />
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.address || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Contact Number */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Contact Number</label>
-                                        <input type="number" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.contact || ''} onChange={handleInputChange} />
+                                        <input type="number" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.contact || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Email Address */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Email Address</label>
-                                        <input type="email" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.aemail || ''} onChange={handleInputChange} />
+                                        <input type="email" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.aemail || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Present Position */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Present Position</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.presentpos || ''} onChange={handleInputChange} />
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.presentpos || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     {/* Reference of Teacher's */}
                                     <div className="form-group mb-3">
                                         <label htmlFor="tc_sname" className="form-label">Reference of Teacher's</label>
-                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.refteachers || ''} onChange={handleInputChange} />
+                                        <input type="text" className="form-control" id="tc_sname" name="tc_sname" value={modalData?.refteachers || ''} onChange={handleInputChange}/>
                                     </div>
 
                                     <div className="form-group mb-3">
-                                        <label htmlFor="photo" className="form-label">Board Result File Uplaod</label>
-                                        {mode === 'view' ? (
-                                            <img src={`${API_BASE_URL}/uploads/${modalData.photo}`} alt="Result" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover' }} />
-                                        ) : (
-                                            <input type="file" className="form-control" id="photo" name="photo" onChange={handleInputChange} />
-                                        )}
+                                        <label htmlFor="photo" className="form-label">Photo Uplaod Path</label>
+                                        <input type="text" className="form-control" id="photo" name="photo" value={modalData?.photo || ''} onChange={handleInputChange}/>
                                     </div>
                                 </div>
 
                                 <div className="modal-footer">
+                                    <button className="btn btn-primary" onClick={handlePrint}>
+                                        Print
+                                    </button>
                                     <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>
                                         Close
                                     </button>
@@ -205,8 +212,8 @@ function ViewAlumni() {
                     </div>
                 </div>
             )}
-        </>
-    )
+    </>
+  )
 }
 
 export default ViewAlumni

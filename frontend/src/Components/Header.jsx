@@ -316,8 +316,8 @@ function Header() {
                                     <ul className="dropdown-menu">
                                         <li><Link to={'/school-news'} className="dropdown-item" href="#">School News</Link></li>
                                         <li><Link to={'/notice-circular'} className="dropdown-item" href="#">Notice & Circulars</Link></li>
-                                        <li><Link to={'/event'} className="dropdown-item">Event Photo Gallery</Link></li>
-                                        <li><Link to={'/newsletter'} className="dropdown-item">Newsletter</Link></li>
+                                        <li><Link to={'/event'} className="dropdown-item">Events Photo Gallery</Link></li>
+                                        <li><Link to={'/newsletter'} className="dropdown-item">Newsletters</Link></li>
                                         <li><Link to={'/school-magazine'} className="dropdown-item" href="#">School Magazine-Quest</Link></li>
                                         <li><Link to={'/achievement?tab=academic'} className="dropdown-item">Academic Achievements</Link></li>
                                         <li><Link to={'/achievement?tab=co-curricular'} className="dropdown-item">Co-Curricular Achievements</Link></li>
