@@ -6,7 +6,7 @@ import pro_vice_chairman from '../images/pro-vice-chairman.jpg'
 import Principal from '../images/Principal.jpg';
 import Director from '../images/Director.jpg';
 // import Headmistress_Senior from '../images/hm_senior.jpg';
-import Vice_Principal from '../images/vicep.png';
+import Vice_Principal from '../images/vicep.jpg';
 import Headmistress_Middle from '../images/hm_middle.jpg';
 import Headmistress_Primary from '../images/Hm_primary.jpeg';
 import IC_Middle from '../images/IC_Middle.jpg';
