@@ -106,7 +106,7 @@ function Faculty() {
                                     <div className="py-3">
                                         <img src={Headmistress_Primary} className="img-fluid" alt="" />
                                         <h6 className="pt-2 teacher-name">PURNIMA RAJVI</h6>
-                                        <h6 className="">Headmistress<br />(Primary Wing)</h6>
+                                        <h6 className="">Headmistress (Primary Wing)</h6>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ function Faculty() {
                                     <div className="py-3">
                                         <img src={IC_Primary} className="img-fluid" alt="" />
                                         <h6 className="pt-2 teacher-name">RITU HANDA</h6>
-                                        <h6 className="">Incharge<br />(Class Nur-Prep)</h6>
+                                        <h6 className="">Incharge (Class Nur-Prep)</h6>
                                     </div>
                                 </div>
                             </div>
