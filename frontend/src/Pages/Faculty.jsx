@@ -9,6 +9,9 @@ import Director from '../images/Director.jpg';
 import Vice_Principal from '../images/vicep.png';
 import Headmistress_Middle from '../images/hm_middle.jpg';
 import Headmistress_Primary from '../images/Hm_primary.jpeg';
+import IC_Middle from '../images/IC_Middle.jpg';
+import IC_Primary from '../images/IC_Primary.jpg';
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import API_BASE_URL from '../config'
@@ -108,6 +111,29 @@ function Faculty() {
                                 </div>
                             </div>
                         </div>
+                        
+                        
+                        <div className="col-12">
+                            <div className="row justify-content-center">
+                                                                
+                                <div className="col-lg-2 col-md-4">
+                                    <div className="py-3">
+                                        <img src={IC_Middle} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">VINITA BORA</h6>
+                                        <h6>Incharge (Classes IV & V)</h6>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-2 col-md-4">
+                                    <div className="py-3">
+                                        <img src={IC_Primary} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">RITU HANDA</h6>
+                                        <h6 className="">Incharge<br />(Class Nur-Prep)</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+
                     </div>
                 </div>
 
