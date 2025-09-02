@@ -147,35 +147,7 @@ function AuthoritiesMessage() {
                         </div>
                     </div>
 
-                    <div className="container authorities_message bisque_authoritites_message">
-                        <div className="row">
-                            <div className="col-lg-2">
-                                <div className='image'>
-                                    <img src={Headmistress_Middle} alt="Headmistress Middle" />
-                                </div>
-                            </div>
-
-                            <div className="col-lg-10 message">
-                                <h2><i>The pen of education writes the story of our future on the pages of today.</i></h2>
-
-                                <p>Delhi Public School Jodhpur sincerely endeavours to polish the students and equip them with the skills needed to survive in the competitive world. The school aims to provide a stimulating and supportive environment, encouraging students to outshine themselves and develop a lifelong love for learning.</p>
-
-                                <p>In the Middle Block, we offer a wide-ranging curriculum that challenges students academically while refining their creativity and critical thinking skills. Our dedicated teachers are zealous about their subjects and are committed to providing high-quality education. They encourage students to explore new ideas, ask questions, and engage in meaningful discussions, helping them to become independent and confident learners.</p>
-
-                                <p>We believe that education extends beyond the classroom. Activities, including sports, arts, music and drama among others, allow students to explore their interests and talents. Through these collaborative and concerted activities, the school offers a plethora of opportunities for the students to develop heuristically.</p>
-
-                                <p>Values such as respect, kindness, and integrity lie at the core of the school’s ethos. We are committed to fostering a community where students feel safe, respected, and empowered to achieve their best.</p>
-
-                                <p>Our committed teachers ensure that each student receives the support and guidance they need to succeed.</p>
-
-                                <div className='text-end'>
-                                    <h2 className='text-uppercase'><i>Ms Pallavi Das</i></h2>
-                                    <h3>(Headmistress Middle)</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    
                     <div className="container blue_authorities_message">
                         <div className="row authorities_message pt-5">
                             <div className="col-lg-2">
