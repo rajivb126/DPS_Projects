@@ -118,8 +118,8 @@ function AuthoritiesMessage() {
                         </div>
                     </div>
 
-                    <div className="container blue_authorities_message">
-                        <div className="row authorities_message pt-5">
+                    <div className="container authorities_message bisque_authoritites_message">
+                        <div className="row">
                             <div className="col-lg-2">
                                 <div className='image'>
                                     <img src={VicePrincipal} alt="Vice Principal" className='director-image' />
