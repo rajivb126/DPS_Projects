@@ -568,7 +568,7 @@ function Home() {
                                         <img src={achieve1} alt="" />
                                     </div>
                                     <div className="counter-content">
-                                        <h2>4.6K +</h2>
+                                        <h2>4.5K +</h2>
                                         <span>STUDENTS</span>
                                     </div>
                                 </div>
