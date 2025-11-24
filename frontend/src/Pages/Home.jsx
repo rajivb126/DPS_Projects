@@ -21,7 +21,7 @@ import achieve4 from '../images/achieve-4.png';
 // import Popup from '../images/Popup.jpg'
 import { Player } from "video-react";
 import NumberCounter from 'number-counter';
-import Banner from '../images/SiteSlider.mp4';
+import Banner from '../images/SiteSlider_new.mp4';
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { Link } from "react-router-dom";

@@ -79,7 +79,7 @@ function Faculty() {
                         </div>
                         <div className="col-12">
                             <div className="row justify-content-center">
-                                <div className="col-lg-2 col-md-4">
+                                <div className="col-lg-2 col-md-3">
                                     <div className="py-3">
                                         <img src={Principal} className="img-fluid" alt="" />
                                         <h6 className="pt-2 teacher-name">ABHILASHA SHAW</h6>
@@ -94,7 +94,7 @@ function Faculty() {
                                     (Senior Wing)</h6>
                             </div>
                         </div> */}
-                                <div className="col-lg-2 col-md-4">
+                                <div className="col-lg-2 col-md-3">
                                     <div className="py-3">
                                         <img src={Vice_Principal} className="img-fluid" alt="" />
                                         <h6 className="pt-2 teacher-name">KAAJAL KANWAR BHATI</h6>
@@ -102,11 +102,19 @@ function Faculty() {
                                     </div>
                                 </div>
 
-                                <div className="col-lg-2 col-md-4">
+                                <div className="col-lg-2 col-md-3">
+                                    <div className="py-3">
+                                        <img src={Headmistress_Middle} className="img-fluid" alt="" />
+                                        <h6 className="pt-2 teacher-name">DARSHAN LAL</h6>
+                                        <h6>HM Middle</h6>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-2 col-md-3">
                                     <div className="py-3">
                                         <img src={Headmistress_Primary} className="img-fluid" alt="" />
                                         <h6 className="pt-2 teacher-name">PURNIMA RAJVI</h6>
-                                        <h6 className="">Headmistress</h6>
+                                        <h6 className="">HM Primary</h6>
                                     </div>
                                 </div>
                             </div>
