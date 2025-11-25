@@ -176,7 +176,7 @@ function MandatoryPublicDisclosure() {
                     </div>
 
 
-                    {/* <div className="col-12 pb-5">
+                    <div className="col-12 pb-5">
                         <h3>C. RESULTS AND ACADEMICS</h3>
                         <table align="center" className="table table-striped table-bordered table-hover nowrap">
                             <thead style={{ backgroundColor: 'maroon', color: 'white' }}>
@@ -308,7 +308,7 @@ function MandatoryPublicDisclosure() {
 
                             </tbody>
                         </table>
-                    </div> */}
+                    </div>
 
                     <div className="col-12 pb-5">
                         <h3>D. STAFF (TEACHING)</h3>
