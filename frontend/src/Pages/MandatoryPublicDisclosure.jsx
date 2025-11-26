@@ -176,7 +176,7 @@ function MandatoryPublicDisclosure() {
                     </div>
 
 
-                    {/* <div className="col-12 pb-5">
+                    <div className="col-12 pb-5">
                         <h3>C. RESULTS AND ACADEMICS</h3>
                         <table align="center" className="table table-striped table-bordered table-hover nowrap">
                             <thead style={{ backgroundColor: 'maroon', color: 'white' }}>
@@ -193,7 +193,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">1.</td>
                                     <td align="left">FEE STRUCTURE OF THE SCHOOL</td>
                                     <td align="Center">
-                                        <a href="https://dpsjodhpur.in/backend/uploads/FEE_STRUCUTRE.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/FEE_STRUCTURE_25-26.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -201,7 +201,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">2.</td>
                                     <td align="left">ANNUAL ACADEMIC CALENDAR</td>
                                     <td align="Center">
-                                        <a href="https://dpsjodhpur.in/backend/uploads/School_calendar.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/School_Calendar_2025-26.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -245,27 +245,28 @@ function MandatoryPublicDisclosure() {
                                 </tr>
                             </thead>
                             <tbody style={{ fontWeight: '600', textAlign: 'center' }}>
-                                <tr>
+                                  <tr>
                                     <td align="center">1.</td>
+                                    <td>2024-25</td>
+                                    <td>354</td>
+                                    <td>354</td>
+                                    <td>100%</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">2.</td>
                                     <td>2023-24</td>
                                     <td>353</td>
                                     <td>353</td>
                                     <td>100%</td>
                                 </tr>
                                 <tr>
-                                    <td align="center">2.</td>
+                                    <td align="center">3.</td>
                                     <td>2022-23</td>
                                     <td>351</td>
                                     <td>349</td>
                                     <td>99.43%</td>
                                 </tr>
-                                <tr>
-                                    <td align="center">3.</td>
-                                    <td>2021-22</td>
-                                    <td>358</td>
-                                    <td>358</td>
-                                    <td>100%</td>
-                                </tr>
+                              
                             </tbody>
                         </table>
                     </div>
@@ -283,30 +284,31 @@ function MandatoryPublicDisclosure() {
                                 </tr>
                             </thead>
                             <tbody style={{ fontWeight: '600', textAlign: 'center' }}>
-                                <tr>
+                               <tr>
                                     <td align="center">1.</td>
+                                    <td>2024-25</td>
+                                    <td>306</td>
+                                    <td>306</td>
+                                    <td>100%</td>
+                                </tr> 
+				                <tr>
+                                    <td align="center">2.</td>
                                     <td>2023-24</td>
                                     <td>309</td>
                                     <td>308</td>
                                     <td>99.68%</td>
                                 </tr>
                                 <tr>
-                                    <td align="center">2.</td>
+                                    <td align="center">3.</td>
                                     <td>2022-23</td>
                                     <td>318</td>
                                     <td>306</td>
                                     <td>96.23%</td>
                                 </tr>
-                                <tr>
-                                    <td align="center">3.</td>
-                                    <td>2021-22</td>
-                                    <td>359</td>
-                                    <td>358</td>
-                                    <td>99.7%</td>
-                                </tr>
+
                             </tbody>
                         </table>
-                    </div> */}
+                    </div>
 
                     <div className="col-12 pb-5">
                         <h3>D. STAFF (TEACHING)</h3>
