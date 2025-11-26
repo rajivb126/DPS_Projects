@@ -39,9 +39,9 @@ function AdmissionProcedure() {
                                 <li>
                                     <a className="nav-link" id="application-tab" data-bs-toggle="tab" data-bs-target="#application" role="tab" aria-controls="application" aria-selected="false">Application Form</a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to={'/fee-structure'} target='_blank' className="nav-link">Fee Structure</Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
