@@ -49,7 +49,7 @@ function AdmissionProcedure() {
                         <div className="tab-content" id="myTabContent">
                             <div className="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <h3>Admission Overview</h3>
-                                <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to the Admission Process for the session 2025-26.</p>
+                                <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to the Admission Process for the session 2026-27.</p>
 
                                 <p>DPS Jodhpur is dedicated to fostering the growth of young minds through a balanced approach that integrates academics, co-curricular activities, and essential life skills. With modern facilities, a skilled faculty, and a dynamic learning atmosphere, we provide every student with a fulfilling and enriching educational experience.</p>
 
@@ -58,18 +58,19 @@ function AdmissionProcedure() {
 
                                 <h4 style={{ color: '#074c9f', fontWeight: 'bold' }}>Age Criteria For Admission</h4>
                                 <ul className='p-0' style={{listStyle:'none'}}>
-                                    <li>Eligible Age as on March 31, 2025</li>
-                                    <li><strong>Class Nursery :</strong> Minimum 3 years & Maximum less than 4 years (DOB between 1 April 2021 and 31 March 2022)</li>
-                                    <li><strong>Class KG :</strong> Minimum 4 years & Maximum less than 5 years (DOB between 1 April 2020 and 31 March 2021)</li>
-                                    <li><strong>Class Prep :</strong> Minimum 5 years & Maximum less than 6 years (DOB between 1 April 2019 and 31 March 2020)</li>
-                                    <li><strong>Class I :</strong> Minimum 6 years & Maximum less than 7 years (DOB between 1 April 2018 and 31 March 2019)</li>
+                                    <li>Eligible Age as on March 31, 2026</li>
+                                    <li><strong>Class Nursery :</strong> Minimum 3 years & Maximum less than 4 years (DOB between 1 April 2022 and 31 March 2023)</li>
+                                    <li><strong>Class KG :</strong> Minimum 4 years & Maximum less than 5 years (DOB between 1 April 2021 and 31 March 2022)</li>
+                                    <li><strong>Class Prep :</strong> Minimum 5 years & Maximum less than 6 years (DOB between 1 April 2020 and 31 March 2021)</li>
+                                    
                                 </ul>
 
                                 <ol className='ps-3'>
-                                    <li>Successful registration does not in any way guarantee the admission of a candidate. As number of seats available are limited, selection will be based on age criteria, i.e. older children will be given preference. <br /> For example a child born on 15 Aug 2021 (3 Years, 7 Months, 16 Days) will get preference over child born on 11 Dec 2021 (3 Years, 3 Months, 20 Days)
+                                    <li>Successful registration does not in any way guarantee the admission of a candidate. As number of seats available are limited, selection will be based on age criteria, i.e. older children will be given preference. <br /> For example a child born on 15 Aug 2022 (3 Years, 7 Months, 16 Days) will get preference over child born on 11 Dec 2022 (3 Years, 3 Months, 20 Days)
                                     </li>
                                     <li>Preference will be given to siblings (real brother or sister) of students already studying in the school.</li>
                                 </ol>
+                                 <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center' }}>Dates for the Admission will be announced shortly for the session 2026-27.</p>
                             </div>
                             <div className="tab-pane fade" id="procedure" role="tabpanel" aria-labelledby="procedure-tab">
                                 <h3>Admission Guideline</h3>
@@ -135,7 +136,7 @@ function AdmissionProcedure() {
                             </div>
                             <div className="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
                                 <h3>Application Form</h3>
-                                <p>Content for Application Form.</p>
+                               <br/><br/> <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textAlign: 'center' }}>Application Form will be availabe shortly for the session 2026-27.</p>
                             </div>
                         </div>
                     </div>
