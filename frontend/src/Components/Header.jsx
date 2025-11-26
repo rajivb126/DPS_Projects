@@ -302,9 +302,9 @@ function Header() {
                                     </Link>
                                     <ul className="dropdown-menu">
                                         <li><Link to={'/admission-procedure'} className="dropdown-item">Admission Procedure</Link></li>
-                                        <li><Link to={'/exam-policy'} className="dropdown-item">Exam Policy</Link></li>
+                                        {/* <li><Link to={'/exam-policy'} className="dropdown-item">Exam Policy</Link></li> */}
                                         <li><Link to={'/hostel-policy'} className="dropdown-item">Hostel Policy</Link></li>
-                                        <li><Link to={'/fee-structure'} className="dropdown-item">Fee Structure</Link></li>
+                                        {/* <li><Link to={'/fee-structure'} className="dropdown-item">Fee Structure</Link></li> */}
                                         <li><Link to={'subject-combination'} className='dropdown-item'>Subject Combination for Class XI</Link></li>
                                     </ul>
                                 </li>
