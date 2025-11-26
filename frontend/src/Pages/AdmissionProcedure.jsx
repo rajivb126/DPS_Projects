@@ -78,9 +78,6 @@ function AdmissionProcedure() {
                                 <ol>
                                     <li>Registration form is to be filled only through the school website <a href="https://dpsjodhpur.in/dpsjodhpur">www.dpsjodhpur.in</a></li>
 
-                                    <li>Read all the instructions carefully and click on the button given at the bottom of this page to begin the registration process. Before you proceed make sure that the Pop-Up blocker of your browser is disabled.
-                                    </li>
-
                                     <li><strong>The Registration Fee INR 3000/- (rupees three thousand only) is payable through online mode only and is non - refundable.</strong></li>
 
                                     <li>Your registration will be complete only after the submission of duly filled form and payment of requisite registration fee <strong>(INR 3000/-).</strong> Incomplete and unpaid registration will not be accepted.</li>
