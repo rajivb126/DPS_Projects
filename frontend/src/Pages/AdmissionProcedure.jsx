@@ -100,13 +100,24 @@ function AdmissionProcedure() {
 
                                     <li>Before depositing the requisite registration fee, kindly click on the ‘preview’ button to view and check all the entries and edit if needed. You will not be able to make any changes after the final submission.</li>
 
-                                    <li>he final submission of the form will be possible only after the payment of requisite registration fee. You shall receive an email on your registered email ID after the final submission to confirm your registration as successful.</li>
+                                    <li>The final submission of the form will be possible only after the payment of requisite registration fee. You shall receive an email on your registered email ID after the final submission to confirm your registration as successful.</li>
 
                                     <li>Confirmation of selection will be notified individually to the parents’ of selected candidates only, via SMS and / or email.</li>
 
                                     <li>To promote a balanced educational environment and foster gender equality, our school is committed to maintaining a healthy ratio of boys and girls in admissions. We encourage equal representation to enhance the learning experience for all students.</li>
                                 </ol>
 
+                                
+
+                                <h6 className='fs-6 text-danger text-center'>
+                                    <i><u>Note: False information / incomplete form will be rejected. No request for correction will be entertained.</u></i>
+                                </h6>
+                                {/* <h4 className='fs-1 text-center pt-2' style={{ color: 'maroon' }}>
+                                    <u>Dates for Registration will be announced shortly.</u>
+                                </h4> */}
+                            </div>
+                            <div className="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                                <h3>Required Documents</h3>
                                 <h5>DOCUMENTS TO BE BROUGHT TO SCHOOL AT THE TIME OF ADMISSION (DEPOSITING SCHOOL FEE):</h5>
                                 <ul>
                                     <li><strong>Printed Registration Form,</strong>signed by both parents alongwith the passport size photographs pasted on it.</li>
@@ -119,17 +130,6 @@ function AdmissionProcedure() {
                                         </ul>
                                     </li>
                                 </ul>
-
-                                <h6 className='fs-6 text-danger text-center'>
-                                    <i><u>Note: False information / incomplete form will be rejected. No request for correction will be entertained.</u></i>
-                                </h6>
-                                {/* <h4 className='fs-1 text-center pt-2' style={{ color: 'maroon' }}>
-                                    <u>Dates for Registration will be announced shortly.</u>
-                                </h4> */}
-                            </div>
-                            <div className="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
-                                <h3>Required Documents</h3>
-                                <p>Content for Required Documents.</p>
                             </div>
                             <div className="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
                                 <h3>Application Form</h3>
