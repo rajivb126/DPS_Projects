@@ -57,7 +57,7 @@ function AdmissionProcedure() {
 
                                 <h4 style={{ color: '#074c9f', fontWeight: 'bold' }}>Age Criteria For Admission</h4>
                                 <ul className='p-0' style={{listStyle:'none'}}>
-                                    <li>Eligible Age as on March 31, 2026</li>
+                                    <li>Eligible Age as on <b>March 31, 2026</b></li>
                                     <li><strong>Class Nursery :</strong> Minimum 3 years & Maximum less than 4 years (DOB between 1 April 2022 and 31 March 2023)</li>
                                     <li><strong>Class KG :</strong> Minimum 4 years & Maximum less than 5 years (DOB between 1 April 2021 and 31 March 2022)</li>
                                     <li><strong>Class Prep :</strong> Minimum 5 years & Maximum less than 6 years (DOB between 1 April 2020 and 31 March 2021)</li>
