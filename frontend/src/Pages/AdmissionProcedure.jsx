@@ -51,10 +51,9 @@ function AdmissionProcedure() {
                                 <h3>Admission Overview</h3>
                                 <p className='fs-5' style={{ color: '#074c9f', fontWeight: 'bold' }}>Welcome to the Admission Process for the session 2026-27.</p>
 
-                                <p>DPS Jodhpur is dedicated to fostering the growth of young minds through a balanced approach that integrates academics, co-curricular activities, and essential life skills. With modern facilities, a skilled faculty, and a dynamic learning atmosphere, we provide every student with a fulfilling and enriching educational experience.</p>
+                                <p>DPS Jodhpur is committed to shaping young minds through a balanced approach that brings together strong academics, engaging co-curricular activities and essential life skills. With state-of-the-art facilities, dedicated faculty and a vibrant learning environment, we ensure that every student receives a meaningful and enriching educational experience.</p>
 
-                                <p>DPS Jodhpur follows the CBSE curriculum, offering classes from Nursery-KG-Prep to Grade 12. We seek individuals who can not only contribute positively to the school community but also take full advantage of the facilities available to them.<br />
-                                Our academic year begins in April.</p>
+                                <p>DPS Jodhpur follows the CBSE curriculum offering classes from Nursery–KG–Prep to Grade 12. We welcome individuals who can contribute positively to the school community and make full use of the facilities and opportunities provided. Our academic year begins in April.</p>
 
                                 <h4 style={{ color: '#074c9f', fontWeight: 'bold' }}>Age Criteria For Admission</h4>
                                 <ul className='p-0' style={{listStyle:'none'}}>
