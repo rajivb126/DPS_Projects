@@ -75,7 +75,7 @@ function AdmissionProcedure() {
                                 <h3>Admission Guideline</h3>
                                 <h5>GUIDELINES FOR FILLING THE ONLINE REGISTRATION FORM:</h5>
                                 <ol>
-                                    <li>Registration form is to be filled only through the school website <a href="https://dpsjodhpur.in">www.dpsjodhpur.in</a></li>
+                                    <li>Registration form of the session 2025-26 is to be filled only through the school website <a href="https://dpsjodhpur.in">www.dpsjodhpur.in</a></li>
 
                                     <li><strong>The Registration Fee INR 3000/- (rupees three thousand only) is payable through online mode only and is non - refundable.</strong></li>
 
