@@ -10,7 +10,7 @@ function AdmissionProcedure() {
 
             <section style={{ animation: 'fadeIn 1s ease-in-out' }}>
                 <div>
-                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/eJG1noHnV-4" title="YouTube video player" allow="accelerometer; autoplay=1&mute=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/eJG1noHnV-4" title="YouTube video player" allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen>
                     </iframe>
                 </div>
             </section>
