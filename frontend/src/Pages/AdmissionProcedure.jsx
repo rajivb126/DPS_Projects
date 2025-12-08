@@ -2,8 +2,12 @@ import React from 'react';
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+    
+
 
 function AdmissionProcedure() {
+    const [isChecked, setIsChecked] = useState(false);
     return (
         <>
             <Header />
@@ -31,7 +35,7 @@ function AdmissionProcedure() {
                                     <a className="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" role="tab" aria-controls="overview" aria-selected="true">Admission Overview</a>
                                 </li>
                                 <li>
-                                    <a className="nav-link" id="procedure-tab" data-bs-toggle="tab" data-bs-target="#procedure" role="tab" aria-controls="procedure" aria-selected="false">Admission Guideline</a>
+                                    <a className="nav-link" id="procedure-tab" data-bs-toggle="tab" data-bs-target="#procedure" role="tab" aria-controls="procedure" aria-selected="false">Admission Guidelines</a>
                                 </li>
                                 <li>
                                     <a className="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" role="tab" aria-controls="documents" aria-selected="false">Required Documents</a>
@@ -72,7 +76,7 @@ function AdmissionProcedure() {
                                  <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center' }}>Dates for the Admission will be announced shortly for the session 2026-27.</p>
                             </div>
                             <div className="tab-pane fade" id="procedure" role="tabpanel" aria-labelledby="procedure-tab">
-                                <h3>Admission Guideline</h3>
+                                <h3>Admission Guidelines</h3>
                                 <h5>GUIDELINES FOR FILLING THE ONLINE REGISTRATION FORM:</h5>
                                 <ol>
                                     {/* <li>Registration form of the session 2026-27 is to be filled only through the school website <a href="https://dpsjodhpur.in">www.dpsjodhpur.in</a></li> */}
@@ -119,7 +123,7 @@ function AdmissionProcedure() {
                                 <h3>Required Documents</h3>
                                 <h5>DOCUMENTS TO BE BROUGHT TO SCHOOL AT THE TIME OF ADMISSION (DEPOSITING SCHOOL FEE):</h5>
                                 <ul>
-                                    <li><strong>Printed Registration Form,</strong>signed by both parents alongwith the passport size photographs pasted on it.</li>
+                                    <li><strong>Printed Registration Form, </strong>signed by both parents alongwith the passport size photographs pasted on it.</li>
 
                                     <li>Photocopy & Original -
                                         <ul>
@@ -132,7 +136,57 @@ function AdmissionProcedure() {
                             </div>
                             <div className="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
                                 <h3>Application Form</h3>
-                               <br/><br/> <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textAlign: 'center' }}>Application Form will be availabe shortly for the session 2026-27.</p>
+                               {/* <br/><br/> <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textAlign: 'center' }}>Application Form will be availabe shortly for the session 2026-27.</p> */}
+                            <br /><br />
+    <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textAlign: 'center' }}>
+        Application Form will be availabe shortly for the session 2026-27.
+    </p>
+
+    {/* Declaration + Proceed Button */}
+    {/* <div className="mt-4" style={{ textAlign: 'center' }}>
+
+        <div className="form-check d-flex justify-content-center">
+            <input
+                className="form-check-input"
+                type="checkbox"
+                id="declarationCheck"
+                checked={isChecked}
+                onChange={(e) => setIsChecked(e.target.checked)}
+                style={{
+                    width: "22px",
+                    height: "22px",
+                    cursor: "pointer",
+                    border: "2px solid #333",
+                    boxShadow: "0 0 3px rgba(0,0,0,0.5)"
+                     }}
+            />
+            <label className="form-check-label ms-2" htmlFor="declarationCheck">
+                I hereby declare that I have read through the <strong>"Admission Guidelines"</strong> and <strong>" Required Documents" </strong> from the above tabs carefully.
+            </label>
+        </div>
+
+        <a
+            href="https://octopod.co.in/dps/admission/35ee747ac5f346411f328ae87f426ff7"
+            style={{ textDecoration: "none" }}
+        >
+            <button
+                className="btn mt-3"
+                disabled={!isChecked}
+                style={{
+                    backgroundColor: '#ff9900',
+                    color: '#000000',
+                    fontWeight: 'bold',
+                    padding: '10px 30px',
+                    borderRadius: '6px',
+                    cursor: isChecked ? 'pointer' : 'not-allowed',
+                    opacity: isChecked ? 1 : 0.6
+                }}
+            >
+                Proceed...
+            </button>
+        </a>
+
+    </div> */}
                             </div>
                         </div>
                     </div>
