@@ -124,13 +124,12 @@ function AdmissionProcedure() {
                                 <h5>DOCUMENTS TO BE BROUGHT TO SCHOOL AT THE TIME OF ADMISSION (DEPOSITING SCHOOL FEE):</h5>
                                 <ul>
                                     <li><strong>Printed Registration Form, </strong>signed by both parents alongwith the passport size photographs pasted on it.</li>
-
-                                    <li>Photocopy & Original -
+                                    <li><strong>Transfer Certificate (Class Prep Onwards)</strong></li>    
+                                    <li><strong>Photocopy & Original -</strong>
                                         <ul>
                                             <li>Birth Certificate of the child</li>
                                             <li>Aadhaar card of the child (If Available)</li>
                                             <li>Aadhaar card/ PAN card/ Passport of both parents</li>
-                                            <li>Transfer Certificate (Class Prep Onwards)</li>
                                             <li>Progress Report Card of previous class</li>
                                         </ul>
                                     </li>
