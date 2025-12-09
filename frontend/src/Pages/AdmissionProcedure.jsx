@@ -130,6 +130,8 @@ function AdmissionProcedure() {
                                             <li>Birth Certificate of the child</li>
                                             <li>Aadhaar card of the child (If Available)</li>
                                             <li>Aadhaar card/ PAN card/ Passport of both parents</li>
+                                            <li>Transfer Certificate (Class Prep Onwards)</li>
+                                            <li>Progress Report Card of previous class</li>
                                         </ul>
                                     </li>
                                 </ul>
