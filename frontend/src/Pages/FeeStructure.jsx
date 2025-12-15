@@ -23,7 +23,7 @@ function FeeStructure() {
                         <div className="col-12 pt-3 text-center">
                             <div>
                                 <h3>Fee structure for Day Scholar<br />
-                                    Session 2025 - 2026
+                                    Session 2026 - 2027
                                 </h3>
                                 <h6 className="pb-5">
                                     REGISTRATION CHARGES (at the time of submission of registration form) :
@@ -78,27 +78,27 @@ function FeeStructure() {
                                 <tbody>
                                     <tr>
                                         <td align="left">NURSERY TO V</td>
-                                        <td>Rs. 71300/-</td>
+                                        <td>Rs. 76600/-</td>
                                     </tr>
                                     <tr>
                                         <td align="left">VI TO X</td>
-                                        <td>Rs. 77000/-</td>
+                                        <td>Rs. 82700/-</td>
                                     </tr>
                                     <tr>
-                                        <td align="left">XI & XII ( Com.& Arts )</td>
-                                        <td>Rs. 83400/-</td>
+                                        <td align="left">XI & XII ( Commerce & Humanities)</td>
+                                        <td>Rs. 89600/-</td>
                                     </tr>
                                     <tr>
-                                        <td align="left">XI & XII ( Com.- I.P. )</td>
-                                        <td>Rs. 83850/-</td>
+                                        <td align="left">XI & XII ( Commerce - I.P.)</td>
+                                        <td>Rs. 90050/-</td>
                                     </tr>
                                     <tr>
-                                        <td align="left">XI & XII ( Science )</td>
-                                        <td>Rs. 85650/-</td>
+                                        <td align="left">XI & XII (Science - Maths)</td>
+                                        <td>Rs. 91950/-</td>
                                     </tr>
                                     <tr>
-                                        <td align="left">XI & XII ( Science - Bio )</td>
-                                        <td>Rs. 86200/-</td>
+                                        <td align="left">XI & XII (Science - Bio)</td>
+                                        <td>Rs. 92600/-</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -129,52 +129,52 @@ function FeeStructure() {
                                     </tr>
                                     <tr>
                                         <th>Alongwith One time Fee<br />(In Rs.)</th>
-                                        <th>Due on (July 2025)<br />(In Rs.)</th>
-                                        <th>Due on (November 2025)<br />(In Rs.)</th>
+                                        <th>Due on (July 2026)<br />(In Rs.)</th>
+                                        <th>Due on (November 2026)<br />(In Rs.)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td style={{ textAlign: 'left' }}>NURSERY TO V</td>
-                                        <td>24500</td>
-                                        <td>23500</td>
-                                        <td>23300</td>
-                                        <td>71300</td>
+                                        <td>26000</td>
+                                        <td>25500</td>
+                                        <td>25100</td>
+                                        <td>76600</td>
                                     </tr>
                                     <tr>
                                         <td style={{ textAlign: 'left' }}>VI TO X</td>
-                                        <td>26500</td>
-                                        <td>25500</td>
-                                        <td>25000</td>
-                                        <td>77000</td>
+                                        <td>28000</td>
+                                        <td>27500</td>
+                                        <td>27200</td>
+                                        <td>82700</td>
                                     </tr>
                                     <tr>
-                                        <td style={{ textAlign: 'left' }}>XI & XII ( Com.& Arts )</td>
-                                        <td>28200</td>
-                                        <td>28200</td>
-                                        <td>27000</td>
-                                        <td>83400</td>
+                                        <td style={{ textAlign: 'left' }}>XI & XII (Commerce & Humanities)</td>
+                                        <td>30300</td>
+                                        <td>30300</td>
+                                        <td>29000</td>
+                                        <td>89600</td>
                                     </tr>
                                     <tr>
-                                        <td style={{ textAlign: 'left' }}>XI & XII ( Com. - I.P. )</td>
-                                        <td>28200</td>
-                                        <td>28200</td>
-                                        <td>27450</td>
-                                        <td>83850</td>
+                                        <td style={{ textAlign: 'left' }}>XI & XII (Commerce - I.P.)</td>
+                                        <td>30300</td>
+                                        <td>30300</td>
+                                        <td>29450</td>
+                                        <td>90050</td>
                                     </tr>
                                     <tr>
-                                        <td style={{ textAlign: 'left' }}>XI & XII ( Science - Maths )</td>
-                                        <td>29000</td>
-                                        <td>29000</td>
-                                        <td>27650</td>
-                                        <td>85650</td>
+                                        <td style={{ textAlign: 'left' }}>XI & XII (Science - Maths)</td>
+                                        <td>31000</td>
+                                        <td>31000</td>
+                                        <td>29950</td>
+                                        <td>91950</td>
                                     </tr>
                                     <tr>
-                                        <td style={{ textAlign: 'left' }}>XI & XII ( Science - Bio)</td>
-                                        <td>29000</td>
-                                        <td>29000</td>
-                                        <td>28200</td>
-                                        <td>86200</td>
+                                        <td style={{ textAlign: 'left' }}>XI & XII (Science - Bio)</td>
+                                        <td>31000</td>
+                                        <td>31000</td>
+                                        <td>30600</td>
+                                        <td>92600</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -184,7 +184,7 @@ function FeeStructure() {
                             <div className="mx-lg-5 pt-2">
                                 <p className="mx-lg-5"><span>Note:</span> <i><u>Students of Class XI & XII who take practical
                                     subject(s) will pay Rs. 1000/- an additional fee for each practical subject. This
-                                    fee is payble with first installment of the session or at the time of
+                                    fee is payable with first installment of the session or at the time of
                                     admission.</u></i></p>
                                 <div className="mx-lg-5">
                                     <ul className="mx-lg-4">
@@ -198,8 +198,8 @@ function FeeStructure() {
 
                         <div className="col-12 pt-4 text-center">
                             <div>
-                                <h3>Fee structure for Day Hostellers<br />
-                                    Session 2025 - 2026
+                                <h3>Fee structure for Hostellers<br />
+                                    Session 2026 - 2027
                                 </h3>
                                 <h6 className="pb-5">
                                     REGISTRATION CHARGES (at the time of submission of registration form) :
@@ -236,7 +236,7 @@ function FeeStructure() {
                                     </tr>
                                     <tr style={{ fontWeight: 'bold' }}>
                                         <td align="left">Total</td>
-                                        <td>Rs.61500/-</td>
+                                        <td>Rs. 61500/-</td>
                                         <td align="left"></td>
                                     </tr>
                                 </tbody>
@@ -287,24 +287,24 @@ function FeeStructure() {
                                     </tr>
                                     <tr>
                                         <th>Alongwith One time Fee<br />(In Rs.)</th>
-                                        <th>Due on (July 2025)<br />(In Rs.)</th>
-                                        <th>Due on (November 2025)<br />(In Rs.)</th>
+                                        <th>Due on (July 2026)<br />(In Rs.)</th>
+                                        <th>Due on (November 2026)<br />(In Rs.)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Upto X</td>
-                                        <td>106000</td>
-                                        <td>105500</td>
-                                        <td>105000</td>
-                                        <td>316500</td>
+                                        <td>114000</td>
+                                        <td>113000</td>
+                                        <td>112150</td>
+                                        <td>339150</td>
                                     </tr>
                                     <tr>
                                         <td>XI & XII</td>
-                                        <td>110000</td>
-                                        <td>109000</td>
-                                        <td>108000</td>
-                                        <td>327000</td>
+                                        <td>118000</td>
+                                        <td>117000</td>
+                                        <td>115600</td>
+                                        <td>350600</td>
                                     </tr>
                                 </tbody>
                             </table>
