@@ -193,7 +193,7 @@ function MandatoryPublicDisclosure() {
                                     <td align="center">1.</td>
                                     <td align="left">FEE STRUCTURE OF THE SCHOOL</td>
                                     <td align="Center">
-                                        <a href="https://dpsjodhpur.in/backend/uploads/FEE_STRUCTURE_25-26.pdf"
+                                        <a href="https://dpsjodhpur.in/backend/uploads/FEE_STRUCTURE.pdf"
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
@@ -220,14 +220,14 @@ function MandatoryPublicDisclosure() {
                                             target="_blank">View</a>
                                     </td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <td align="center">5.</td>
                                     <td align="left">LAST THREE YEAR RESULT OF THE BOARD EXAMINATION AS PER
                                         APPLICABILITY</td>
                                     <td align="Center">
                                         <a href="#result">View</a>
                                     </td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>
@@ -356,9 +356,9 @@ function MandatoryPublicDisclosure() {
                                         </ul>
                                     </td>
                                     <td align="center">
-                                        28<br />
+                                        27<br />
                                         47<br />
-                                        103
+                                        108
                                     </td>
                                 </tr>
                                 <tr>
@@ -374,7 +374,7 @@ function MandatoryPublicDisclosure() {
                                 <tr>
                                     <td align="center">6.</td>
                                     <td align="left">DETAILS OF COUNSELLOR & WELLNESS TEACHER</td>
-                                    <td align="center">1</td>
+                                    <td align="center">2</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -466,7 +466,7 @@ function MandatoryPublicDisclosure() {
                                 <tr>
                                     <td align="left">Mr Kaushik Dutta</td>
                                     <td align="left">Vice Chairperson</td>
-                                    <td align="left">C-843, Lavy Pinto Block Asian Games Village New Delhi</td>
+                                    <td align="left">A-843, Lavy Pinto Block Asian Games Village New Delhi</td>
                                 </tr>
                                 <tr>
                                     <td align="left">Mr Dinesh Kothari</td>
