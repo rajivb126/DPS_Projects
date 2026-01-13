@@ -128,16 +128,36 @@ function AuthoritiesMessage() {
 
                             <div className="col-lg-10 message">
                                 <h2><i>Through the prism of education, the light of knowledge refracts into a spectrum of understanding.</i></h2>
+                                
+                                <p>Delhi Public School, Jodhpur is committed to nurturing an environment that fosters academic excellence, creativity, and personal growth. The school's mission is to provide a holistic education that unlocks every student's potential and equips learners to meet future challenges with confidence and competence.</p>
 
-                                <p>Delhi Public School Jodhpur is dedicated to cultivating an environment that determines academic excellence, creativity, and personal growth. Our commitment is to provide a holistic education that furthers every student's potential, preparing them for future challenges.</p>
+                                <p>The thoughtfully designed curriculum inspires intellectual curiosity and encourages students to excel both academically and in co-curricular pursuits. A strong belief in cultivating a growth mindset empowers students to embrace challenges, collaborate effectively, and develop resilience as lifelong learners.</p>
 
-                                <p>Our curriculum is designed to inspire intellectual curiosity and encourage students to excel academically and in extracurricular activities equally. We believe that a growth mindset is crucial, and we strive to instil this in our students, helping them embrace challenges, work collaboratively, and develop resilience.</p>
+                                <p>The foundation of the school's success lies in its experienced, dedicated, and passionate faculty, who create a supportive and stimulating learning environment. Through personalised attention and mentorship, every student is guided towards achieving their highest potential. Consistent academic achievements and placements in prestigious institutions worldwide stand as a testament to the pursuit of excellence.</p>
 
-                                <p>Our experienced and passionate staff is pivotal in creating a supportive and stimulating learning environment. We ensure that each student receives personalised attention, allowing them to thrive and reach their full potential. Our strong academic record is a testament to our commitment to excellence, with our students consistently achieving success in top institutions worldwide.</p>
+                                <p>Beyond the classroom, strong emphasis is placed on the performing arts, along with distinctive programmes such as start-up pitching, Model United Nations (MUNs), and Robotics. These initiatives enrich the learning experience, strengthen critical thinking, and nurture a genuine love for learning. A diverse range of school clubs further provides students with opportunities to explore interests and showcase talents.</p>
 
-                                <p>Beyond academics, we value performing arts and undertake unique programs like pitching start-ups, MUNs, and Robotics, enriching the students' educational experience, critical thinking and love for learning. Additionally, the school clubs offer students ample opportunities to explore their interests and talents.</p>
+                                <p>Delhi Public School, Jodhpur is deeply committed to fostering a culture rooted in respect, equality, empathy, and understanding—preparing students not only for academic success but also to become responsible, compassionate, and impactful global citizens.</p>
 
-                                <p>We are dedicated to creating a culture of respect, equality, empathy and understanding in our students to equip them to contribute to the world.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                                 <div className='text-end'>
                                     <h2 className='text-uppercase'><i>Ms Kaajal Kanwar Bhati</i></h2>
