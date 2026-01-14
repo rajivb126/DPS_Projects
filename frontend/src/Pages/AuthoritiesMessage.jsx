@@ -139,26 +139,6 @@ function AuthoritiesMessage() {
 
                                 <p>Delhi Public School, Jodhpur is deeply committed to fostering a culture rooted in respect, equality, empathy, and understanding—preparing students not only for academic success but also to become responsible, compassionate, and impactful global citizens.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <div className='text-end'>
                                     <h2 className='text-uppercase'><i>Ms Kaajal Kanwar Bhati</i></h2>
                                     <h3>(Vice Principal)</h3>
@@ -166,6 +146,34 @@ function AuthoritiesMessage() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="container authorities_message bisque_authoritites_message">
+                        <div className="row">
+                            <div className="col-lg-2">
+                                <div className='image'>
+                                    <img src={Headmistress_Middle} alt="Headmaster Middle Block" className='director-image' />
+                                </div>
+                            </div>
+
+                            <div className="col-lg-10 message">
+                                <h2><i>“The pen of education writes the story of our future on the pages of today.”</i></h2>
+                                <p>At Delhi Public School Jodhpur, we sincerely endeavour to shape young minds and equip them with the skills required to thrive in an ever-evolving and competitive world. Learning here is guided by timeless principles—curiosity that prompts inquiry, observation that sharpens understanding, reasoning that brings clarity, and application that gives knowledge its true purpose. When these elements converge, education transcends the mere accumulation of information and becomes a way of interpreting the world with insight and balance.</p>
+                                <p>In the Middle Block, we offer a comprehensive and dynamic curriculum that challenges students academically while nurturing creativity and critical thinking. Our classrooms are spaces where questions are welcomed, ideas are examined, and exploration is encouraged. Dedicated teachers, deeply invested in their disciplines, guide students to think independently, articulate confidently and approach learning with both precision and imagination.</p>
+                                <p>We firmly believe that meaningful learning extends beyond the classroom. Engagement in sports, arts, music, drama and co-curricular pursuits allows students to test their abilities, collaborate with peers and grow through experience. These opportunities foster adaptability, resilience and discovery—skills best developed through active participation and reflection.</p>
+                                <p>At the heart of our institution lie the values of respect, kindness and integrity. We are committed to nurturing a safe, inclusive and supportive environment where every child feels valued and empowered to realise their potential. With committed mentors offering guidance and direction, students learn to strike a thoughtful balance between knowledge and wisdom, discipline and creativity, structure and freedom.</p>
+                                <p>Together, we aspire to nurture learners who are inquisitive in thought, grounded in values and prepared to face the future with confidence and clarity.</p>
+
+                                
+                                <div className='text-end'>
+                                    <h2 className='text-uppercase'><i>Mr Darshan Lal</i></h2>
+                                    <h3>(Headmaster Middle Block)</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
                     
                     <div className="container blue_authorities_message">
