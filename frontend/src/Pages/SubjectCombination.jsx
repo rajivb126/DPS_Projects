@@ -137,7 +137,7 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Physcial Education/ Food Nutrition & Dietics</td>
+                                        <td align='left'>Physical Education/ Food Nutrition & Dietetics</td>
                                         <td>048 / 834</td>
                                     </tr>
                                 </tbody>
