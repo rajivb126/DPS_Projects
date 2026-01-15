@@ -57,8 +57,8 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Computer Science/ Data Science</td>
-                                        <td>083/844</td>
+                                        <td align='left'>Computer Science / Data Science</td>
+                                        <td>083 / 844</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -97,8 +97,8 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Economics/ Physical Education</td>
-                                        <td>030/048</td>
+                                        <td align='left'>Economics / Physical Education</td>
+                                        <td>030 / 048</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -138,7 +138,7 @@ function SubjectCombination() {
                                     <tr>
                                         <td>5.</td>
                                         <td align='left'>Physcial Education/ Food Nutrition & Dietics</td>
-                                        <td>048/834</td>
+                                        <td>048 / 834</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -292,8 +292,8 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td align='left'>Physcial Education</td>
-                                        <td>049</td>
+                                        <td align='left'>Physical Education</td>
+                                        <td>048</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
