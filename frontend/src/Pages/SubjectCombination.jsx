@@ -20,7 +20,7 @@ function SubjectCombination() {
                     <div className='row'>
                         <div className="col-12 pt-3 text-center">
                             <div>
-                                <h3>Session 2025 - 2026
+                                <h3>Session 2026 - 2027
                                 </h3>
                             </div>
                         </div>
@@ -97,8 +97,8 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Economics/ Data Science</td>
-                                        <td>030/844</td>
+                                        <td align='left'>Economics/ Physical Education</td>
+                                        <td>030/048</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -132,13 +132,13 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td align='left'>Mathematics</td>
-                                        <td>041</td>
+                                        <td align='left'>Biology</td>
+                                        <td>044</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Physcial Education/ Yoga</td>
-                                        <td>048/841</td>
+                                        <td align='left'>Physcial Education/ Food Nutrition & Dietics</td>
+                                        <td>048/834</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -162,23 +162,23 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>2.</td>
-                                        <td align='left'>Physics</td>
-                                        <td>042</td>
+                                        <td align='left'>Business Studies</td>
+                                        <td>054</td>
                                     </tr>
                                     <tr>
                                         <td>3.</td>
-                                        <td align='left'>Chemistry</td>
-                                        <td>043</td>
+                                        <td align='left'>Accountancy</td>
+                                        <td>055</td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td align='left'>Biology</td>
-                                        <td>044</td>
+                                        <td align='left'>Mathematics</td>
+                                        <td>041</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Mathematics/ Physcial Education / Food Nutrition & Dietetics</td>
-                                        <td>041 / 048 / 834</td>
+                                        <td align='left'>Economics / Marketing</td>
+                                        <td>030 / 812 </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -212,59 +212,19 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td align='left'>Mathematics</td>
-                                        <td>041</td>
+                                        <td align='left'>Informatics Practices / Data Science</td>
+                                        <td>065 / 844</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Economics / Marketing/ Data Science</td>
-                                        <td>030 / 812 / 844</td>
+                                        <td align='left'>Economics / Marketing</td>
+                                        <td>030 / 812</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <h4 className='text-center text-uppercase'>Group - VI</h4>
-                        <div className="col-lg-10 text-center" style={{ margin: 'auto' }}>
-                            <table align="center" className="table table-striped table-bordered table-hover table-condensed" style={{ width: '80%', margin: 'auto', fontSize: '15px' }}>
-                                <thead>
-                                    <tr>
-                                        <th className='text-uppercase'>S. No.</th>
-                                        <th className='text-uppercase'>Subjects</th>
-                                        <th className='text-uppercase'>Subject Code</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1.</td>
-                                        <td align='left'>English</td>
-                                        <td>301</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2.</td>
-                                        <td align='left'>Business Studies</td>
-                                        <td>054</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3.</td>
-                                        <td align='left'>Accountancy</td>
-                                        <td>055</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4.</td>
-                                        <td align='left'>IP / Data Science / Marketing</td>
-                                        <td>065 / 844 / 812</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5.</td>
-                                        <td align='left'>Economics / Painting / Yoga</td>
-                                        <td>030 / 049 / 841</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <h4 className='text-center text-uppercase'>Group - VII</h4>
                         <div className="col-lg-10 text-center" style={{ margin: 'auto' }}>
                             <table align="center" className="table table-striped table-bordered table-hover table-condensed" style={{ width: '80%', margin: 'auto', fontSize: '15px' }}>
                                 <thead>
@@ -297,14 +257,14 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Painting / Mathematics / Data Science</td>
-                                        <td>049 / 041 / 844</td>
+                                        <td align='left'>Economics / Painting / Data Science</td>
+                                        <td>030 / 049 / 844</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
-                        <h4 className='text-center text-uppercase'>Group - VIII</h4>
+                        <h4 className='text-center text-uppercase'>Group - VII</h4>
                         <div className="col-lg-10 text-center" style={{ margin: 'auto', paddingBottom:'50px' }}>
                             <table align="center" className="table table-striped table-bordered table-hover table-condensed" style={{ width: '80%', margin: 'auto', fontSize: '15px' }}>
                                 <thead>
@@ -327,18 +287,18 @@ function SubjectCombination() {
                                     </tr>
                                     <tr>
                                         <td>3.</td>
-                                        <td align='left'>Geography / Psychology</td>
-                                        <td>029 / 037</td>
+                                        <td align='left'>Geography</td>
+                                        <td>029</td>
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td align='left'>Economics / Painting</td>
-                                        <td>031 / 049</td>
+                                        <td align='left'>Physcial Education</td>
+                                        <td>049</td>
                                     </tr>
                                     <tr>
                                         <td>5.</td>
-                                        <td align='left'>Yoga / Physcial Education</td>
-                                        <td>841 / 048</td>
+                                        <td align='left'>Economics / Painting</td>
+                                        <td>030 / 049</td>
                                     </tr>
                                 </tbody>
                             </table>
