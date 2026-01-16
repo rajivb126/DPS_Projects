@@ -305,7 +305,7 @@ function Header() {
                                         {/* <li><Link to={'/exam-policy'} className="dropdown-item">Exam Policy</Link></li> */}
                                         <li><Link to={'/hostel-policy'} className="dropdown-item">Hostel Policy</Link></li>
                                         <li><Link to={'/fee-structure'} className="dropdown-item">Fee Structure</Link></li>
-                                        <li><Link to={'subject-combination'} className='dropdown-item'>Subject Combination for Class XI</Link></li>
+                                        <li><Link to={'/subject-combination'} className='dropdown-item'>Subject Combination for Class XI</Link></li>
                                     </ul>
                                 </li>
                                 <li className="nav-item dropdown">
