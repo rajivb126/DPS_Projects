@@ -17,8 +17,10 @@ function Download() {
             });
     }, []);
 
+    const currentDate = new Date();
+
     // Filter download based on date range
-        const newsUpdate = newsData.filter(Download =>
+        const dlData = data.filter(Download =>
         new Date(Download.start_date) <= currentDate && 
         new Date(Download.end_date) >= currentDate
     );
@@ -65,8 +67,8 @@ function Download() {
                                         </tr>
                                     </thead> */}
                                     <tbody style={{ verticalAlign: 'middle' }}>
-                                        {data.length > 0 ? (
-                                            [...data]
+                                        {dlData.length > 0 ? (
+                                            [...dlData]
                                                 .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
                                                 .map((news, index) => (
                                                     <tr key={news._id}> {/* key fix */}
