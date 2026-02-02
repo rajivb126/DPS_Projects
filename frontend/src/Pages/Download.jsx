@@ -17,6 +17,12 @@ function Download() {
             });
     }, []);
 
+    // Filter download based on date range
+        const newsUpdate = newsData.filter(Download =>
+        new Date(Download.start_date) <= currentDate && 
+        new Date(Download.end_date) >= currentDate
+    );
+    
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const day = ('0' + date.getDate()).slice(-2);
