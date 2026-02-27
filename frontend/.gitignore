@@ -16,7 +16,6 @@ logs/
 
 # Build outputs
 /dist/
-/build/
 /coverage/
 
 # OS-specific files
