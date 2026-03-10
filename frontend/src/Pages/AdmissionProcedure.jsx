@@ -73,7 +73,7 @@ function AdmissionProcedure() {
                                     </li>
                                     <li>Preference will be given to siblings (real brother or sister) of students already studying in the school.</li>
                                 </ol>
-                                 <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center' }}>Dates for the Admission will be announced shortly for the session 2026-27.</p>
+                                 {/* <p className='fs-5' style={{ color: '#960606ff', fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center' }}>Dates for the Admission will be announced shortly for the session 2026-27.</p> */}
                             </div>
                             <div className="tab-pane fade" id="procedure" role="tabpanel" aria-labelledby="procedure-tab">
                                 <h3>Admission Guidelines</h3>
