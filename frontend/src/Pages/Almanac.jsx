@@ -19,7 +19,7 @@ function Almanac() {
                     <div className='row mx-auto'>
                         <div className='col-12'>
                             <div className='school-magazine pt-lg-5 py-3'>
-                                <iframe src="https://online.anyflip.com/aaycz/tzrq/index.html" seamless="seamless" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+                                <iframe src="https://online.anyflip.com/vkign/mejn/index.html" seamless="seamless" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
                             </div>
                         </div>
                     </div>
