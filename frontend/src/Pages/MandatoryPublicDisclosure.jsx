@@ -516,7 +516,7 @@ function MandatoryPublicDisclosure() {
                         </table>
                     </div>
 
-                    <h5 className="text-center fs-2 pt-4">Download - <a href="https://dpsjodhpur.in/backend/uploads/Mandatory_Disclosure_Details___SARAS_5.0.pdf">Mandatory_Disclosure_Details _ SARAS 5.0</a></h5>
+                    {/* <h5 className="text-center fs-2 pt-4">Download - <a href="https://dpsjodhpur.in/backend/uploads/Mandatory_Disclosure_Details___SARAS_5.0.pdf">Mandatory_Disclosure_Details _ SARAS 5.0</a></h5> */}
                 </div>
             </section >
 
