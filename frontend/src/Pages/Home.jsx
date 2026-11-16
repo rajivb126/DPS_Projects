@@ -277,7 +277,7 @@ function Home() {
                     <div className="popup">
                         {/* Modal */}
                         <div className="modal show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
-                            <div className="modal-dialog modal-dialog-centered" role="document" style={{ maxWidth: '1000px' }}>
+                            <div className="modal-dialog modal-dialog-centered" role="document" style={{width: "85vw", maxWidth: "850px", maxHeight: "85vh", margin: "auto"}}>
                                 <div className="modal-content">
                                     <div className="modal-body p-0 position-relative">
                                         <img src={`${API_BASE_URL}/uploads/${popupData.popup_image}`} alt="Popup" className="img-fluid" />
