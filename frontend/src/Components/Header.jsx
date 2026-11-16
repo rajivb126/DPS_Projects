@@ -206,8 +206,8 @@ function Header() {
                         <div className="col-xxl-9 col-lg-8 col-md-8 p-0">
                             <ul className="d-flex align-items-center">
                                 <li>
-                                    <a href="tel:+0291-2766886">
-                                        <FontAwesomeIcon icon={faPhone} className='pe-2' />0291-2766886/887, 2946886/887
+                                    <a href="tel:+917737880141">
+                                        <FontAwesomeIcon icon={faPhone} className='pe-2' />0291-2766886/887, +91 77378 80141
                                     </a>
                                 </li>
                                 <li>
@@ -574,8 +574,8 @@ function Header() {
                                     </ul>
                                 </li> */}
                                 <li className="nav-item">
-                                    <a className="nav-link fw-bolder" href="tel:02912766886">
-                                        <FontAwesomeIcon icon={faPhone} className='pe-2' />0291-2766886/887, 2946886/887
+                                    <a className="nav-link fw-bolder" href="tel:+917737880141">
+                                        <FontAwesomeIcon icon={faPhone} className='pe-2' />0291-2766886/887, 7737880141
                                     </a>
                                 </li>
                                 <li className="nav-item p-0">
